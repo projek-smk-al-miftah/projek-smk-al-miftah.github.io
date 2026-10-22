@@ -1,1 +1,231 @@
 
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Premium</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="login-container">
+    <section class="login-card">
+
+      <div class="logo">N<span>+</span></div>
+
+      <p class="eyebrow">WELCOME BACK</p>
+      <h1>Selamat Datang</h1>
+      <p class="subtitle">Masuk untuk melanjutkan ke akun Anda.</p>
+
+      <button class="google-btn" id="googleLogin">
+        <span class="google-icon">G</span>
+        Lanjutkan dengan Google
+      </button>
+
+      <div class="separator">
+        <span></span><p>atau gunakan email</p><span></span>
+      </div>
+
+      <form id="loginForm">
+        <label for="email">Alamat Email</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="nama@email.com"
+          autocomplete="email"
+          required
+        >
+
+        <label for="password">Kata Sandi</label>
+        <input
+          type="password"
+          id="password"
+          placeholder="Masukkan kata sandi"
+          autocomplete="current-password"
+          required
+          minlength="6"
+        >
+
+        <button type="button" id="forgotPassword" class="forgot">
+          Lupa kata sandi?
+        </button>
+
+        <button type="submit" class="login-btn">Masuk Sekarang</button>
+      </form>
+
+      <p class="register-text">
+        Belum punya akun?
+        <button type="button" id="showRegister">Daftar sekarang</button>
+      </p>
+
+      <p id="message" role="status" aria-live="polite"></p>
+
+      <footer>© 2026 • Premium Login</footer>
+    </section>
+  </main>
+
+  <script type="module">
+    import { initializeApp } from
+      "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
+
+    import {
+      getAuth,
+      GoogleAuthProvider,
+      signInWithPopup,
+      signInWithEmailAndPassword,
+      createUserWithEmailAndPassword,
+      sendPasswordResetEmail,
+      onAuthStateChanged,
+      signOut
+    } from
+      "https://www.gstatic.com/firebasejs/12.4.0/firebase-auth.js";
+
+    // GANTI dengan konfigurasi dari Firebase milikmu.
+    const firebaseConfig = {
+      apiKey: "ISI_API_KEY",
+      authDomain: "ISI_PROJECT_ID.firebaseapp.com",
+      projectId: "ISI_PROJECT_ID",
+      appId: "ISI_APP_ID"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const provider = new GoogleAuthProvider();
+
+    const form = document.getElementById("loginForm");
+    const message = document.getElementById("message");
+    const registerButton = document.getElementById("showRegister");
+    const submitButton = form.querySelector('[type="submit"]');
+
+    let mode = "login";
+
+    function showMessage(text, error = false) {
+      message.textContent = text;
+      message.style.color = error ? "#ff737d" : "#a6ffcf";
+    }
+
+    function translateError(error) {
+      const errors = {
+        "auth/invalid-credential": "Email atau kata sandi salah.",
+        "auth/user-not-found": "Akun tidak ditemukan.",
+        "auth/wrong-password": "Kata sandi tidak benar.",
+        "auth/email-already-in-use": "Email sudah terdaftar.",
+        "auth/weak-password": "Gunakan kata sandi minimal 6 karakter.",
+        "auth/invalid-email": "Format email tidak valid.",
+        "auth/popup-closed-by-user": "Jendela Google ditutup.",
+        "auth/unauthorized-domain": "Domain website belum diizinkan di Firebase.",
+        "auth/operation-not-allowed": "Metode login belum diaktifkan di Firebase.",
+        "auth/too-many-requests": "Terlalu banyak percobaan. Coba lagi nanti.",
+        "auth/network-request-failed": "Periksa koneksi internet."
+      };
+
+      return errors[error.code] || "Gagal: " + error.message;
+    }
+
+    function updateMode() {
+      const isRegister = mode === "register";
+
+      submitButton.textContent = isRegister ? "Buat Akun" : "Masuk Sekarang";
+      registerButton.textContent = isRegister
+        ? "Kembali ke login"
+        : "Daftar sekarang";
+
+      document.querySelector(".eyebrow").textContent =
+        isRegister ? "CREATE ACCOUNT" : "WELCOME BACK";
+
+      document.querySelector("h1").textContent =
+        isRegister ? "Buat Akun Baru" : "Selamat Datang";
+    }
+
+    registerButton.addEventListener("click", () => {
+      mode = mode === "login" ? "register" : "login";
+      updateMode();
+      showMessage("");
+    });
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+
+      submitButton.disabled = true;
+      showMessage("Memproses akun...");
+
+      try {
+        if (mode === "register") {
+          await createUserWithEmailAndPassword(auth, email, password);
+          showMessage("Akun berhasil dibuat!");
+        } else {
+          await signInWithEmailAndPassword(auth, email, password);
+          showMessage("Login berhasil!");
+        }
+      } catch (error) {
+        showMessage(translateError(error), true);
+      } finally {
+        submitButton.disabled = false;
+      }
+    });
+
+    document.getElementById("googleLogin").addEventListener(
+      "click", async () => {
+        try {
+          await signInWithPopup(auth, provider);
+          showMessage("Login Google berhasil!");
+        } catch (error) {
+          showMessage(translateError(error), true);
+        }
+      }
+    );
+
+    document.getElementById("forgotPassword").addEventListener(
+      "click", async () => {
+        const email = document.getElementById("email").value.trim();
+
+        if (!email) {
+          showMessage("Isi alamat email terlebih dahulu.", true);
+          return;
+        }
+
+        try {
+          await sendPasswordResetEmail(auth, email);
+          showMessage("Jika akun memenuhi syarat, email reset akan dikirim.");
+        } catch (error) {
+          showMessage(translateError(error), true);
+        }
+      }
+    );
+
+    // Login tetap tersimpan sampai pengguna keluar.
+    onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        message.innerHTML = "";
+
+        const info = document.createElement("div");
+        info.className = "user-info";
+
+        const title = document.createElement("strong");
+        title.textContent = "Berhasil masuk!";
+
+        const account = document.createElement("p");
+        account.textContent = user.email || user.displayName || "Akun Google";
+
+        const logout = document.createElement("button");
+        logout.className = "login-btn";
+        logout.textContent = "Keluar dari Akun";
+        logout.addEventListener("click", async () => {
+          await signOut(auth);
+          showMessage("Kamu sudah keluar.");
+          info.remove();
+        });
+
+        info.append(title, account, logout);
+        message.appendChild(info);
+      }
+    });
+  </script>
+
+</body>
+</html>
+
