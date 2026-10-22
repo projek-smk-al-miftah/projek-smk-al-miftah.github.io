@@ -227,4 +227,267 @@
   </script>
 
 </body>
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --purple: #9b72ff;
+  --silver: #d9d5e8;
+  --background: #08080e;
+  --card: #12121c;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background:
+    radial-gradient(ellipse at 15% 15%, #39205b 0%, transparent 38%),
+    radial-gradient(ellipse at 85% 85%, #191d43 0%, transparent 35%),
+    var(--background);
+  color: #fff;
+  min-height: 100vh;
+}
+
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 440px;
+  padding: 40px 34px;
+  background: rgba(18, 18, 28, 0.94);
+  border: 1px solid rgba(191, 169, 255, 0.22);
+  border-radius: 24px;
+  box-shadow: 0 25px 90px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(18px);
+}
+
+.logo {
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 26px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #c3a9ff, #7442e8);
+  color: #fff;
+  font-size: 24px;
+  font-weight: 800;
+  box-shadow: 0 8px 30px #8b5cf655;
+}
+
+.logo span {
+  color: #e5d7ff;
+  display: inline;
+}
+
+.eyebrow {
+  color: #b59aff;
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+h1 {
+  font-size: 29px;
+  text-align: center;
+  letter-spacing: -1px;
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  color: #9998ab;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.google-btn {
+  width: 100%;
+  min-height: 49px;
+  border: 1px solid #373744;
+  border-radius: 11px;
+  background: #1b1b27;
+  color: #f4f2fa;
+  font-weight: 600;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.google-btn:hover {
+  border-color: #b19aff;
+  background: #242234;
+}
+
+.google-icon {
+  font-size: 20px;
+  font-weight: 800;
+  color: #8bb5ff;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 25px 0;
+}
+
+.separator span {
+  flex: 1;
+  height: 1px;
+  background: #30303c;
+}
+
+.separator p {
+  color: #858496;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+label {
+  display: block;
+  margin-bottom: 9px;
+  color: #d8d6e5;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+input {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 20px;
+  color: white;
+  background: #0c0c14;
+  border: 1px solid #30303d;
+  border-radius: 10px;
+  outline: none;
+  font-size: 13px;
+}
+
+input::placeholder {
+  color: #666579;
+}
+
+input:focus {
+  border-color: var(--purple);
+  box-shadow: 0 0 0 3px #9b72ff20;
+}
+
+.forgot {
+  display: block;
+  margin: -8px 0 22px auto;
+  color: #b79bff;
+  background: transparent;
+  border: none;
+  font-size: 12px;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 15px;
+  color: white;
+  background: linear-gradient(110deg, #8c5cff, #6941d9);
+  border: none;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: 0 8px 25px #8155ef30;
+}
+
+.login-btn:hover {
+  filter: brightness(1.15);
+  transform: translateY(-1px);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.register-text {
+  text-align: center;
+  color: #9998ab;
+  font-size: 12px;
+  margin-top: 24px;
+}
+
+.register-text button {
+  background: transparent;
+  border: none;
+  color: #b99dff;
+  font-weight: 700;
+  margin-left: 3px;
+}
+
+#message {
+  margin-top: 18px;
+  font-size: 12px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.user-info {
+  padding: 14px;
+  border: 1px solid #373044;
+  border-radius: 12px;
+  background: #191524;
+}
+
+.user-info p {
+  margin: 8px 0 14px;
+}
+
+footer {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 10px;
+  color: #68677a;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    padding: 16px;
+  }
+
+  .login-card {
+    padding: 32px 22px;
+    border-radius: 20px;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+}
+
+
 </html>
