@@ -1,0 +1,231 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>SAHAM NEXUS | Informasi Pasar Saham</title>
+
+  <meta name="description"
+        content="Website informasi saham dengan desain modern, pencarian saham, dan grafik pasar.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #080b0a;
+      --card: #111613;
+      --border: #242d27;
+      --green: #b6ff52;
+      --text: #f4f7f4;
+      --muted: #89958d;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(8, 11, 10, 0.95);
+      backdrop-filter: blur(12px);
+    }
+
+    nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 23px;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: var(--green);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      color: #c0c9c2;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: var(--green);
+    }
+
+    .nav-button {
+      padding: 10px 17px;
+      border-radius: 8px;
+      color: #10140c;
+      background: var(--green);
+      font-weight: bold;
+    }
+
+    .hero {
+      padding: 90px 0 65px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 7px 13px;
+      border: 1px solid #40552c;
+      background: #182313;
+      color: var(--green);
+      border-radius: 30px;
+      font-size: 12px;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: clamp(40px, 6vw, 65px);
+      line-height: 1.08;
+      letter-spacing: -2px;
+      margin-bottom: 22px;
+    }
+
+    h1 span {
+      color: var(--green);
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 520px;
+      margin-bottom: 28px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 20px;
+      border-radius: 9px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: #10140c;
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--border);
+      color: white;
+    }
+
+    .market-card {
+      background: linear-gradient(145deg, #172019, #0d110e);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 20px 70px #0005;
+    }
+
+    .market-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .market-value {
+      font-size: 35px;
+      font-weight: bold;
+      margin: 7px 0;
+    }
+
+    .positive {
+      color: var(--green);
+    }
+
+    .chart {
+      width: 100%;
+      height: 160px;
+      margin: 15px 0;
+    }
+
+    .chart svg {
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+
+    .chart-line {
+      fill: none;
+      stroke: var(--green);
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .chart-area {
+      fill: url(#chartFill);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-bottom: 65px;
+    }
+
+    .stat {
+      padding: 22px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      border-radius: 13px;
+    }
+
+    .stat h3 {
+      font-size: 24px;
+      margin-bottom: 3px;
+    }
+
+    .stat p {
+      color: var(--muted
