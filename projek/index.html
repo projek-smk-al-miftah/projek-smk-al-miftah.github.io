@@ -1,1 +1,470 @@
-projek
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NETSTORE - Jual Alat Jaringan</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f3f6fb;
+    color: #172033;
+}
+
+header {
+    background: #071426;
+    color: white;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #38bdf8;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #38bdf8;
+}
+
+.hero {
+    background: linear-gradient(120deg, #071426, #123d67, #087cae);
+    color: white;
+    padding: 90px 8%;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 43px;
+    margin-bottom: 18px;
+}
+
+.hero h1 span {
+    color: #38bdf8;
+}
+
+.hero p {
+    color: #d4e7f7;
+    line-height: 1.8;
+    margin-bottom: 28px;
+}
+
+.btn {
+    display: inline-block;
+    background: #0ea5e9;
+    color: white;
+    padding: 13px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #0284c7;
+}
+
+.container {
+    padding: 60px 8%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-title h2 {
+    font-size: 30px;
+    color: #0b2745;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: #64748b;
+}
+
+.search {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    padding: 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    margin: 0 auto 35px;
+    outline: none;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.product {
+    background: white;
+    border-radius: 13px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+    transition: 0.3s;
+}
+
+.product:hover {
+    transform: translateY(-7px);
+}
+
+.product-image {
+    height: 170px;
+    background: linear-gradient(135deg, #dbeafe, #e0f2fe);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 75px;
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.product-info h3 {
+    margin-bottom: 10px;
+    color: #0b2745;
+}
+
+.product-info p {
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 12px;
+}
+
+.price {
+    color: #0284c7;
+    font-weight: bold;
+    font-size: 19px;
+    margin-bottom: 15px;
+}
+
+.product-info button {
+    width: 100%;
+}
+
+.about {
+    background: #e0f2fe;
+    text-align: center;
+}
+
+.about p {
+    max-width: 700px;
+    margin: auto;
+    line-height: 1.9;
+    color: #334155;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 13px;
+    margin: 10px 0;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    font-size: 14px;
+}
+
+.contact-form button {
+    width: 100%;
+}
+
+footer {
+    background: #071426;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+footer span {
+    color: #38bdf8;
+}
+
+@media(max-width:600px) {
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    nav a {
+        margin: 7px;
+        display: inline-block;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .container {
+        padding: 45px 5%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">NETSTORE.</div>
+    <nav>
+        <a href="#home">Beranda</a>
+        <a href="#produk">Produk</a>
+        <a href="#tentang">Tentang</a>
+        <a href="#kontak">Kontak</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <h1>JUAL ALAT-ALAT <span>JARINGAN</span></h1>
+    <p>
+        Pusat perlengkapan jaringan komputer berkualitas.<br>
+        Solusi kebutuhan jaringan rumah, sekolah, kantor, dan industri.
+    </p>
+    <a href="#produk" class="btn">Lihat Produk</a>
+</section>
+
+<section class="container" id="produk">
+
+    <div class="section-title">
+        <h2>Produk Kami</h2>
+        <p>Pilih perlengkapan jaringan komputer yang Anda butuhkan.</p>
+    </div>
+
+    <input
+        type="text"
+        class="search"
+        id="search"
+        placeholder="Cari alat jaringan..."
+        oninput="cariProduk()"
+    >
+
+    <div class="products" id="daftarProduk">
+
+        <div class="product" data-name="router mikrotik">
+            <div class="product-image">📡</div>
+            <div class="product-info">
+                <h3>Router MikroTik</h3>
+                <p>Perangkat untuk mengatur koneksi dan jaringan internet.</p>
+                <div class="price">Rp450.000</div>
+                <button class="btn" onclick="beli('Router MikroTik',450000)">Beli Sekarang</button>
+            </div>
+        </div>
+
+        <div class="product" data-name="switch hub jaringan">
+            <div class="product-image">🔌</div>
+            <div class="product-info">
+                <h3>Switch 8 Port</h3>
+                <p>Menghubungkan beberapa perangkat dalam satu jaringan LAN.</p>
+                <div class="price">Rp180.000</div>
+                <button class="btn" onclick="beli('Switch 8 Port',180000)">Beli Sekarang</button>
+            </div>
+        </div>
+
+        <div class="product" data-name="kabel lan utp">
+            <div class="product-image">🧵</div>
+            <div class="product-info">
+                <h3>Kabel LAN UTP</h3>
+                <p>Kabel jaringan untuk koneksi komputer dan perangkat lainnya.</p>
+                <div class="price">Rp150.000</div>
+                <button class="btn" onclick="beli('Kabel LAN UTP',150000)">Beli Sekarang</button>
+            </div>
+        </div>
+
+        <div class="product" data-name="access point wifi">
+            <div class="product-image">📶</div>
+            <div class="product-info">
+                <h3>Access Point</h3>
+                <p>Memperluas jangkauan jaringan WiFi.</p>
+                <div class="price">Rp350.000</div>
+                <button class="btn" onclick="beli('Access Point',350000)">Beli Sekarang</button>
+            </div>
+        </div>
+
+        <div class="product" data-name="lan tester">
+            <div class="product-image">🛠️</div>
+            <div class="product-info">
+                <h3>LAN Tester</h3>
+                <p>Alat untuk memeriksa kondisi dan susunan kabel LAN.</p>
+                <div class="price">Rp75.000</div>
+                <button class="btn" onclick="beli('LAN Tester',75000)">Beli Sekarang</button>
+            </div>
+        </div>
+
+        <div class="product" data-name="tang crimping">
+            <div class="product-image">🔧</div>
+            <div class="product-info">
+                <h3>Tang Crimping</h3>
+                <p>Alat memasang konektor RJ45 pada kabel jaringan.</p>
+                <div class="price">Rp65.000</div>
+                <button class="btn" onclick="beli('Tang Crimping',65000)">Beli Sekarang</button>
+            </div>
+        </div>
+
+        <div class="product" data-name="konektor rj45">
+            <div class="product-image">🔩</div>
+            <div class="product-info">
+                <h3>Konektor RJ45</h3>
+                <p>Konektor untuk menghubungkan kabel UTP ke perangkat jaringan.</p>
+                <div class="price">Rp25.000</div>
+                <button class="btn" onclick="beli('Konektor RJ45',25000)">Beli Sekarang</button>
+            </div>
+        </div>
+
+        <div class="product" data-name="modem internet">
+            <div class="product-image">🌐</div>
+            <div class="product-info">
+                <h3>Modem Internet</h3>
+                <p>Perangkat untuk menghubungkan jaringan ke internet.</p>
+                <div class="price">Rp275.000</div>
+                <button class="btn" onclick="beli('Modem Internet',275000)">Beli Sekarang</button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="container about" id="tentang">
+    <div class="section-title">
+        <h2>Tentang NETSTORE</h2>
+    </div>
+    <p>
+        NETSTORE merupakan toko perlengkapan jaringan komputer
+        yang menyediakan berbagai alat jaringan seperti Router,
+        Switch, Kabel LAN, Access Point, LAN Tester, dan perlengkapan
+        TKJ lainnya. Kami menyediakan produk untuk pelajar,
+        teknisi, sekolah, dan kebutuhan perkantoran.
+    </p>
+</section>
+
+<section class="container" id="kontak">
+    <div class="section-title">
+        <h2>Form Pemesanan</h2>
+        <p>Isi data berikut untuk melakukan pemesanan.</p>
+    </div>
+
+    <form class="contact-form" onsubmit="pesan(event)">
+        <input type="text" id="nama" placeholder="Nama lengkap" required>
+
+        <input type="text" id="alamat" placeholder="Alamat pengiriman" required>
+
+        <select id="produk" required>
+            <option value="">Pilih produk</option>
+            <option>Router MikroTik</option>
+            <option>Switch 8 Port</option>
+            <option>Kabel LAN UTP</option>
+            <option>Access Point</option>
+            <option>LAN Tester</option>
+            <option>Tang Crimping</option>
+            <option>Konektor RJ45</option>
+            <option>Modem Internet</option>
+        </select>
+
+        <input type="number" id="jumlah" placeholder="Jumlah pembelian" min="1" required>
+
+        <textarea id="catatan" rows="4" placeholder="Catatan tambahan"></textarea>
+
+        <button type="submit" class="btn">Kirim Pesanan WhatsApp</button>
+    </form>
+</section>
+
+<footer>
+    <p>© 2026 <span>NETSTORE</span> - Jual Alat-Alat Jaringan</p>
+    <p>Solusi Perlengkapan Jaringan Komputer Anda.</p>
+</footer>
+
+<script>
+const nomorWhatsApp = "6281234567890";
+
+// Tombol beli produk
+function beli(nama, harga) {
+    const pesan = `Halo NETSTORE, saya ingin membeli:
+${nama}
+Harga: Rp${harga.toLocaleString("id-ID")}
+
+Mohon informasi pemesanan.`;
+
+    window.open(
+        "https://wa.me/" + nomorWhatsApp + "?text=" +
+        encodeURIComponent(pesan),
+        "_blank"
+    );
+}
+
+// Pencarian produk
+function cariProduk() {
+    const keyword = document.getElementById("search").value.toLowerCase();
+    const produk = document.querySelectorAll(".product");
+
+    produk.forEach(item => {
+        const nama = item.dataset.name;
+        item.style.display = nama.includes(keyword) ? "block" : "none";
+    });
+}
+
+// Form pemesanan
+function pesan(event) {
+    event.preventDefault();
+
+    const nama = document.getElementById("nama").value;
+    const alamat = document.getElementById("alamat").value;
+    const produk = document.getElementById("produk").value;
+    const jumlah = document.getElementById("jumlah").value;
+    const catatan = document.getElementById("catatan").value;
+
+    const pesan = `HALO NETSTORE, SAYA INGIN MEMESAN:
+
+Nama: ${nama}
+Alamat: ${alamat}
+Produk: ${produk}
+Jumlah: ${jumlah}
+Catatan: ${catatan}
+
+Mohon konfirmasi pesanan saya.`;
+
+    window.open(
+        "https://wa.me/" + nomorWhatsApp + "?text=" +
+        encodeURIComponent(pesan),
+        "_blank"
+    );
+}
+</script>
+
+</body>
+</html>
+
