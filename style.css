@@ -1,1 +1,308 @@
+```css
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #080d0a;
+    color: white;
+}
+
+/* NAVBAR */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 23px 8%;
+    background: #101a14;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+    color: #20e68c;
+}
+
+.logo span {
+    color: white;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: #20e68c;
+}
+
+/* HERO */
+.hero {
+    min-height: 520px;
+    padding: 70px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    background: linear-gradient(120deg, #07120b, #16432b);
+}
+
+.hero-content {
+    max-width: 550px;
+}
+
+.subtitle {
+    color: #20e68c;
+    letter-spacing: 3px;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 58px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #20e68c;
+}
+
+.hero-content p:not(.subtitle) {
+    color: #d0ddd4;
+    line-height: 1.8;
+}
+
+.hero-image img {
+    width: 330px;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 25px;
+    box-shadow: 0 15px 40px #000;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 28px;
+    margin-top: 25px;
+    background: #20e68c;
+    color: #06150b;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: .3s;
+}
+
+.btn:hover {
+    background: white;
+    transform: translateY(-4px);
+}
+
+/* FEATURES */
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 35px 8%;
+    background: #111b14;
+    text-align: center;
+    gap: 20px;
+}
+
+.feature h3 {
+    color: #20e68c;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.feature p {
+    color: #ccc;
+}
+
+/* PRODUK */
+.produk {
+    padding: 85px 8%;
+    text-align: center;
+}
+
+.produk h2,
+.tentang h2,
+.kontak h2 {
+    font-size: 34px;
+    color: #20e68c;
+}
+
+.deskripsi {
+    color: #aaa;
+    margin-top: 15px;
+}
+
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.card {
+    background: #14231a;
+    padding: 20px;
+    border-radius: 18px;
+    border: 1px solid #294433;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: #20e68c;
+    box-shadow: 0 10px 30px #20e68c22;
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.kategori {
+    display: inline-block;
+    color: #20e68c;
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-top: 20px;
+}
+
+.card h3 {
+    margin: 15px 0;
+    font-size: 21px;
+}
+
+.card p {
+    color: #b9c5bd;
+    line-height: 1.7;
+}
+
+.card h4 {
+    color: #20e68c;
+    font-size: 19px;
+    margin-top: 18px;
+}
+
+.buy {
+    display: block;
+    background: #20e68c;
+    color: #06150b;
+    text-decoration: none;
+    padding: 13px;
+    margin-top: 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.buy:hover {
+    background: white;
+}
+
+/* TENTANG */
+.tentang {
+    background: #111b14;
+    padding: 85px 8%;
+    text-align: center;
+}
+
+.tentang-box {
+    max-width: 750px;
+    margin: auto;
+}
+
+.tentang p:not(.subtitle) {
+    color: #ccc;
+    line-height: 1.9;
+    margin-top: 20px;
+}
+
+/* KONTAK */
+.kontak {
+    text-align: center;
+    padding: 85px 8%;
+}
+
+.kontak p:not(.subtitle) {
+    color: #ccc;
+    margin-top: 20px;
+}
+
+/* FOOTER */
+footer {
+    background: #030805;
+    padding: 30px;
+    text-align: center;
+    line-height: 2;
+    color: #999;
+}
+
+footer h3 {
+    color: #20e68c;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 39px;
+    }
+
+    .hero-image img {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .product-container {
+        grid-template-columns: 1fr;
+    }
+
+    .produk h2,
+    .tentang h2,
+    .kontak h2 {
+        font-size: 27px;
+    }
+}
+```
