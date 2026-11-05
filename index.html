@@ -1,216 +1,176 @@
-```html
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OPPO STORE - Jual HP OPPO Terbaru</title>
-    <meta name="description" content="Katalog smartphone OPPO terbaru di OPPO STORE.">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+/* --- ROOT VARIABLES --- */
+:root {
+  --primary-color: #00c853; /* Warna khas OPPO hijau neon */
+  --primary-glow: rgba(0, 200, 83, 0.4);
+  --bg-dark: #0b0f19;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --text-main: #ffffff;
+  --text-muted: #94a3b8;
+  --radius: 20px;
+  --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
 
-    <!-- NAVBAR -->
-    <header class="navbar">
-        <a href="#home" class="logo">
-            <span class="logo-icon">O</span>
-            OPPO<span class="logo-white">STORE</span>
-        </a>
+/* --- SECTION HEADING --- */
+.products.section {
+  padding: 80px 20px;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
 
-        <nav>
-            <a href="#home">Beranda</a>
-            <a href="#produk">Produk</a>
-            <a href="#tentang">Tentang</a>
-            <a href="#kontak">Kontak</a>
-        </nav>
+.section-heading {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 50px auto;
+}
 
-        <a href="#produk" class="nav-btn">Belanja Sekarang ↗</a>
-    </header>
+.section-label {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  background: rgba(0, 200, 83, 0.1);
+  padding: 6px 16px;
+  border-radius: 50px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(0, 200, 83, 0.2);
+}
 
-    <!-- HERO -->
-    <section class="hero" id="home">
+.section-heading h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, #fff 30%, var(--text-muted));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-        <div class="hero-text">
-            <span class="label">✦ OPPO SMARTPHONE COLLECTION</span>
+.section-heading p {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
 
-            <h1>
-                MASA DEPAN<br>
-                ADA DI <span>TANGANMU.</span>
-            </h1>
+/* --- PRODUCT GRID --- */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-            <p>
-                Temukan smartphone OPPO terbaru dengan
-                desain elegan, kamera berkualitas, dan
-                teknologi modern untuk aktivitasmu.
-            </p>
+/* --- PRODUCT CARD --- */
+.product-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+  position: relative;
+}
 
-            <div class="hero-actions">
-                <a href="#produk" class="primary-btn">JELAJAHI PRODUK ↗</a>
-                <a href="#tentang" class="secondary-btn">Tentang Kami</a>
-            </div>
+.product-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--primary-color);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px var(--primary-glow);
+}
 
-            <div class="statistics">
-                <div>
-                    <h3>01</h3>
-                    <p>Produk Pilihan</p>
-                </div>
-                <div>
-                    <h3>02</h3>
-                    <p>Pelayanan Ramah</p>
-                </div>
-                <div>
-                    <h3>03</h3>
-                    <p>Pesan Mudah</p>
-                </div>
-            </div>
-        </div>
+/* --- PRODUCT IMAGE / DEVICE VISUAL --- */
+.product-image {
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.05) 0%, transparent 70%);
+}
 
-        <!-- ILUSTRASI SVG SMARTPHONE -->
-        <div class="phone-scene">
-            <div class="glow"></div>
+.find-image { background: radial-gradient(circle at center, rgba(0, 200, 83, 0.15) 0%, transparent 70%); }
+.reno-image { background: radial-gradient(circle at center, rgba(56, 189, 248, 0.15) 0%, transparent 70%); }
+.a-image { background: radial-gradient(circle at center, rgba(168, 85, 247, 0.15) 0%, transparent 70%); }
 
-            <svg class="phone-svg" viewBox="0 0 300 460"
-                 xmlns="http://www.w3.org/2000/svg"
-                 role="img" aria-label="Ilustrasi smartphone OPPO">
+.device {
+  width: 130px;
+  height: 200px;
+  background: #1e293b;
+  border-radius: 24px;
+  border: 3px solid #334155;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  transition: var(--transition);
+}
 
-                <defs>
-                    <linearGradient id="phoneBody" x1="0" y1="0" x2="1" y2="1">
-                        <stop offset="0%" stop-color="#a5b5aa"/>
-                        <stop offset="45%" stop-color="#283d31"/>
-                        <stop offset="100%" stop-color="#101c15"/>
-                    </linearGradient>
+.product-card:hover .device {
+  transform: scale(1.05) rotate(-2deg);
+}
 
-                    <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1">
-                        <stop offset="0%" stop-color="#35e99a"/>
-                        <stop offset="50%" stop-color="#105a3a"/>
-                        <stop offset="100%" stop-color="#061b13"/>
-                    </linearGradient>
+.camera-module {
+  background: #0f172a;
+  border-radius: 16px;
+  padding: 6px;
+  display: flex;
+  gap: 4px;
+  border: 1px solid #475569;
+}
 
-                    <linearGradient id="shine" x1="0" y1="0" x2="1" y2="1">
-                        <stop offset="0%" stop-color="#ffffff" stop-opacity=".4"/>
-                        <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
-                    </linearGradient>
-                </defs>
+.camera-module span {
+  width: 10px;
+  height: 10px;
+  background: #000;
+  border-radius: 50%;
+  border: 1px solid #64748b;
+  display: inline-block;
+}
 
-                <ellipse cx="150" cy="430" rx="105" ry="16"
-                         fill="#20e68c" opacity=".2"/>
+.device-brand {
+  font-size: 0.65rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: #94a3b8;
+}
 
-                <g transform="rotate(-9 150 220)">
-                    <rect x="51" y="17" width="198" height="412"
-                          rx="29" fill="url(#phoneBody)"
-                          stroke="#9eae9f" stroke-width="3"/>
+/* --- PRODUCT DETAILS --- */
+.product-details {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
 
-                    <rect x="58" y="24" width="184" height="398"
-                          rx="23" fill="#030805"/>
+.product-category {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  letter-spacing: 1.5px;
+  margin-bottom: 6px;
+}
 
-                    <rect x="65" y="32" width="170" height="382"
-                          rx="18" fill="url(#screen)"/>
+.product-details h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #fff;
+}
 
-                    <circle cx="150" cy="44" r="5" fill="#09130d"/>
+.product-details p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
 
-                    <circle cx="180" cy="130" r="90"
-                            fill="#20e68c" opacity=".13"/>
-
-                    <path d="M65 285 Q150 180 235 270 L235 414 L65 414Z"
-                          fill="#062c1b" opacity=".7"/>
-
-                    <path d="M65 335 Q140 250 235 320"
-                          fill="none" stroke="#8bffc0"
-                          stroke-width="3" opacity=".5"/>
-
-                    <path d="M65 355 Q150 270 235 350"
-                          fill="none" stroke="#ffffff"
-                          stroke-width="2" opacity=".25"/>
-
-                    <rect x="75" y="75" width="150" height="115"
-                          rx="15" fill="url(#shine)"/>
-
-                    <text x="150" y="235" fill="white"
-                          font-size="24" text-anchor="middle"
-                          font-weight="bold">OPPO</text>
-
-                    <text x="150" y="258" fill="#baffd5"
-                          font-size="9" text-anchor="middle"
-                          letter-spacing="3">TECHNOLOGY</text>
-                </g>
-            </svg>
-
-            <div class="floating-card">
-                <span>✦</span>
-                <div>
-                    <strong>OPPO COLLECTION</strong>
-                    <p>Technology Meets Style</p>
-                </div>
-            </div>
-        </div>
-
-    </section>
-
-    <!-- KEUNGGULAN -->
-    <section class="features">
-        <div class="feature">
-            <span>✦</span>
-            <div>
-                <h3>Produk Pilihan</h3>
-                <p>Beragam seri smartphone</p>
-            </div>
-        </div>
-
-        <div class="feature">
-            <span>◇</span>
-            <div>
-                <h3>Informasi Produk</h3>
-                <p>Deskripsi mudah dipahami</p>
-            </div>
-        </div>
-
-        <div class="feature">
-            <span>↗</span>
-            <div>
-                <h3>Pemesanan Mudah</h3>
-                <p>Hubungi melalui WhatsApp</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- PRODUK -->
-    <section class="products" id="produk">
-
-        <div class="section-title">
-            <span class="label">OUR COLLECTION</span>
-            <h2>KOLEKSI HP <span>OPPO.</span></h2>
-            <p>Pilih smartphone favoritmu sekarang.</p>
-        </div>
-
-        <div class="product-grid">
-
-            <!-- FIND SERIES -->
-            <article class="product-card">
-                <div class="product-visual green">
-                    <span class="tag">PREMIUM</span>
-
-                    <svg viewBox="0 0 200 220" class="mini-phone"
-                         xmlns="http://www.w3.org/2000/svg"
-                         role="img" aria-label="Ilustrasi HP premium">
-                        <rect x="48" y="5" width="104" height="210"
-                              rx="19" fill="#17251b"
-                              stroke="#a4b9a9" stroke-width="3"/>
-                        <rect x="54" y="12" width="92" height="196"
-                              rx="15" fill="#174d30"/>
-                        <circle cx="85" cy="55" r="18" fill="#9bf3bb"/>
-                        <circle cx="120" cy="55" r="18" fill="#74d99e"/>
-                        <circle cx="85" cy="55" r="8" fill="#163a27"/>
-                        <circle cx="120" cy="55" r="8" fill="#163a27"/>
-                        <path d="M55 160 Q100 90 145 160 L145 208 L55 208Z"
-                              fill="#20e68c" opacity=".5"/>
-                        <text x="100" y="190" font-size="13"
-                              text-anchor="middle" fill="white">OPPO</text>
-                    </svg>
-                </div>
-
-                <div class="product-info">
-                    <span class="category">FLAGSHIP SERIES</span>
-                    <h3>OPPO Find Series</h3>
-                    <p>Seri premium dengan teknologi dan desain modern.</p>
-                    <div class="product-footer">
-                        <strong>Hubungi Toko
+/* --- BOTTOM &
