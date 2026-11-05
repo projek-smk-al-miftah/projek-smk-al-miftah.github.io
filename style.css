@@ -3,164 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OPPO Flagship Store | Jual HP Android OPPO Keren</title>
-    <!-- Google Font: Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>OPPO Terbaru</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
     
     <style>
-        /* ==========================================
-           OPPO STORE - FLAGSHIP TECH STYLE (CSS)
-           ========================================== */
-
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        /* --- ROOT VARIABLES --- */
         :root {
-            --primary-color: #00ff88;
+            --primary: #00ff88;
             --primary-glow: rgba(0, 255, 136, 0.35);
             --bg-dark: #050806;
-            --card-bg: rgba(14, 22, 17, 0.75);
-            --card-border: rgba(0, 255, 136, 0.15);
             --text-main: #f0fdf4;
             --text-muted: #8a9e91;
-            --radius: 24px;
-            --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
+        /* --- BODY BACKGROUND DEMO --- */
         body {
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
             background-color: var(--bg-dark);
-            color: var(--text-main);
-            overflow-x: hidden;
-        }
-
-        /* --- NAVBAR --- */
-        .navbar {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            padding: 50px 20px;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            padding: 20px 8%;
-            background: rgba(5, 8, 6, 0.85);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            min-height: 100vh;
+            margin: 0;
         }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-            font-size: 22px;
-            font-weight: 900;
-            color: var(--primary-color);
-            letter-spacing: -0.5px;
-        }
-
-        .logo-icon {
-            border: 2px solid var(--primary-color);
-            border-radius: 50%;
-            padding: 2px 8px;
-            font-size: 15px;
-            box-shadow: 0 0 15px var(--primary-glow);
-        }
-
-        .logo-white {
-            color: #ffffff;
-        }
-
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        nav {
-            display: flex;
-            gap: 32px;
-        }
-
-        nav a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            transition: var(--transition);
-        }
-
-        nav a:hover {
-            color: var(--primary-color);
-        }
-
-        .login-btn {
-            text-decoration: none;
-            color: var(--primary-color);
-            border: 1px solid var(--card-border);
-            background: rgba(0, 255, 136, 0.05);
-            padding: 10px 24px;
-            border-radius: 99px;
-            font-size: 13px;
-            font-weight: 700;
-            transition: var(--transition);
-        }
-
-        .login-btn:hover {
-            background: var(--primary-color);
-            color: #050806;
-            box-shadow: 0 0 25px var(--primary-glow);
-        }
-
-        /* --- HERO SECTION --- */
-        .hero {
-            padding: 100px 8% 60px;
+        /* --- HERO HEADING STYLING --- */
+        .oppo-heading-section {
             text-align: center;
-            background: 
-                radial-gradient(circle at 50% 20%, rgba(0, 255, 136, 0.12) 0%, transparent 50%),
-                var(--bg-dark);
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
         }
 
-        .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
+        /* Badge Label */
+        .oppo-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 3px;
+            color: var(--primary);
+            text-transform: uppercase;
+            background: rgba(0, 255, 136, 0.08);
+            padding: 8px 20px;
+            border-radius: 99px;
+            margin-bottom: 16px;
+            border: 1px solid rgba(0, 255, 136, 0.25);
+            box-shadow: 0 0 20px var(--primary-glow);
+        }
+
+        /* Main Title with Gradient Effect */
+        .oppo-heading-section h1 {
+            font-size: clamp(2.5rem, 5vw, 3.8rem);
             font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 20px;
+            line-height: 1.15;
+            margin-bottom: 16px;
+            color: var(--text-main);
             letter-spacing: -1.5px;
         }
 
-        .hero h1 span {
+        .oppo-heading-section h1 span {
             background: linear-gradient(135deg, #00ff88 0%, #00f2fe 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 20px rgba(0, 255, 136, 0.3));
+            filter: drop-shadow(0 0 25px rgba(0, 255, 136, 0.3));
         }
 
-        .hero p {
+        /* Subtitle Description */
+        .oppo-heading-section p {
             color: var(--text-muted);
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto 30px;
+            font-size: 1.05rem;
             line-height: 1.7;
+            max-width: 550px;
+            margin: 0 auto;
         }
+    </style>
+</head>
+<body>
 
-        /* --- PRODUCTS SECTION --- */
-        .products.section {
-            padding: 60px 8% 100px;
-        }
+    <div class="oppo-heading-section">
+        <span class="oppo-badge">Official Release</span>
+        <h1>Jelajahi <span>HP OPPO Terbaru</span> Paling Spektakuler</h1>
+        <p>Temukan inovasi teknologi terdepan, desain bodi futuristik, dan sistem kamera profesional dalam genggaman Anda.</p>
+    </div>
 
-        .section-heading {
-            text-align: center;
-            max-width: 650px;
-            margin: 0 auto
+</body>
+</html>
