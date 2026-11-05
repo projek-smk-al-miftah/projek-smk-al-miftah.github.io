@@ -1,41 +1,43 @@
 /* ==========================================
-   1. RESET & VARIABLE SYSTEM
+   1. RESET & VARIABLE SYSTEM (CYBER BLUE THEME)
    ========================================== */
 :root {
-  --primary: #059669;
-  --primary-hover: #047857;
-  --accent-glow: rgba(5, 150, 105, 0.25);
-  --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  --primary: #00d2ff;
+  --primary-dark: #0072ff;
+  --primary-gradient: linear-gradient(135deg, #00d2ff 0%, #0072ff 100%);
+  --accent-glow: rgba(0, 210, 255, 0.35);
+  --bg-dark: #070d19;
+  --bg-card: rgba(15, 23, 42, 0.65);
   --text-main: #f8fafc;
   --text-muted: #94a3b8;
-  --glass-bg: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-bg: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(0, 210, 255, 0.15);
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Plus Jakarta Sans', 'Poppins', sans-serif;
   scroll-behavior: smooth;
 }
 
 body {
-  background: #0f172a; /* Dark theme premium */
+  background: var(--bg-dark);
   color: var(--text-main);
   min-height: 100vh;
   overflow-x: hidden;
 }
 
 /* ==========================================
-   2. NAVBAR ELEGANT
+   2. NAVBAR ELEGANT (GLASSMORPHISM BLUE)
    ========================================== */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1.2rem 8%;
-  background: rgba(15, 23, 42, 0.75);
+  background: rgba(7, 13, 25, 0.8);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   position: fixed;
@@ -51,17 +53,12 @@ body {
   font-weight: 800;
   letter-spacing: 1.5px;
   color: #ffffff;
-  display: flex;
-  align-items: center;
-  gap: 5px;
 }
 
-.logo::after {
-  content: '';
-  width: 8px;
-  height: 8px;
-  background-color: var(--primary);
-  border-radius: 50%;
+.logo span {
+  color: var(--primary);
+  font-weight: 400;
+  margin-left: 4px;
 }
 
 .nav-links {
@@ -81,17 +78,35 @@ body {
 .nav-links a:hover,
 .nav-links a.active {
   color: var(--primary);
-  text-shadow: 0 0 10px var(--accent-glow);
+  text-shadow: 0 0 12px var(--accent-glow);
+}
+
+.btn-nav {
+  text-decoration: none;
+  color: var(--primary);
+  border: 1px solid var(--glass-border);
+  background: rgba(0, 210, 255, 0.05);
+  padding: 0.6rem 1.4rem;
+  border-radius: 99px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-nav:hover {
+  background: var(--primary);
+  color: #000;
+  box-shadow: 0 0 20px var(--accent-glow);
 }
 
 /* ==========================================
-   3. HERO SECTION WITH GLOW & ANIMATION
+   3. HERO SECTION WITH BLUE GLOW & ANIMATION
    ========================================== */
 .hero {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 8rem 8% 4rem;
+  padding: 10rem 8% 5rem;
   min-height: 100vh;
   gap: 4rem;
   position: relative;
@@ -107,22 +122,22 @@ body {
   align-items: center;
   gap: 8px;
   padding: 0.4rem 1.2rem;
-  background: rgba(5, 150, 105, 0.15);
-  border: 1px solid rgba(5, 150, 105, 0.4);
-  color: #34d399;
+  background: rgba(0, 210, 255, 0.1);
+  border: 1px solid rgba(0, 210, 255, 0.3);
+  color: var(--primary);
   border-radius: 50px;
   font-size: 0.85rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
+  box-shadow: 0 0 15px rgba(0, 210, 255, 0.1);
 }
 
-.badge::before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  background-color: #34d399;
+.badge-dot {
+  width: 7px;
+  height: 7px;
+  background-color: var(--primary);
   border-radius: 50%;
-  box-shadow: 0 0 8px #34d399;
+  box-shadow: 0 0 10px var(--primary);
 }
 
 .hero-text h1 {
@@ -135,9 +150,10 @@ body {
 }
 
 .hero-text h1 span {
-  background: linear-gradient(135deg, #34d399 0%, #059669 100%);
+  background: var(--primary-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 20px rgba(0, 210, 255, 0.3));
 }
 
 .hero-text p {
@@ -147,6 +163,28 @@ body {
   margin-bottom: 2.5rem;
 }
 
+/* Feature Badges under Hero */
+.hero-features {
+  display: flex;
+  gap: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hero-features .feature-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.hero-features .icon {
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
 /* ==========================================
    4. BUTTONS & INTERACTION
    ========================================== */
@@ -154,6 +192,7 @@ body {
   display: flex;
   gap: 1.2rem;
   align-items: center;
+  margin-bottom: 2rem;
 }
 
 .btn {
@@ -163,6 +202,381 @@ body {
   padding: 0.9rem 2rem;
   border-radius: 12px;
   font-size: 0.95rem;
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
-  transition: all 0.3s cubic-
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--primary-gradient);
+  color: #030712;
+  box-shadow: 0 10px 25px var(--accent-glow);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(0, 210, 255, 0.5);
+}
+
+.btn-secondary {
+  background: var(--glass-bg);
+  color: var(--text-main);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+  background: rgba(0, 210, 255, 0.1);
+  border-color: var(--primary);
+  transform: translateY(-3px);
+}
+
+/* ==========================================
+   5. HERO IMAGE & CYBER GLOW
+   ========================================== */
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.image-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  height: 320px;
+  background: var(--primary-dark);
+  filter: blur(130px);
+  opacity: 0.45;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.image-wrapper {
+  position: relative;
+  z-index: 2;
+  border-radius: 24px;
+  padding: 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+  animation: float 5s ease-in-out infinite;
+}
+
+.image-wrapper img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 16px;
+  display: block;
+  object-fit: cover;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* ==========================================
+   6. FEATURES SECTION
+   ========================================== */
+.features-section {
+  padding: 5rem 8%;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 4rem;
+}
+
+.section-header h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 0.8rem;
+}
+
+.section-header h2 span {
+  color: var(--primary);
+}
+
+.section-header p {
+  color: var(--text-muted);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.feature-card {
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary);
+  box-shadow: 0 10px 30px rgba(0, 210, 255, 0.15);
+}
+
+.card-icon {
+  width: 50px;
+  height: 50px;
+  background: rgba(0, 210, 255, 0.1);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.feature-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.8rem;
+}
+
+.feature-card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ==========================================
+   7. PRODUCT CATALOG CARDS
+   ========================================== */
+.products-section {
+  padding: 3rem 8% 6rem;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.product-card {
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  padding: 1.5rem;
+  position: relative;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 210, 255, 0.2);
+}
+
+.product-badge {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  background: rgba(0, 210, 255, 0.15);
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  padding: 0.3rem 0.8rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  z-index: 2;
+}
+
+.product-badge.popular {
+  background: var(--primary-gradient);
+  color: #000;
+  border: none;
+}
+
+.product-img {
+  width: 100%;
+  height: 240px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 1.2rem;
+}
+
+.product-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-img img {
+  transform: scale(1.08);
+}
+
+.series-name {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: 1px;
+}
+
+.product-info h3 {
+  font-size: 1.3rem;
+  margin: 0.4rem 0 0.6rem;
+}
+
+.product-info p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.product-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.price {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.btn-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(0, 210, 255, 0.1);
+  color: var(--primary);
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.btn-card:hover {
+  background: var(--primary);
+  color: #000;
+}
+
+/* ==========================================
+   8. CTA BANNER & FOOTER
+   ========================================== */
+.cta-banner {
+  margin: 0 8% 6rem;
+  background: linear-gradient(135deg, rgba(0, 210, 255, 0.15) 0%, rgba(0, 114, 255, 0.15) 100%);
+  border: 1px solid var(--primary);
+  border-radius: 28px;
+  padding: 4rem 2rem;
+  text-align: center;
+  box-shadow: 0 0 40px rgba(0, 210, 255, 0.15);
+}
+
+.banner-content h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.banner-content p {
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.btn-wa {
+  background: #25d366;
+  color: #ffffff;
+  padding: 0.9rem 2.2rem;
+  border-radius: 99px;
+  font-weight: 800;
+  box-shadow: 0 0 20px rgba(37, 211, 102, 0.4);
+}
+
+.btn-wa:hover {
+  background: #1eb956;
+  transform: scale(1.05);
+}
+
+.footer {
+  background: #040811;
+  padding: 2.5rem 8%;
+  border-top: 1px solid var(--glass-border);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.top-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* ==========================================
+   9. RESPONSIVE DESIGN (HP & TABLET)
+   ========================================== */
+@media (max-width: 992px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 8rem;
+  }
+
+  .hero-text h1 {
+    font-size: 2.8rem;
+  }
+
+  .cta-buttons, .hero-features {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 1.2rem;
+    text-align: center;
+  }
+}
