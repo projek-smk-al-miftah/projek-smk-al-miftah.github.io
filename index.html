@@ -1,125 +1,216 @@
+```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="OPPO STORE - Katalog dan penjualan smartphone OPPO resmi dengan teknologi modern dan promo menarik.">
-    <meta name="theme-color" content="#060907">
-
-    <title>OPPO STORE | Smartphone Premium & Official Catalog</title>
-
-    <!-- Google Fonts: Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-    <!-- Lucide Icons (CDN for smooth modern icons) -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-
+    <title>OPPO STORE - Jual HP OPPO Terbaru</title>
+    <meta name="description" content="Katalog smartphone OPPO terbaru di OPPO STORE.">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <!-- NAVBAR -->
-    <header class="header">
-        <a href="#beranda" class="logo">
-            OPPO<span>STORE.</span>
+    <header class="navbar">
+        <a href="#home" class="logo">
+            <span class="logo-icon">O</span>
+            OPPO<span class="logo-white">STORE</span>
         </a>
 
         <nav>
-            <a href="#beranda">Beranda</a>
+            <a href="#home">Beranda</a>
             <a href="#produk">Produk</a>
             <a href="#tentang">Tentang</a>
             <a href="#kontak">Kontak</a>
         </nav>
 
-        <a href="#produk" class="nav-button">Belanja Sekarang &rarr;</a>
+        <a href="#produk" class="nav-btn">Belanja Sekarang ↗</a>
     </header>
 
-    <main>
-        <!-- HERO SECTION -->
-        <section class="hero" id="beranda">
-            <div class="hero-content">
-                <span class="badge">
-                    <i data-lucide="sparkles" style="width: 14px; height: 14px;"></i> SMARTPHONE COLLECTION
-                </span>
+    <!-- HERO -->
+    <section class="hero" id="home">
 
-                <h1>
-                    TEMUKAN<br>
-                    GAYA BARU<br>
-                    <span>BERSAMA OPPO.</span>
-                </h1>
+        <div class="hero-text">
+            <span class="label">✦ OPPO SMARTPHONE COLLECTION</span>
 
-                <p>
-                    Nikmati pengalaman teknologi smartphone modern, desain elegan, kamera kelas dunia, dan performa tinggi yang mendukung aktivitas harianmu.
-                </p>
+            <h1>
+                MASA DEPAN<br>
+                ADA DI <span>TANGANMU.</span>
+            </h1>
 
-                <div class="hero-buttons">
-                    <a href="#produk" class="btn-primary">
-                        Jelajahi Produk &rarr;
-                    </a>
+            <p>
+                Temukan smartphone OPPO terbaru dengan
+                desain elegan, kamera berkualitas, dan
+                teknologi modern untuk aktivitasmu.
+            </p>
 
-                    <a href="#tentang" class="btn-outline">
-                        Tentang Kami
-                    </a>
-                </div>
-
-                <div class="hero-info">
-                    <div>
-                        <h3>01</h3>
-                        <p>Kualitas Pilihan</p>
-                    </div>
-                    <div>
-                        <h3>02</h3>
-                        <p>Pelayanan Ramah</p>
-                    </div>
-                    <div>
-                        <h3>03</h3>
-                        <p>Pemesanan Mudah</p>
-                    </div>
-                </div>
+            <div class="hero-actions">
+                <a href="#produk" class="primary-btn">JELAJAHI PRODUK ↗</a>
+                <a href="#tentang" class="secondary-btn">Tentang Kami</a>
             </div>
 
-            <div class="hero-image">
-                <div class="image-glow"></div>
-                <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=900" alt="Smartphone OPPO Premium Flagship">
-                <div class="image-caption">
-                    <span>OPPO COLLECTION</span>
-                    <h3>Technology Meets Style</h3>
-                </div>
-            </div>
-        </section>
-
-        <!-- KEUNGGULAN SECTION -->
-        <section class="advantages">
-            <div class="advantage">
-                <span><i data-lucide="shield-check"></i></span>
+            <div class="statistics">
                 <div>
-                    <h3>Produk Original</h3>
-                    <p>Smartphone resmi bergaransi</p>
+                    <h3>01</h3>
+                    <p>Produk Pilihan</p>
                 </div>
-            </div>
-
-            <div class="advantage">
-                <span><i data-lucide="zap"></i></span>
                 <div>
-                    <h3>Informasi Jelas</h3>
-                    <p>Spesifikasi produk detail & akurat</p>
+                    <h3>02</h3>
+                    <p>Pelayanan Ramah</p>
                 </div>
-            </div>
-
-            <div class="advantage">
-                <span><i data-lucide="message-square"></i></span>
                 <div>
-                    <h3>Pesan Praktis</h3>
-                    <p>Konsultasi langsung via WhatsApp</p>
+                    <h3>03</h3>
+                    <p>Pesan Mudah</p>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <!-- PRODUK SECTION -->
-        <section class="products" id="produk">
-            <div class="section-heading">
-                <span class="section-label">OUR COLLECTION</span>
-                <h2>JELAJAHI PRODUK <span>OPPO.</span></h2>
-                <p>Temukan smartphone pilihan
+        <!-- ILUSTRASI SVG SMARTPHONE -->
+        <div class="phone-scene">
+            <div class="glow"></div>
+
+            <svg class="phone-svg" viewBox="0 0 300 460"
+                 xmlns="http://www.w3.org/2000/svg"
+                 role="img" aria-label="Ilustrasi smartphone OPPO">
+
+                <defs>
+                    <linearGradient id="phoneBody" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stop-color="#a5b5aa"/>
+                        <stop offset="45%" stop-color="#283d31"/>
+                        <stop offset="100%" stop-color="#101c15"/>
+                    </linearGradient>
+
+                    <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stop-color="#35e99a"/>
+                        <stop offset="50%" stop-color="#105a3a"/>
+                        <stop offset="100%" stop-color="#061b13"/>
+                    </linearGradient>
+
+                    <linearGradient id="shine" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stop-color="#ffffff" stop-opacity=".4"/>
+                        <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+                    </linearGradient>
+                </defs>
+
+                <ellipse cx="150" cy="430" rx="105" ry="16"
+                         fill="#20e68c" opacity=".2"/>
+
+                <g transform="rotate(-9 150 220)">
+                    <rect x="51" y="17" width="198" height="412"
+                          rx="29" fill="url(#phoneBody)"
+                          stroke="#9eae9f" stroke-width="3"/>
+
+                    <rect x="58" y="24" width="184" height="398"
+                          rx="23" fill="#030805"/>
+
+                    <rect x="65" y="32" width="170" height="382"
+                          rx="18" fill="url(#screen)"/>
+
+                    <circle cx="150" cy="44" r="5" fill="#09130d"/>
+
+                    <circle cx="180" cy="130" r="90"
+                            fill="#20e68c" opacity=".13"/>
+
+                    <path d="M65 285 Q150 180 235 270 L235 414 L65 414Z"
+                          fill="#062c1b" opacity=".7"/>
+
+                    <path d="M65 335 Q140 250 235 320"
+                          fill="none" stroke="#8bffc0"
+                          stroke-width="3" opacity=".5"/>
+
+                    <path d="M65 355 Q150 270 235 350"
+                          fill="none" stroke="#ffffff"
+                          stroke-width="2" opacity=".25"/>
+
+                    <rect x="75" y="75" width="150" height="115"
+                          rx="15" fill="url(#shine)"/>
+
+                    <text x="150" y="235" fill="white"
+                          font-size="24" text-anchor="middle"
+                          font-weight="bold">OPPO</text>
+
+                    <text x="150" y="258" fill="#baffd5"
+                          font-size="9" text-anchor="middle"
+                          letter-spacing="3">TECHNOLOGY</text>
+                </g>
+            </svg>
+
+            <div class="floating-card">
+                <span>✦</span>
+                <div>
+                    <strong>OPPO COLLECTION</strong>
+                    <p>Technology Meets Style</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- KEUNGGULAN -->
+    <section class="features">
+        <div class="feature">
+            <span>✦</span>
+            <div>
+                <h3>Produk Pilihan</h3>
+                <p>Beragam seri smartphone</p>
+            </div>
+        </div>
+
+        <div class="feature">
+            <span>◇</span>
+            <div>
+                <h3>Informasi Produk</h3>
+                <p>Deskripsi mudah dipahami</p>
+            </div>
+        </div>
+
+        <div class="feature">
+            <span>↗</span>
+            <div>
+                <h3>Pemesanan Mudah</h3>
+                <p>Hubungi melalui WhatsApp</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUK -->
+    <section class="products" id="produk">
+
+        <div class="section-title">
+            <span class="label">OUR COLLECTION</span>
+            <h2>KOLEKSI HP <span>OPPO.</span></h2>
+            <p>Pilih smartphone favoritmu sekarang.</p>
+        </div>
+
+        <div class="product-grid">
+
+            <!-- FIND SERIES -->
+            <article class="product-card">
+                <div class="product-visual green">
+                    <span class="tag">PREMIUM</span>
+
+                    <svg viewBox="0 0 200 220" class="mini-phone"
+                         xmlns="http://www.w3.org/2000/svg"
+                         role="img" aria-label="Ilustrasi HP premium">
+                        <rect x="48" y="5" width="104" height="210"
+                              rx="19" fill="#17251b"
+                              stroke="#a4b9a9" stroke-width="3"/>
+                        <rect x="54" y="12" width="92" height="196"
+                              rx="15" fill="#174d30"/>
+                        <circle cx="85" cy="55" r="18" fill="#9bf3bb"/>
+                        <circle cx="120" cy="55" r="18" fill="#74d99e"/>
+                        <circle cx="85" cy="55" r="8" fill="#163a27"/>
+                        <circle cx="120" cy="55" r="8" fill="#163a27"/>
+                        <path d="M55 160 Q100 90 145 160 L145 208 L55 208Z"
+                              fill="#20e68c" opacity=".5"/>
+                        <text x="100" y="190" font-size="13"
+                              text-anchor="middle" fill="white">OPPO</text>
+                    </svg>
+                </div>
+
+                <div class="product-info">
+                    <span class="category">FLAGSHIP SERIES</span>
+                    <h3>OPPO Find Series</h3>
+                    <p>Seri premium dengan teknologi dan desain modern.</p>
+                    <div class="product-footer">
+                        <strong>Hubungi Toko
