@@ -1,64 +1,100 @@
-/* Reset Basic */
+/* ==========================================
+   1. RESET & VARIABLE SYSTEM
+   ========================================== */
+:root {
+  --primary: #059669;
+  --primary-hover: #047857;
+  --accent-glow: rgba(5, 150, 105, 0.25);
+  --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-  color: #1e293b;
+  background: #0f172a; /* Dark theme premium */
+  color: var(--text-main);
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
-/* Navbar Style */
+/* ==========================================
+   2. NAVBAR ELEGANT
+   ========================================== */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 8%;
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px);
-  position: sticky;
+  padding: 1.2rem 8%;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  position: fixed;
+  width: 100%;
   top: 0;
-  z-index: 100;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  left: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--glass-border);
 }
 
 .logo {
   font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: #059669; /* Warna aksen hijau OPPO */
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.logo::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background-color: var(--primary);
+  border-radius: 50%;
 }
 
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 .nav-links a {
   text-decoration: none;
-  color: #475569;
+  color: var(--text-muted);
   font-weight: 500;
+  font-size: 0.95rem;
   transition: all 0.3s ease;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: #059669;
+  color: var(--primary);
+  text-shadow: 0 0 10px var(--accent-glow);
 }
 
-/* Hero Section */
+/* ==========================================
+   3. HERO SECTION WITH GLOW & ANIMATION
+   ========================================== */
 .hero {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 4rem 8%;
-  min-height: 85vh;
-  gap: 3rem;
+  padding: 8rem 8% 4rem;
+  min-height: 100vh;
+  gap: 4rem;
+  position: relative;
 }
 
 .hero-text {
@@ -67,32 +103,66 @@ body {
 }
 
 .badge {
-  display: inline-block;
-  padding: 0.4rem 1rem;
-  background-color: #d1fae5;
-  color: #047857;
-  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.4rem 1.2rem;
+  background: rgba(5, 150, 105, 0.15);
+  border: 1px solid rgba(5, 150, 105, 0.4);
+  color: #34d399;
+  border-radius: 50px;
   font-size: 0.85rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
 }
 
+.badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background-color: #34d399;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #34d399;
+}
+
 .hero-text h1 {
-  font-size: 3.2rem;
-  line-height: 1.2;
-  font-weight: 700;
+  font-size: 3.5rem;
+  line-height: 1.15;
+  font-weight: 800;
   margin-bottom: 1.5rem;
-  color: #0f172a;
+  color: var(--text-main);
+  letter-spacing: -1px;
+}
+
+.hero-text h1 span {
+  background: linear-gradient(135deg, #34d399 0%, #059669 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .hero-text p {
   font-size: 1.1rem;
-  line-height: 1.7;
-  color: #64748b;
-  margin-bottom: 2rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
 }
 
-/* Buttons */
+/* ==========================================
+   4. BUTTONS & INTERACTION
+   ========================================== */
 .cta-buttons {
   display: flex;
-  gap:
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.9rem 2rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s cubic-
