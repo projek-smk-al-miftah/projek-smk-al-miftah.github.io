@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OPPO STORE — Discover Your Smartphone</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Google Fonts: Plus Jakarta Sans untuk tampilan ultra-modern -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- Navigation -->
+  <!-- Navigation Bar -->
   <header class="navbar">
-    <div class="logo">OPPO STORE</div>
+    <div class="logo">OPPO<span>STORE</span></div>
     <nav>
       <ul class="nav-links">
         <li><a href="#home" class="active">Beranda</a></li>
@@ -21,24 +21,40 @@
         <li><a href="#kontak">Kontak</a></li>
       </ul>
     </nav>
+    <a href="#produk" class="btn-nav">Belanja Sekarang ↗</a>
   </header>
 
   <!-- Hero Section -->
   <section class="hero" id="home">
     <div class="hero-text">
-      <span class="badge">Model Terbaru 2026</span>
-      <h1>Hebat, Gaya Lebih Elegan.</h1>
-      <p>Smartphone OPPO dengan desain modern, kamera berkualitas, performa cepat, dan teknologi yang mendukung aktivitas sehari-hari.</p>
+      <div class="badge">
+        <span class="badge-dot"></span> Model Terbaru 2026
+      </div>
+      <h1>Hebat, Gaya Lebih <span>Elegan.</span></h1>
+      <p>Nikmati perpaduan desain futuristik, kamera kelas profesional, dan performa luar biasa untuk mendukung gaya hidup digitalmu sehari-hari.</p>
+      
       <div class="cta-buttons">
-        <a href="#produk" class="btn btn-primary">Lihat Produk</a>
-        <a href="#detail" class="btn btn-secondary">Lebih Lanjut &rarr;</a>
+        <a href="#produk" class="btn btn-primary">Lihat Produk <span class="arrow">→</span></a>
+        <a href="#detail" class="btn btn-secondary">Pelajari Lebih Lanjut</a>
+      </div>
+
+      <!-- Feature Highlight Badges -->
+      <div class="hero-features">
+        <div class="feature-item">
+          <span class="icon">⚡</span>
+          <span>SuperVOOC Flash Charge</span>
+        </div>
+        <div class="feature-item">
+          <span class="icon">📸</span>
+          <span>Hasselblad Camera</span>
+        </div>
       </div>
     </div>
     
     <div class="hero-image">
+      <div class="image-glow"></div>
       <div class="image-wrapper">
-        <!-- Ganti src dengan gambar smartphone Anda -->
-        <img src="https://via.placeholder.com/450x550" alt="OPPO Smartphone">
+        <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?q=80&w=800&auto=format&fit=crop" alt="OPPO Smartphone Premium">
       </div>
     </div>
   </section>
