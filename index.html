@@ -1,178 +1,320 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OPPO STORE - HP Terbaru</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Katalog HP OPPO - GitHub Pages</title>
+    <!-- Google Fonts & FontAwesome untuk ikon -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* Top Notification Bar */
+        .top-banner {
+            background-color: #00763b;
+            color: white;
+            text-align: center;
+            padding: 10px 15px;
+            font-size: 13px;
+            position: relative;
+        }
+
+        .top-banner span {
+            font-weight: 600;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        /* Navbar */
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #eaeaea;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            color: #000;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #444;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #00763b;
+        }
+
+        .nav-icons {
+            display: flex;
+            gap: 20px;
+            font-size: 18px;
+            color: #333;
+            cursor: pointer;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: #111;
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .product-card {
+            background: #ffffff;
+            border: 1px solid #eaeaea;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+
+        .product-image-container {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            background: #f7f7f7;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .product-image-container img {
+            max-height: 170px;
+            object-fit: contain;
+        }
+
+        /* Color Dots */
+        .color-dots {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        .dot.active {
+            border: 2px solid #00763b;
+        }
+
+        .dot-blue { background-color: #a8dadc; }
+        .dot-dark { background-color: #333333; }
+        .dot-silver { background-color: #e0e0e0; }
+        .dot-rose { background-color: #e5b2ca; }
+
+        .product-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 8px;
+            text-align: left;
+        }
+
+        .product-desc {
+            font-size: 13px;
+            color: #666;
+            text-align: left;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .btn-buy {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #000;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+
+        .btn-buy:hover {
+            background-color: #00763b;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            color: #aaa;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+            font-size: 13px;
+        }
+
+        /* Responsif untuk HP */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- NAVBAR -->
+    <!-- Banner Atas -->
+    <div class="top-banner">
+        Diskon Rp1 Juta dan Benefit Member hingga Rp500 Ribu! <span>Pre-order</span>
+    </div>
+
+    <!-- Navigasi Utama -->
     <header>
-        <nav class="navbar">
-            <a href="#home" class="logo">OPPO<span>STORE</span></a>
-
-            <ul class="nav-menu">
-                <li><a href="#home">Beranda</a></li>
-                <li><a href="#produk">Produk</a></li>
-                <li><a href="#tentang">Tentang</a></li>
-                <li><a href="#kontak">Kontak</a></li>
+        <div class="navbar">
+            <div class="logo">oppo</div>
+            <ul class="nav-links">
+                <li><a href="#">Smartphone</a></li>
+                <li><a href="#">Tablet</a></li>
+                <li><a href="#">Audio</a></li>
+                <li><a href="#">Wearables</a></li>
+                <li><a href="#">Accessories</a></li>
+                <li><a href="#">Tentang OPPO</a></li>
+                <li><a href="#">Dukungan</a></li>
             </ul>
-
-            <a href="https://wa.me/6281234567890"
-               class="nav-button">Hubungi Kami</a>
-        </nav>
+            <div class="nav-icons">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-regular fa-user"></i>
+                <i class="fa-solid fa-bag-shopping"></i>
+            </div>
+        </div>
     </header>
 
-    <!-- HERO -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <p class="small-title">WELCOME TO OPPO STORE</p>
-
-            <h1>Temukan HP OPPO <span>Impianmu</span></h1>
-
-            <p>
-                Nikmati teknologi terbaru, kamera berkualitas,
-                desain elegan dan performa luar biasa.
-                Temukan smartphone OPPO favoritmu di sini!
-            </p>
-
-            <div class="hero-buttons">
-                <a href="#produk" class="btn-primary">Lihat Produk</a>
-
-                <a href="https://wa.me/6281234567890"
-                   class="btn-outline">Pesan Sekarang</a>
-            </div>
-
-            <div class="hero-info">
-                <div><h3>100%</h3><p>Produk Original</p></div>
-                <div><h3>24 Jam</h3><p>Layanan Online</p></div>
-                <div><h3>Terpercaya</h3><p>Pelayanan Terbaik</p></div>
-            </div>
-        </div>
-
-        <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=700"
-                 alt="Smartphone OPPO">
-        </div>
-    </section>
-
-    <!-- PRODUK -->
-    <section class="products" id="produk">
-
-        <div class="section-title">
-            <p>KOLEKSI SMARTPHONE</p>
-            <h2>HP OPPO Terbaru</h2>
-            <span>Pilih smartphone favoritmu sekarang.</span>
-        </div>
-
-        <div class="product-container">
-
+    <!-- Konten Katalog HP -->
+    <div class="container">
+        <h2 class="section-title">Smartphone Terbaru OPPO</h2>
+        
+        <div class="product-grid">
+            
+            <!-- Produk 1 -->
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=500"
-                     alt="OPPO Find X9 Ultra">
-
-                <h3>OPPO Find X9 Ultra</h3>
-                <p>Premium Camera & Performa Flagship</p>
-                <h4>Hubungi untuk harga</h4>
-
-                <a href="https://wa.me/6281234567890?text=Halo%2C%20saya%20ingin%20membeli%20OPPO%20Find%20X9%20Ultra"
-                   class="buy-button">Beli Sekarang</a>
+                <div class="product-image-container">
+                    <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&q=80&w=400" alt="OPPO A7 Pro Max 5G">
+                </div>
+                <div class="color-dots">
+                    <div class="dot dot-blue active"></div>
+                    <div class="dot dot-dark"></div>
+                </div>
+                <div class="product-title">OPPO A7 Pro Max 5G</div>
+                <div class="product-desc">50MP Kamera Selfie Ultra-Wide AI dengan layar jernih AMOLED 120Hz.</div>
+                <a href="#" class="btn-buy">Lihat Detail</a>
             </div>
 
+            <!-- Produk 2 -->
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1603891128711-11b4b03bb138?w=500"
-                     alt="OPPO Reno16 Pro">
-
-                <h3>OPPO Reno16 Pro 5G</h3>
-                <p>Kamera AI & Desain Elegan</p>
-                <h4>Hubungi untuk harga</h4>
-
-                <a href="https://wa.me/6281234567890?text=Halo%2C%20saya%20ingin%20membeli%20OPPO%20Reno16%20Pro"
-                   class="buy-button">Beli Sekarang</a>
+                <div class="product-image-container">
+                    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&q=80&w=400" alt="OPPO A7 Pro 5G">
+                </div>
+                <div class="color-dots">
+                    <div class="dot dot-blue"></div>
+                    <div class="dot dot-dark active"></div>
+                    <div class="dot dot-rose"></div>
+                </div>
+                <div class="product-title">OPPO A7 Pro 5G</div>
+                <div class="product-desc">50MP Kamera Selfie Ultra-Wide AI, performa tangguh & baterai awet.</div>
+                <a href="#" class="btn-buy">Lihat Detail</a>
             </div>
 
+            <!-- Produk 3 -->
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=500"
-                     alt="OPPO A7 Pro">
+                <div class="product-image-container">
+                    <img src="https://images.unsplash.com/photo-1565849904461-04a58ad377e0?auto=format&fit=crop&q=80&w=400" alt="OPPO Reno16 F 5G Eco Pack">
+                </div>
+                <div class="color-dots">
+                    <div class="dot dot-silver active"></div>
+                    <div class="dot dot-dark"></div>
+                </div>
+                <div class="product-title">OPPO Reno16 F 5G Eco Pack</div>
+                <div class="product-desc">Desain Planet 3D, Pop Shoot Bestie, dan fitur AI Fotografi canggih.</div>
+                <a href="#" class="btn-buy">Lihat Detail</a>
+            </div>
 
-                <h3>OPPO A7 Pro 5G</h3>
-                <p>Baterai Besar & Kamera Jernih</p>
-                <h4>Hubungi untuk harga</h4>
-
-                <a href="https://wa.me/6281234567890?text=Halo%2C%20saya%20ingin%20membeli%20OPPO%20A7%20Pro"
-                   class="buy-button">Beli Sekarang</a>
+            <!-- Produk 4 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="https://images.unsplash.com/photo-1580910051074-3eb694886505?auto=format&fit=crop&q=80&w=400" alt="OPPO Reno16 Pro 5G">
+                </div>
+                    <div class="color-dots">
+                    <div class="dot dot-silver"></div>
+                    <div class="dot dot-dark active"></div>
+                </div>
+                <div class="product-title">OPPO Reno16 Pro 5G</div>
+                <div class="product-desc">AI Kolase Mix, Kamera 4K Stabilisasi profesional untuk kreator.</div>
+                <a href="#" class="btn-buy">Lihat Detail</a>
             </div>
 
         </div>
-    </section>
+    </div>
 
-    <!-- TENTANG -->
-    <section class="about" id="tentang">
-
-        <div class="about-image">
-            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=700"
-                 alt="Smartphone">
-        </div>
-
-        <div class="about-content">
-            <p class="small-title">TENTANG TOKO KAMI</p>
-
-            <h2>Belanja HP OPPO Lebih Mudah dan Nyaman</h2>
-
-            <p>
-                OPPO STORE menyediakan berbagai pilihan smartphone
-                OPPO dengan pelayanan ramah dan proses pemesanan mudah.
-                Hubungi kami untuk informasi stok, harga dan promo terbaru.
-            </p>
-
-            <a href="https://wa.me/6281234567890"
-               class="btn-primary">Konsultasi Sekarang</a>
-        </div>
-
-    </section>
-
-    <!-- KONTAK -->
-    <section class="contact" id="kontak">
-        <div>
-
-            <p class="small-title">HUBUNGI KAMI</p>
-
-            <!-- TOMBOL WHATSAPP DI ATAS -->
-            <a href="https://wa.me/6281234567890"
-               class="btn-primary whatsapp-contact"
-               target="_blank">
-                ☎ Hubungi WhatsApp
-            </a>
-
-            <h2>Siap Memiliki HP OPPO Impianmu?</h2>
-
-            <p>
-                Klik tombol WhatsApp untuk bertanya
-                dan melakukan pemesanan.
-            </p>
-
-        </div>
-    </section>
-
-    <!-- FOOTER -->
+    <!-- Footer -->
     <footer>
-        <h2>OPPO<span>STORE</span></h2>
-
-        <p>Tempat Belanja Smartphone OPPO Pilihan Anda.</p>
-
-        <p>© 2026 OPPO STORE. Website Toko Online.</p>
+        <p>&copy; 2026 OPPO Catalog (GitHub Pages). Dibuat dengan HTML & CSS.</p>
     </footer>
-
-    <!-- WHATSAPP FLOATING -->
-    <a class="whatsapp"
-       href="https://wa.me/6281234567890"
-       target="_blank"
-       aria-label="Chat WhatsApp">
-        WA
-    </a>
 
 </body>
 </html>
