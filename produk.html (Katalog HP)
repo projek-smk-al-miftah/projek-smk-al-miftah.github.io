@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Katalog Produk - OPPO STORE</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<a class="logo" href="index.html">OPPO<span>STORE</span></a>
+<nav>
+<a href="index.html">Beranda</a>
+<a href="produk.html">Produk</a>
+<a href="pencarian.html">Pencarian</a>
+<a href="keranjang.html">Keranjang 🛒</a>
+<a href="kontak.html">Kontak</a>
+</nav>
+</header>
+
+<section class="section">
+<p class="label">OUR COLLECTION</p>
+<h1>Katalog HP OPPO</h1>
+<p>Pilih smartphone favorit kamu.</p>
+<div id="allProducts" class="products"></div>
+</section>
+
+<footer>© 2026 OPPO STORE</footer>
+<script src="script.js"></script>
+</body>
+</html>
