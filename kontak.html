@@ -1,61 +1,260 @@
-
+html
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kontak | OPPO STORE</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#07532f">
+
+    <title>Kontak | OPPO STORE</title>
+
+    <meta name="description" content="Hubungi OPPO STORE untuk informasi smartphone, harga, dan pemesanan.">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
+
 <body>
+
+<!-- HEADER -->
 <header class="header">
-<div class="container navbar">
-<a class="logo" href="index.html">OPPO<span>STORE.</span></a>
-<nav>
-<a href="index.html">Beranda</a>
-<a href="produk.html">Produk</a>
-<a href="tentang.html">Tentang</a>
-<a class="active" href="kontak.html">Kontak</a>
-<a href="keranjang.html">Keranjang 🛒</a>
-</nav>
-</div>
+    <div class="container navbar">
+
+        <a class="logo" href="index.html">
+            OPPO<span>STORE.</span>
+        </a>
+
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="produk.html">Produk</a>
+            <a href="tentang.html">Tentang</a>
+            <a class="active" href="kontak.html">Kontak</a>
+            <a href="keranjang.html">Keranjang 🛒</a>
+        </nav>
+
+    </div>
 </header>
 
-<main class="container section">
-<div class="section-title">
-<span class="tag">CONTACT US</span>
-<h1>Hubungi Kami</h1>
-<p>Kami siap membantu menjawab pertanyaanmu.</p>
-</div>
 
-<div class="contact-layout">
-<div class="contact-info">
-<h2>OPPO STORE</h2>
-<p>Silakan kirim pesan kepada kami untuk bertanya tentang produk, harga, dan pemesanan.</p>
-<div class="contact-item">📱 WhatsApp: Hubungi admin</div>
-<div class="contact-item">✉️ Email: toko@example.com</div>
-<div class="contact-item">🌐 Website: OPPO STORE</div>
-</div>
+<!-- HERO KONTAK -->
+<section class="contact-hero">
+    <div class="container">
 
-<form id="contactForm" class="contact-form">
-<label>Nama Lengkap</label>
-<input type="text" id="contactName" placeholder="Masukkan nama kamu" required>
+        <span class="contact-tag">CUSTOMER SERVICE</span>
 
-<label>Email</label>
-<input type="email" id="contactEmail" placeholder="Masukkan email kamu" required>
+        <h1>
+            Kami Siap <span>Membantu Anda.</span>
+        </h1>
 
-<label>Pesan</label>
-<textarea id="contactMessage" rows="5" placeholder="Tuliskan pesan kamu..." required></textarea>
+        <p>
+            Punya pertanyaan tentang smartphone OPPO?
+            Hubungi tim kami untuk mendapatkan informasi
+            produk, harga, dan pemesanan.
+        </p>
 
-<button type="submit" class="btn">Kirim Pesan ↗</button>
-</form>
-</div>
+        <a href="#hubungi" class="contact-main-btn">
+            Hubungi Sekarang ↗
+        </a>
+
+    </div>
+</section>
+
+
+<!-- HALAMAN KONTAK -->
+<main class="container section" id="hubungi">
+
+    <div class="section-title">
+        <span class="tag">GET IN TOUCH</span>
+        <h2>Hubungi OPPO STORE</h2>
+        <p>Kami siap melayani pertanyaan dan kebutuhan Anda.</p>
+    </div>
+
+
+    <div class="contact-layout">
+
+        <!-- INFORMASI TOKO -->
+        <div class="contact-info">
+
+            <span class="contact-tag">INFORMASI TOKO</span>
+
+            <h2>Mari Terhubung!</h2>
+
+            <p>
+                Silakan pilih salah satu layanan berikut
+                untuk menghubungi admin OPPO STORE.
+            </p>
+
+
+            <!-- WHATSAPP -->
+            <a class="contact-card whatsapp"
+               href="https://wa.me/6281234567890?text=Halo%20OPPO%20STORE%2C%20saya%20ingin%20bertanya%20tentang%20produk."
+               target="_blank"
+               rel="noopener noreferrer">
+
+                <div class="contact-icon">✆</div>
+
+                <div>
+                    <h3>WhatsApp Admin</h3>
+                    <p>Chat langsung dengan admin toko</p>
+                    <strong>Hubungi WhatsApp ↗</strong>
+                </div>
+
+            </a>
+
+
+            <!-- GMAIL -->
+            <a class="contact-card google"
+               href="https://mail.google.com/mail/?view=cm&fs=1&to=tokomu@gmail.com"
+               target="_blank"
+               rel="noopener noreferrer">
+
+                <div class="contact-icon">G</div>
+
+                <div>
+                    <h3>Google / Gmail</h3>
+                    <p>Kirim pertanyaan melalui email</p>
+                    <strong>Kirim Email ↗</strong>
+                </div>
+
+            </a>
+
+
+            <!-- WEBSITE -->
+            <div class="contact-card website">
+
+                <div class="contact-icon">🌐</div>
+
+                <div>
+                    <h3>Website Resmi</h3>
+                    <p>Temukan produk smartphone OPPO</p>
+                    <strong>OPPO STORE</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FORM PESAN -->
+        <form id="contactForm" class="contact-form">
+
+            <span class="contact-tag">SEND MESSAGE</span>
+
+            <h2>Kirim Pesan Anda</h2>
+
+            <p>Isi formulir berikut untuk menghubungi admin.</p>
+
+            <label for="contactName">Nama Lengkap</label>
+
+            <input
+                type="text"
+                id="contactName"
+                placeholder="Masukkan nama lengkap"
+                required
+            >
+
+
+            <label for="contactEmail">Email</label>
+
+            <input
+                type="email"
+                id="contactEmail"
+                placeholder="Masukkan alamat email"
+                required
+            >
+
+
+            <label for="contactMessage">Pesan</label>
+
+            <textarea
+                id="contactMessage"
+                rows="5"
+                placeholder="Tuliskan pertanyaan Anda..."
+                required
+            ></textarea>
+
+
+            <button type="submit" class="contact-submit">
+                Kirim ke WhatsApp ↗
+            </button>
+
+            <small>
+                Pesan akan diteruskan ke WhatsApp admin OPPO STORE.
+            </small>
+
+        </form>
+
+    </div>
+
 </main>
 
-<footer><div class="container footer-content">
-<a class="logo" href="index.html">OPPO<span>STORE.</span></a>
-<p>© 2026 OPPO STORE.</p>
-</div></footer>
+
+<!-- FOOTER -->
+<footer class="contact-footer">
+
+    <div class="container footer-content">
+
+        <a class="logo" href="index.html">
+            OPPO<span>STORE.</span>
+        </a>
+
+        <p>© 2026 OPPO STORE. All Rights Reserved.</p>
+
+    </div>
+
+</footer>
+
+
+<!-- WHATSAPP FLOATING BUTTON -->
+<a
+    href="https://wa.me/6281234567890"
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat WhatsApp">
+
+    ✆
+
+</a>
+
+
+<!-- JAVASCRIPT -->
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    const nama = document.getElementById("contactName").value.trim();
+    const email = document.getElementById("contactEmail").value.trim();
+    const pesan = document.getElementById("contactMessage").value.trim();
+
+    if (!nama || !email || !pesan) {
+        alert("Mohon lengkapi semua formulir!");
+        return;
+    }
+
+    const nomorAdmin = "6281234567890";
+
+    const teks =
+        "Halo OPPO STORE!\n\n" +
+        "Nama: " + nama + "\n" +
+        "Email: " + email + "\n" +
+        "Pesan: " + pesan;
+
+    const url = "https://wa.me/" + nomorAdmin +
+                "?text=" + encodeURIComponent(teks);
+
+    window.open(url, "_blank");
+
+});
+</script>
+
 <script src="script.js"></script>
+
 </body>
 </html>
+```
