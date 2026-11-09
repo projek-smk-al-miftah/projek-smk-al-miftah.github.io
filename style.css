@@ -1,3 +1,423 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #080d0b;
+    color: white;
+    line-height: 1.6;
+}
+
+/* NAVBAR */
+header {
+    background: #080d0b;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #26352e;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    padding: 18px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.logo span, footer span {
+    color: #16d47b;
+}
+
+/* MENU BERJAJAR KE SAMPING */
+.nav-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    transition: .3s;
+    white-space: nowrap;
+}
+
+.nav-menu a:hover {
+    color: #16d47b;
+}
+
+.nav-button {
+    background: #16d47b;
+    color: #06130c;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* HERO */
+.hero {
+    max-width: 1200px;
+    margin: auto;
+    min-height: 570px;
+    padding: 70px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.small-title {
+    color: #16d47b;
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-size: 13px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    line-height: 1.15;
+    margin: 20px 0;
+}
+
+.hero h1 span {
+    color: #16d47b;
+}
+
+.hero-content > p:not(.small-title) {
+    color: #b9c4be;
+    max-width: 520px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn-primary, .btn-outline {
+    display: inline-block;
+    padding: 13px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.btn-primary {
+    background: #16d47b;
+    color: #06130c;
+}
+
+.btn-primary:hover, .buy-button:hover {
+    background: #0fa65f;
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    border: 1px solid #16d47b;
+    color: white;
+}
+
+.btn-outline:hover {
+    background: #16d47b;
+    color: #06130c;
+}
+
+.hero-info {
+    display: flex;
+    flex-direction: row;
+    gap: 35px;
+    margin-top: 45px;
+}
+
+.hero-info h3 {
+    color: #16d47b;
+    font-size: 19px;
+}
+
+.hero-info p {
+    color: #aab5ae;
+    font-size: 12px;
+}
+
+.hero-image {
+    flex: 1;
+    text-align: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 440px;
+    height: 390px;
+    object-fit: cover;
+    border-radius: 25px;
+    box-shadow: 0 0 40px #16d47b22;
+}
+
+/* PRODUK */
+.products {
+    padding: 80px 25px;
+    background: #101813;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title p {
+    color: #16d47b;
+    letter-spacing: 3px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.section-title h2 {
+    font-size: 38px;
+    margin: 10px 0;
+}
+
+.section-title span {
+    color: #aab5ae;
+}
+
+.product-container {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.product-card {
+    background: #18231c;
+    padding: 20px;
+    border-radius: 18px;
+    text-align: center;
+    border: 1px solid #29382f;
+    transition: .3s;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    border-color: #16d47b;
+}
+
+.product-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.product-card h3 {
+    margin-top: 15px;
+    font-size: 21px;
+}
+
+.product-card p {
+    color: #aab5ae;
+    margin: 8px 0;
+}
+
+.product-card h4 {
+    color: #16d47b;
+    margin: 15px 0;
+}
+
+.buy-button {
+    display: block;
+    background: #16d47b;
+    color: #06130c;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+/* TENTANG */
+.about {
+    max-width: 1200px;
+    margin: auto;
+    padding: 90px 25px;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.about-image, .about-content {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.about-content h2 {
+    font-size: 36px;
+    margin: 15px 0;
+}
+
+.about-content p:not(.small-title) {
+    color: #aab5ae;
+    margin-bottom: 25px;
+}
+
+/* KONTAK */
+.contact {
+    text-align: center;
+    background: #14271b;
+    padding: 75px 20px;
+}
+
+.contact h2 {
+    font-size: 35px;
+    margin: 15px 0;
+}
+
+.contact p:not(.small-title) {
+    color: #bdc8c0;
+    margin-bottom: 25px;
+}
+
+/* FOOTER */
+footer {
+    background: #050907;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+footer h2 {
+    margin-bottom: 10px;
+}
+
+footer p {
+    color: #89978e;
+    font-size: 13px;
+    margin: 5px;
+}
+
+/* WHATSAPP */
+.whatsapp {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 58px;
+    height: 58px;
+    background: #16d47b;
+    color: #06130c;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 5px 20px #16d47b55;
+    z-index: 999;
+}
+
+/* RESPONSIVE HP */
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-menu {
+        width: 100%;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding: 5px;
+    }
+
+    .nav-menu a {
+        font-size: 13px;
+    }
+
+    .nav-button {
+        display: none;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 50px 20px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero-info {
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .hero-image img {
+        height: 280px;
+    }
+
+    .product-container {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title h2 {
+        font-size: 30px;
+    }
+
+    .about {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 20px;
+    }
+
+    .about-content h2 {
+        font-size: 29px;
+    }
+
+    .contact h2 {
+        font-size: 27px;
+    }
+}
 /* =========================================================
    OPPO STORE — PREMIUM CYBER BLUE THEME
    Palette: Midnight Navy + Electric Blue + Ice Cyan
