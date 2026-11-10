@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OPPO Store - Keranjang Belanja</title>
+    <title>Keranjang Belanja - OPPO Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header>
         <nav class="navbar">
             <a href="index.html" class="logo">OPPO STORE</a>
@@ -14,7 +16,7 @@
                 <li><a href="index.html">Beranda</a></li>
                 <li><a href="produk.html">Produk</a></li>
                 <li><a href="pencarian.html">Cari</a></li>
-                <li><a href="keranjang.html" class="active">Keranjang</a></li>
+                <li><a href="keranjang.html" class="active cart-link">🛒 Keranjang (<span id="cart-count">0</span>)</a></li>
                 <li><a href="tentang.html">Tentang</a></li>
                 <li><a href="kontak.html">Kontak</a></li>
             </ul>
@@ -23,14 +25,13 @@
 
     <main class="container">
         <h2>Keranjang Belanja Anda</h2>
-        <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: var(--shadow); text-align: center;">
-            <p style="margin-bottom: 1.5rem; font-size: 1.1rem;">Keranjang belanja Anda masih kosong.</p>
-            <a href="produk.html" class="btn-secondary">Mulai Belanja</a>
+        <div id="cart-items-container">
+            <!-- Item keranjang akan dimuat secara dinamis oleh JavaScript -->
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2026 OPPO Store. Hak Cipta Dilindungi.</p>
+        <p>&copy; 2026 OPPO Store. All Rights Reserved.</p>
     </footer>
 
     <script src="script.js"></script>
