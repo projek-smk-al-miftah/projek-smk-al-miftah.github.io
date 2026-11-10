@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OPPO Store - Detail Produk</title>
+    <title>Detail Produk - OPPO Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header>
         <nav class="navbar">
             <a href="index.html" class="logo">OPPO STORE</a>
@@ -14,7 +16,7 @@
                 <li><a href="index.html">Beranda</a></li>
                 <li><a href="produk.html">Produk</a></li>
                 <li><a href="pencarian.html">Cari</a></li>
-                <li><a href="keranjang.html">Keranjang</a></li>
+                <li><a href="keranjang.html" class="cart-link">🛒 Keranjang (<span id="cart-count">0</span>)</a></li>
                 <li><a href="tentang.html">Tentang</a></li>
                 <li><a href="kontak.html">Kontak</a></li>
             </ul>
@@ -22,21 +24,30 @@
     </header>
 
     <main class="container">
-        <div style="display: flex; flex-wrap: wrap; gap: 2rem; background: white; padding: 2rem; border-radius: 8px; box-shadow: var(--shadow);">
+        <div style="display: flex; flex-wrap: wrap; gap: 3rem; background: #fff; padding: 2.5rem; border-radius: var(--radius); box-shadow: var(--shadow); align-items: center;">
             <div style="flex: 1; min-width: 300px; text-align: center;">
-                <img src="https://via.placeholder.com/350x350?text=OPPO+Detail" alt="Produk" style="max-width: 100%; border-radius: 8px;">
+                <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?q=80&w=500&auto=format&fit=crop" alt="Detail OPPO" style="max-width: 100%; border-radius: 12px;">
             </div>
-            <div style="flex: 2; min-width: 300px;">
-                <h2>OPPO Reno Series (Contoh)</h2>
-                <p class="price" style="font-size: 1.5rem; color: var(--primary-color); font-weight: bold; margin: 1rem 0;">Rp 5.999.000</p>
-                <p style="margin-bottom: 1.5rem;">Smartphone dengan kamera jernih berteknologi AI, performa kencang untuk gaming, serta desain bodi yang ramping dan elegan.</p>
-                <a href="keranjang.html" class="btn-primary">Tambah ke Keranjang</a>
+            <div style="flex: 1.5; min-width: 300px;">
+                <span class="badge">Spesifikasi Unggulan</span>
+                <h2 style="margin-top: 0.5rem;">OPPO Reno 11 Pro 5G</h2>
+                <p class="price" style="font-size: 1.8rem; margin: 1rem 0;">Rp 7.999.000</p>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.8;">
+                    Smartphone flagship dengan kamera potret beresolusi tinggi, ditenagai prosesor cepat, RAM besar, serta dukungan pengisian daya super kilat SUPERVOOC untuk mobilitas tinggi Anda sepanjang hari.
+                </p>
+                <ul style="list-style: disc; margin-left: 1.2rem; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.8;">
+                    <li>Layar: 6.7 inci AMOLED Curved Display, 120Hz</li>
+                    <li>Chipset: MediaTek Dimensity 8200</li>
+                    <li>Kamera Utama: 50MP + 32MP Telephoto + 8MP Ultrawide</li>
+                    <li>Baterai: 4600 mAh dengan 80W SUPERVOOC Fast Charge</li>
+                </ul>
+                <button class="btn-primary add-to-cart" data-name="OPPO Reno 11 Pro 5G" data-price="Rp 7.999.000" data-image="https://images.unsplash.com/photo-1598327105666-5b89351aff97?q=80&w=500&auto=format&fit=crop">Tambah ke Keranjang</button>
             </div>
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2026 OPPO Store. Hak Cipta Dilindungi.</p>
+        <p>&copy; 2026 OPPO Store. All Rights Reserved.</p>
     </footer>
 
     <script src="script.js"></script>
