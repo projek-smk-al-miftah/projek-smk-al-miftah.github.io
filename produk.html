@@ -3,51 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OPPO Store - Semua Produk</title>
+    <title>Katalog Produk - OPPO Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header>
         <nav class="navbar">
-            <a href="index.html" class="logo">OPPOSTORE.</a>
+            <a href="index.html" class="logo">OPPO STORE</a>
             <ul class="nav-links">
                 <li><a href="index.html">Beranda</a></li>
                 <li><a href="produk.html" class="active">Produk</a></li>
                 <li><a href="pencarian.html">Cari</a></li>
-                <li><a href="keranjang.html" class="cart-link">🛒 Keranjang <span id="cart-count">0</span></a></li>
+                <li><a href="keranjang.html" class="cart-link">🛒 Keranjang (<span id="cart-count">0</span>)</a></li>
                 <li><a href="tentang.html">Tentang</a></li>
                 <li><a href="kontak.html">Kontak</a></li>
             </ul>
-            <button class="menu-toggle">☰</button>
         </nav>
     </header>
 
     <main class="container">
-        <h2>Katalog Produk OPPO</h2>
-        <div class="product-grid">
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?q=80&w=400&auto=format&fit=crop" alt="Reno">
-                <h3>OPPO Reno 11 Pro</h3>
-                <p class="price">Rp 7.999.000</p>
-                <a href="detail.html" class="btn-secondary">Lihat Detail</a>
+        <h2>Katalog Smartphone OPPO</h2>
+        
+        <div class="category-filters">
+            <button class="filter-btn active" data-category="all">Semua Produk</button>
+            <button class="filter-btn" data-category="reno">OPPO Reno Series</button>
+            <button class="filter-btn" data-category="find">OPPO Find Series</button>
+            <button class="filter-btn" data-category="a">OPPO A Series</button>
+        </div>
+
+        <div class="product-grid" id="product-list">
+            <div class="product-card" data-category="reno">
+                <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?q=80&w=400&auto=format&fit=crop" alt="Reno 11">
+                <div>
+                    <h3>OPPO Reno 11 Pro 5G</h3>
+                    <p class="price">Rp 7.999.000</p>
+                </div>
+                <div style="display: flex; gap: 0.5rem; justify-content: center;">
+                    <a href="detail.html" class="btn-secondary">Detail</a>
+                    <button class="btn-primary add-to-cart" data-name="OPPO Reno 11 Pro 5G" data-price="Rp 7.999.000" data-image="https://images.unsplash.com/photo-1598327105666-5b89351aff97?q=80&w=400&auto=format&fit=crop">+ Beli</button>
+                </div>
             </div>
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1565849904461-04a58ad377e0?q=80&w=400&auto=format&fit=crop" alt="Find">
-                <h3>OPPO Find X7 Ultra</h3>
-                <p class="price">Rp 14.999.000</p>
-                <a href="detail.html" class="btn-secondary">Lihat Detail</a>
+            <div class="product-card" data-category="find">
+                <img src="https://images.unsplash.com/photo-1565849904461-04a58ad377e0?q=80&w=400&auto=format&fit=crop" alt="Find X7">
+                <div>
+                    <h3>OPPO Find X7 Ultra</h3>
+                    <p class="price">Rp 14.999.000</p>
+                </div>
+                <div style="display: flex; gap: 0.5rem; justify-content: center;">
+                    <a href="detail.html" class="btn-secondary">Detail</a>
+                    <button class="btn-primary add-to-cart" data-name="OPPO Find X7 Ultra" data-price="Rp 14.999.000" data-image="https://images.unsplash.com/photo-1565849904461-04a58ad377e0?q=80&w=400&auto=format&fit=crop">+ Beli</button>
+                </div>
             </div>
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1580910051074-3eb694886505?q=80&w=400&auto=format&fit=crop" alt="A Series">
-                <h3>OPPO A78 5G</h3>
-                <p class="price">Rp 3.599.000</p>
-                <a href="detail.html" class="btn-secondary">Lihat Detail</a>
+            <div class="product-card" data-category="a">
+                <img src="https://images.unsplash.com/photo-1580910051074-3eb694886505?q=80&w=400&auto=format&fit=crop" alt="A78">
+                <div>
+                    <h3>OPPO A78 5G</h3>
+                    <p class="price">Rp 3.599.000</p>
+                </div>
+                <div style="display: flex; gap: 0.5rem; justify-content: center;">
+                    <a href="detail.html" class="btn-secondary">Detail</a>
+                    <button class="btn-primary add-to-cart" data-name="OPPO A78 5G" data-price="Rp 3.599.000" data-image="https://images.unsplash.com/photo-1580910051074-3eb694886505?q=80&w=400&auto=format&fit=crop">+ Beli</button>
+                </div>
             </div>
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1526849838030-2248d9ec75d1?q=80&w=400&auto=format&fit=crop" alt="Pad">
-                <h3>OPPO Pad Air</h3>
-                <p class="price">Rp 3.999.000</p>
-                <a href="detail.html" class="btn-secondary">Lihat Detail</a>
+            <div class="product-card" data-category="reno">
+                <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=400&auto=format&fit=crop" alt="Reno 10">
+                <div>
+                    <h3>OPPO Reno 10 5G</h3>
+                    <p class="price">Rp 5.999.000</p>
+                </div>
+                <div style="display: flex; gap: 0.5rem; justify-content: center;">
+                    <a href="detail.html" class="btn-secondary">Detail</a>
+                    <button class="btn-primary add-to-cart" data-name="OPPO Reno 10 5G" data-price="Rp 5.999.000" data-image="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=400&auto=format&fit=crop">+ Beli</button>
+                </div>
             </div>
         </div>
     </main>
