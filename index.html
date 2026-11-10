@@ -1,179 +1,60 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#008c45">
-    <meta name="description" content="OPPO STORE - Temukan smartphone OPPO terbaru dengan desain premium dan teknologi terbaik.">
-    <title>OPPO STORE | Jual HP OPPO Terbaru</title>
+    <title>OPPO Store - Beranda</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<header class="header">
-    <div class="container navbar">
-        <a href="index.html" class="logo">OPPO<span>STORE.</span></a>
-
-        <nav class="nav-links" id="navLinks">
-            <a href="index.html" class="active">Beranda</a>
-            <a href="produk.html">Produk</a>
-            <a href="pencarian.html">Pencarian</a>
-            <a href="tentang.html">Tentang</a>
-            <a href="kontak.html">Kontak</a>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">OPPO STORE</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Beranda</a></li>
+                <li><a href="produk.html">Produk</a></li>
+                <li><a href="pencarian.html">Cari</a></li>
+                <li><a href="keranjang.html">Keranjang</a></li>
+                <li><a href="tentang.html">Tentang</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
         </nav>
+    </header>
 
-        <a href="keranjang.html" class="cart-button">
-            🛒 Keranjang <span id="cartCount">0</span>
-        </a>
-
-        <button class="menu-toggle" id="menuToggle" aria-label="Buka menu">☰</button>
-    </div>
-</header>
-
-<main>
     <section class="hero">
-        <div class="container hero-content">
-            <div class="hero-text">
-                <span class="tag">✦ GENERASI SMARTPHONE TERBARU</span>
-                <h1>Temukan Dunia Baru Bersama <span>OPPO.</span></h1>
-                <p>
-                    Nikmati pengalaman smartphone yang luar biasa.
-                    Desain elegan, kamera memukau, dan teknologi
-                    inovatif untuk menemani setiap aktivitasmu.
-                </p>
-                <div class="hero-buttons">
-                    <a href="produk.html" class="btn btn-primary">Jelajahi Produk →</a>
-                    <a href="tentang.html" class="btn btn-outline">Tentang Kami</a>
-                </div>
-                <div class="hero-info">
-                    <div><strong>100%</strong><small>Produk berkualitas</small></div>
-                    <div><strong>Premium</strong><small>Desain smartphone</small></div>
-                    <div><strong>Terbaru</strong><small>Teknologi OPPO</small></div>
-                </div>
-            </div>
-
-            <div class="hero-image">
-                <div class="image-circle"></div>
-                <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=900"
-                     alt="Smartphone modern">
-                <div class="floating-card">
-                    <span>✦</span>
-                    <div><strong>OPPO Collection</strong><small>Discover your style</small></div>
-                </div>
-            </div>
-        </div>
+        <h1>Inovasi Teknologi di Genggaman Anda</h1>
+        <p>Temukan smartphone dan aksesoris OPPO terbaru dengan penawaran terbaik.</p>
+        <a href="produk.html" class="btn-primary">Lihat Produk</a>
     </section>
 
-    <section class="features">
-        <div class="container feature-grid">
-            <div class="feature"><span>🚚</span><div><strong>Pengiriman Aman</strong><small>Informasi pengiriman jelas</small></div></div>
-            <div class="feature"><span>🛡️</span><div><strong>Produk Berkualitas</strong><small>Utamakan kualitas</small></div></div>
-            <div class="feature"><span>💬</span><div><strong>Layanan Pelanggan</strong><small>Hubungi kami dengan mudah</small></div></div>
-            <div class="feature"><span>✨</span><div><strong>Model Terbaru</strong><small>Pilihan smartphone modern</small></div></div>
-        </div>
-    </section>
-
-    <section class="section" id="produk">
-        <div class="container">
-            <div class="section-heading">
-                <div>
-                    <span class="tag">PILIHAN TERBAIK</span>
-                    <h2>Produk <span>Unggulan</span></h2>
-                    <p>Temukan smartphone favoritmu di OPPO STORE.</p>
-                </div>
-                <a href="produk.html" class="text-link">Lihat Semua Produk →</a>
+    <main class="container">
+        <h2>Produk Unggulan</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="https://via.placeholder.com/200x200?text=OPPO+Reno" alt="OPPO Reno">
+                <h3>OPPO Reno Series</h3>
+                <p class="price">Rp 5.999.000</p>
+                <a href="detail.html" class="btn-secondary">Detail Produk</a>
             </div>
-
-            <div class="product-grid">
-                <article class="product-card">
-                    <div class="product-image">
-                        <span class="product-label">POPULER</span>
-                        <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=600" alt="Smartphone OPPO Find Series">
-                    </div>
-                    <div class="product-details">
-                        <small>OPPO FIND SERIES</small>
-                        <h3>OPPO Find Series</h3>
-                        <p class="price">Rp 12.999.000</p>
-                        <button class="btn btn-primary add-cart" data-name="OPPO Find Series" data-price="12999000">Tambah Keranjang</button>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <div class="product-image">
-                        <span class="product-label">TERBARU</span>
-                        <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=600" alt="Smartphone OPPO Reno Series">
-                    </div>
-                    <div class="product-details">
-                        <small>OPPO RENO SERIES</small>
-                        <h3>OPPO Reno Series</h3>
-                        <p class="price">Rp 5.999.000</p>
-                        <button class="btn btn-primary add-cart" data-name="OPPO Reno Series" data-price="5999000">Tambah Keranjang</button>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <div class="product-image">
-                        <span class="product-label">FAVORIT</span>
-                        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600" alt="Smartphone OPPO A Series">
-                    </div>
-                    <div class="product-details">
-                        <small>OPPO A SERIES</small>
-                        <h3>OPPO A Series</h3>
-                        <p class="price">Rp 2.499.000</p>
-                        <button class="btn btn-primary add-cart" data-name="OPPO A Series" data-price="2499000">Tambah Keranjang</button>
-                    </div>
-                </article>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/200x200?text=OPPO+Find" alt="OPPO Find">
+                <h3>OPPO Find Series</h3>
+                <p class="price">Rp 12.999.000</p>
+                <a href="detail.html" class="btn-secondary">Detail Produk</a>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/200x200?text=OPPO+A" alt="OPPO A Series">
+                <h3>OPPO A Series</h3>
+                <p class="price">Rp 2.499.000</p>
+                <a href="detail.html" class="btn-secondary">Detail Produk</a>
             </div>
         </div>
-    </section>
+    </main>
 
-    <section class="promo">
-        <div class="container promo-content">
-            <div>
-                <span class="tag">OPPO STORE COLLECTION</span>
-                <h2>Teknologi Hebat.<br>Gaya Lebih Elegan.</h2>
-                <p>Jelajahi koleksi smartphone dan temukan pilihan yang sesuai dengan kebutuhanmu.</p>
-                <a href="produk.html" class="btn btn-light">Lihat Koleksi →</a>
-            </div>
-            <div class="promo-icon">O</div>
-        </div>
-    </section>
+    <footer>
+        <p>&copy; 2026 OPPO Store. Hak Cipta Dilindungi.</p>
+    </footer>
 
-    <section class="section">
-        <div class="container">
-            <div class="section-heading">
-                <div>
-                    <span class="tag">KENALI KAMI</span>
-                    <h2>Kenapa Memilih <span>OPPO STORE?</span></h2>
-                    <p>Pengalaman belanja smartphone yang mudah dan nyaman.</p>
-                </div>
-            </div>
-            <div class="benefit-grid">
-                <div class="benefit-card"><span>📱</span><h3>Pilihan Smartphone</h3><p>Temukan berbagai pilihan seri smartphone OPPO.</p></div>
-                <div class="benefit-card"><span>🤝</span><h3>Pelayanan Ramah</h3><p>Kami siap membantu menjawab pertanyaan pelanggan.</p></div>
-                <div class="benefit-card"><span>🔒</span><h3>Transaksi Jelas</h3><p>Informasi produk dan pemesanan disampaikan dengan jelas.</p></div>
-            </div>
-        </div>
-    </section>
-</main>
-
-<footer class="footer">
-    <div class="container footer-content">
-        <div>
-            <a href="index.html" class="logo footer-logo">OPPO<span>STORE.</span></a>
-            <p>Temukan smartphone pilihanmu bersama OPPO STORE.</p>
-        </div>
-        <div class="footer-links">
-            <a href="index.html">Beranda</a>
-            <a href="produk.html">Produk</a>
-            <a href="tentang.html">Tentang Kami</a>
-            <a href="kontak.html">Kontak</a>
-        </div>
-    </div>
-    <div class="copyright">© 2026 OPPO STORE. Website katalog independen.</div>
-</footer>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
