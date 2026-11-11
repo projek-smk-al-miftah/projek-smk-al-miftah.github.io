@@ -1,163 +1,127 @@
-
-/* =====================================
-   OPPO STORE - PREMIUM STYLE
-===================================== */
-
 :root {
-    --oppo-green: #058240;
-    --oppo-dark-green: #046532;
-    --bg-light: #f8fafc;
-    --card-bg: #ffffff;
-    --text-main: #111827;
-    --text-muted: #4b5563;
-    --border-color: #e5e7eb;
-    --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05),
-              0 8px 10px -6px rgba(0, 0, 0, 0.05);
-    --radius: 16px;
+  --primary-color: #008059; /* Warna khas OPPO */
+  --secondary-color: #111111;
+  --bg-color: #f4f4f7;
+  --card-bg: #ffffff;
+  --text-color: #333333;
 }
 
-/* RESET */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'DM Sans', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* BODY */
 body {
-    background-color: var(--bg-light);
-    color: var(--text-main);
-    line-height: 1.6;
-    overflow-x: hidden;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-/* HEADER & NAVBAR */
 header {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 1px solid var(--border-color);
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-.navbar {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1.2rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
 }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: var(--oppo-green);
-    text-decoration: none;
-    letter-spacing: 0.5px;
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 1.5rem;
+  transition: 0.3s;
 }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 2rem;
-    align-items: center;
+nav a:hover {
+  color: var(--primary-color);
 }
 
-.nav-links a {
-    text-decoration: none;
-    color: var(--text-muted);
-    font-weight: 500;
-    transition: color 0.3s ease;
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://via.placeholder.com/1200x400?text=OPPO+Find+Series+Terbaru') center/cover;
+  color: white;
+  text-align: center;
+  padding: 5rem 1rem;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
-    color: var(--oppo-green);
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
-.cart-link {
-    background: #e6f4ed;
-    padding: 0.5rem 1rem;
-    border-radius: 30px;
-    color: var(--oppo-green) !important;
-    font-weight: 600;
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  flex: 1;
 }
 
-/* =====================================
-   HERO IMAGE - GAMBAR SMARTPHONE
-===================================== */
-
-.hero-image-main {
-    width: 380px;
-    max-width: 100%;
-    height: 420px;
-    margin: auto;
-    overflow: hidden;
-    border-radius: 20px;
-    background: #eaf7ee;
-    box-shadow: 0 20px 50px rgba(0, 100, 50, 0.15);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
 }
 
-.hero-image-main:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 25px 60px rgba(0, 100, 50, 0.22);
+.card {
+  background: var(--card-bg);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s;
 }
 
-.hero-image-main img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center;
-    display: block;
+.card:hover {
+  transform: translateY(-5px);
 }
 
-/* =====================================
-   RESPONSIVE - TABLET DAN HP
-===================================== */
-
-@media (max-width: 768px) {
-
-    .navbar {
-        padding: 1rem;
-    }
-
-    .nav-links {
-        gap: 1rem;
-    }
-
-    .hero-image-main {
-        width: 320px;
-        height: 360px;
-    }
+.card img {
+  max-width: 100%;
+  border-radius: 6px;
+  height: 200px;
+  object-fit: cover;
 }
 
-@media (max-width: 480px) {
+.price {
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
 
-    .navbar {
-        flex-wrap: wrap;
-        gap: 12px;
-    }
+.btn {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
 
-    .logo {
-        font-size: 1.2rem;
-    }
+.btn:hover {
+  background-color: #005c40;
+}
 
-    .nav-links {
-        gap: 12px;
-        flex-wrap: wrap;
-    }
-
-    .nav-links a {
-        font-size: 12px;
-    }
-
-    .hero-image-main {
-        width: 100%;
-        max-width: 300px;
-        height: 340px;
-    }
+footer {
+  background-color: var(--secondary-color);
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 2rem;
 }
