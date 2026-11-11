@@ -2,16 +2,40 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Detail Produk</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Produk - OPPO Terbaru</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main>
-        <h2>Detail Produk A</h2>
-        <p>Deskripsi lengkap produk A ada di sini.</p>
-        <p><strong>Harga: Rp 100.000</strong></p>
-        <button onclick="tambahKeranjang()">Tambah ke Keranjang</button>
-    </main>
+    <header>
+        <div class="logo">OPPO Store</div>
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="produk.html">Produk</a>
+            <a href="keranjang.html">Keranjang</a>
+        </nav>
+    </header>
+
+    <div class="container" style="display: flex; gap: 2rem; flex-wrap: wrap; background: white; padding: 2rem; border-radius: 8px;">
+        <img src="https://via.placeholder.com/400" alt="OPPO Flagship" style="max-width: 100%; height: auto;">
+        <div style="flex: 1;">
+            <h2>OPPO Find X6 Pro</h2>
+            <p class="price">Rp 15.999.000</p>
+            <p><strong>Spesifikasi Utama:</strong></p>
+            <ul>
+                <li>Kamera Utama Hasselblad 50 MP</li>
+                <li>Chipset Snapdragon 8 Gen 2</li>
+                <li>RAM 12GB / Storage 256GB</li>
+                <li>Baterai 5000 mAh + 100W SUPERVOOC</li>
+            </ul>
+            <br>
+            <button onclick="addToCart('OPPO Find X6 Pro')" class="btn">Tambah ke Keranjang</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Toko HP OPPO Terbaru.</p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
