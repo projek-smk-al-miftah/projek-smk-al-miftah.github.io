@@ -1,1 +1,327 @@
 
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f5f8f6;
+    color: #17251d;
+}
+
+/* HEADER */
+header {
+    width: 100%;
+    padding: 22px 8%;
+    background: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 900;
+    color: #111;
+}
+
+.logo span,
+footer span {
+    color: #13a65b;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #13a65b;
+}
+
+/* HERO */
+.hero {
+    min-height: 440px;
+    padding: 100px 8%;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(
+        120deg,
+        #063d29,
+        #087c49,
+        #13a65b
+    );
+    color: white;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.badge {
+    background: rgba(255,255,255,0.15);
+    padding: 10px 18px;
+    border-radius: 30px;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    line-height: 1.2;
+    margin: 25px 0;
+}
+
+.hero h1 span {
+    color: #aaffcb;
+}
+
+.hero p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    color: #e3f9eb;
+}
+
+.btn-main {
+    display: inline-block;
+    padding: 14px 25px;
+    background: white;
+    color: #087c49;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-main:hover {
+    transform: translateY(-4px);
+    background: #e4ffed;
+}
+
+/* SERVICES */
+.services {
+    padding: 80px 8%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title span {
+    color: #13a65b;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.section-title h2 {
+    font-size: 32px;
+    margin: 12px 0;
+}
+
+.section-title p {
+    color: #777;
+}
+
+/* CARD */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.07);
+    transition: 0.4s;
+    border: 1px solid #edf0ee;
+}
+
+.card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+.icon {
+    width: 75px;
+    height: 75px;
+    margin: auto;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.whatsapp-icon {
+    background: #e1f9e9;
+    color: #19b95b;
+}
+
+.google-icon {
+    background: #f0f4ff;
+    color: #4285f4;
+}
+
+.card h3 {
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #777;
+    line-height: 1.7;
+    margin-bottom: 28px;
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    padding: 13px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.whatsapp-btn {
+    background: #20b85a;
+}
+
+.whatsapp-btn:hover {
+    background: #128c43;
+}
+
+.google-btn {
+    background: #4285f4;
+}
+
+.google-btn:hover {
+    background: #2867c5;
+}
+
+/* ABOUT */
+.about {
+    padding: 65px 8%;
+    text-align: center;
+    background: #eaf5ee;
+}
+
+.about h2 {
+    margin-bottom: 20px;
+}
+
+.about p {
+    max-width: 650px;
+    margin: auto;
+    color: #66756b;
+    line-height: 1.8;
+}
+
+/* FOOTER */
+footer {
+    background: #092719;
+    color: white;
+    text-align: center;
+    padding: 35px 15px;
+}
+
+footer h3 {
+    margin-bottom: 12px;
+    font-size: 23px;
+}
+
+footer p {
+    font-size: 13px;
+    color: #c6d8cc;
+}
+
+/* RESPONSIVE HP */
+@media (max-width: 768px) {
+
+    header {
+        padding: 18px 5%;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    nav {
+        gap: 18px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    .hero {
+        padding: 75px 7%;
+        min-height: 380px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .services {
+        padding: 60px 6%;
+    }
+
+    .section-title h2 {
+        font-size: 25px;
+    }
+
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 35px 20px;
+    }
+}
+
+@media (max-width: 380px) {
+    nav {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .hero h1 {
+        font-size: 29px;
+    }
+}
+
