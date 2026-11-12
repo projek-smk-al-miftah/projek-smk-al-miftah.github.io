@@ -1,1 +1,519 @@
 
+/* ==================================
+   BRAND ROFIQI - CONTACT PAGE
+================================== */
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
+    color: #18251e;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* HEADER */
+.header {
+    width: 100%;
+    background: #063d2c;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 18px #00000020;
+}
+
+.navbar {
+    width: 90%;
+    max-width: 1200px;
+    min-height: 80px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.logo {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 900;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.logo span,
+.footer span {
+    color: #48e59b;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    list-style: none;
+}
+
+.nav-menu a {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: #48e59b;
+}
+
+/* HERO */
+.hero {
+    min-height: 390px;
+    padding: 70px 8%;
+    background: linear-gradient(120deg, #063d2c, #087c4d);
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.subtitle {
+    color: #65f3ad;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    font-size: clamp(40px, 5vw, 60px);
+    line-height: 1.2;
+    margin: 18px 0;
+}
+
+.hero h1 span,
+.message-info h2 span {
+    color: #65f3ad;
+}
+
+.hero-content p {
+    max-width: 560px;
+    color: #e0f5e9;
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 25px;
+    background: #48e59b;
+    color: #063d2c;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn:hover {
+    background: #ffffff;
+    transform: translateY(-3px);
+}
+
+.hero-icon {
+    width: 250px;
+    min-width: 200px;
+    padding: 35px 20px;
+    text-align: center;
+    border: 1px solid #ffffff40;
+    border-radius: 25px;
+    background: #ffffff12;
+}
+
+.phone-icon {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #48e59b;
+    color: #063d2c;
+    border-radius: 50%;
+    font-size: 40px;
+}
+
+.hero-icon h3 {
+    font-size: 20px;
+}
+
+.hero-icon p {
+    color: #d6f0e2;
+    font-size: 13px;
+}
+
+/* CONTACT SECTION */
+.contact-section {
+    padding: 80px 8%;
+    background: #ffffff;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-heading span {
+    color: #07945b;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.section-heading h2 {
+    color: #063d2c;
+    font-size: 35px;
+    margin: 10px 0;
+}
+
+.section-heading p {
+    color: #777777;
+    font-size: 15px;
+}
+
+/* CONTACT GRID */
+.contact-grid {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.contact-card {
+    padding: 35px 22px;
+    text-align: center;
+    background: #f2faf5;
+    border: 1px solid #e1f0e6;
+    border-radius: 20px;
+    transition: .3s;
+}
+
+.contact-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 30px #00000012;
+}
+
+.contact-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.contact-card h3 {
+    color: #063d2c;
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+.contact-card p {
+    color: #66736a;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.small-btn {
+    display: inline-block;
+    background: #087c4d;
+    color: #ffffff;
+    padding: 9px 18px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.small-btn:hover {
+    background: #063d2c;
+}
+
+/* MESSAGE SECTION */
+.message-section {
+    padding: 85px 8%;
+    background: #eaf8ef;
+}
+
+.message-container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 55px;
+    align-items: center;
+}
+
+.message-info > span {
+    color: #07945b;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.message-info h2 {
+    color: #063d2c;
+    font-size: 38px;
+    line-height: 1.25;
+    margin: 18px 0;
+}
+
+.message-info p {
+    color: #53665a;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px;
+    border-left: 4px solid #07945b;
+}
+
+.info-item strong {
+    color: #063d2c;
+}
+
+.info-item small {
+    color: #777777;
+}
+
+/* FORM */
+.message-form {
+    padding: 35px;
+    background: #ffffff;
+    border-radius: 22px;
+    box-shadow: 0 10px 35px #0000000c;
+}
+
+.message-form h3 {
+    color: #063d2c;
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+
+.message-form label {
+    display: block;
+    color: #263b30;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+.message-form input,
+.message-form textarea {
+    width: 100%;
+    padding: 13px 15px;
+    margin-bottom: 18px;
+    border: 1px solid #dce9df;
+    border-radius: 10px;
+    outline: none;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    background: #fbfdfb;
+}
+
+.message-form input:focus,
+.message-form textarea:focus {
+    border-color: #07945b;
+    box-shadow: 0 0 0 3px #07945b15;
+}
+
+.message-form textarea {
+    resize: vertical;
+}
+
+.submit-btn {
+    width: 100%;
+    font-size: 14px;
+    background: #087c4d;
+    color: #ffffff;
+}
+
+.submit-btn:hover {
+    background: #063d2c;
+}
+
+/* FOOTER */
+.footer {
+    padding: 40px 15px;
+    text-align: center;
+    background: #063d2c;
+    color: #ffffff;
+}
+
+.footer h2 {
+    font-size: 27px;
+    margin-bottom: 10px;
+}
+
+.footer p {
+    color: #d4e9dc;
+    font-size: 13px;
+    margin: 6px 0;
+}
+
+.copyright {
+    margin-top: 20px !important;
+    padding-top: 15px;
+    border-top: 1px solid #ffffff20;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+
+    .navbar {
+        width: 94%;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 15px 0;
+    }
+
+    .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .message-container {
+        gap: 30px;
+    }
+
+    .hero {
+        padding: 60px 6%;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 650px) {
+
+    .navbar {
+        gap: 12px;
+    }
+
+    .logo {
+        width: 100%;
+        text-align: center;
+        font-size: 23px;
+    }
+
+    .nav-menu {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px 17px;
+    }
+
+    .nav-menu a {
+        font-size: 12px;
+    }
+
+    .hero {
+        min-height: auto;
+        flex-direction: column;
+        text-align: center;
+        padding: 55px 6%;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+    }
+
+    .hero-icon {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .contact-section,
+    .message-section {
+        padding: 60px 6%;
+    }
+
+    .section-heading h2 {
+        font-size: 28px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .message-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .message-info {
+        text-align: center;
+    }
+
+    .message-info h2 {
+        font-size: 30px;
+    }
+
+    .info-item {
+        text-align: left;
+        display: inline-flex;
+    }
+
+    .message-form {
+        padding: 25px 18px;
+    }
+
+    .footer h2 {
+        font-size: 23px;
+    }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 380px) {
+
+    .nav-menu {
+        gap: 9px 12px;
+    }
+
+    .nav-menu a {
+        font-size: 11px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .message-info h2 {
+        font-size: 27px;
+    }
+
+    .btn {
+        padding: 11px 18px;
+        font-size: 12px;
+    }
+}
+
