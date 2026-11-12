@@ -1,8 +1,8 @@
 
-/* =====================================
+/* =========================================
    BRAND ROFIQI - OPPO STORE
    PREMIUM RESPONSIVE WEBSITE
-===================================== */
+========================================= */
 
 /* RESET */
 * {
@@ -13,13 +13,13 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 100px;
+    scroll-padding-top: 90px;
 }
 
 body {
     font-family: Arial, Helvetica, sans-serif;
     color: #18251e;
-       #ffffff;
+    background: #ffffff;
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -33,11 +33,11 @@ a {
     -webkit-tap-highlight-color: transparent;
 }
 
-/* =====================================
-   HEADER & NAVIGATION
-===================================== */
+/* =========================================
+   HEADER & NAVBAR
+========================================= */
 
-
+.header {
     width: 100%;
     background: #063d2c;
     position: sticky;
@@ -59,7 +59,7 @@ a {
 }
 
 .logo {
-    color: white;
+    color: #ffffff;
     font-size: 25px;
     font-weight: 900;
     text-decoration: none;
@@ -80,7 +80,7 @@ a {
 }
 
 .nav-menu a {
-    color: white;
+    color: #ffffff;
     font-size: 14px;
     font-weight: bold;
     text-decoration: none;
@@ -91,27 +91,9 @@ a {
     color: #48e59b;
 }
 
-.nav-btn {
-    display: inline-block;
-    background: #48e59b;
-    color: #063d2c;
-    padding: 11px 21px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: bold;
-    white-space: nowrap;
-    transition: .3s;
-}
-
-.nav-btn:hover {
-    background: white;
-    transform: translateY(-3px);
-}
-
-/* =====================================
+/* =========================================
    HERO / BERANDA
-===================================== */
+========================================= */
 
 .hero {
     min-height: 620px;
@@ -120,12 +102,8 @@ a {
     align-items: center;
     justify-content: space-between;
     gap: 55px;
-    color: white;
-    background: linear-gradient(
-        120deg,
-        #063d2c,
-        #087c4d
-    );
+    color: #ffffff;
+    background: linear-gradient(120deg, #063d2c, #087c4d);
     overflow: hidden;
 }
 
@@ -170,7 +148,7 @@ a {
     display: inline-block;
     padding: 13px 25px;
     background: #07945b;
-    color: white;
+    color: #ffffff;
     text-decoration: none;
     border: 2px solid #07945b;
     border-radius: 30px;
@@ -187,15 +165,17 @@ a {
 }
 
 .btn-light {
-    background: white;
+    background: #ffffff;
     color: #06452f;
-    border-color: white;
+    border-color: #ffffff;
 }
 
 .btn-light:hover {
     background: #65f3ad;
     border-color: #65f3ad;
 }
+
+/* HERO STAT */
 
 .hero-stat {
     display: flex;
@@ -236,30 +216,9 @@ a {
     border-radius: 20px;
 }
 
-.photo-caption {
-    background: white;
-    color: #06452f;
-    padding: 15px;
-    border-radius: 15px;
-    margin-top: 15px;
-    box-shadow: 0 8px 25px #00000020;
-}
-
-.photo-caption span {
-    color: #07945b;
-    font-size: 11px;
-    font-weight: bold;
-    letter-spacing: 2px;
-}
-
-.photo-caption h3 {
-    font-size: 18px;
-    margin-top: 4px;
-}
-
-/* =====================================
+/* =========================================
    GENERAL SECTION
-===================================== */
+========================================= */
 
 .section {
     padding: 85px 8%;
@@ -285,21 +244,21 @@ a {
 }
 
 .heading p {
-    color: #777;
+    color: #777777;
     font-size: 15px;
 }
 
-/* =====================================
+/* =========================================
    GALLERY
-===================================== */
+========================================= */
 
 .gallery {
-    background: white;
+    background: #ffffff;
 }
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 25px;
 }
 
@@ -331,9 +290,9 @@ a {
     font-size: 18px;
 }
 
-/* =====================================
+/* =========================================
    PRODUCTS
-===================================== */
+========================================= */
 
 .products {
     background: #f7fbf8;
@@ -347,7 +306,7 @@ a {
 
 .product-card {
     position: relative;
-    background: white;
+    background: #ffffff;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 8px 30px #0000000c;
@@ -381,7 +340,7 @@ a {
     left: 15px;
     z-index: 2;
     background: #087c4d;
-    color: white;
+    color: #ffffff;
     padding: 6px 12px;
     border-radius: 20px;
     font-size: 10px;
@@ -398,7 +357,7 @@ a {
 }
 
 .product-info p {
-    color: #777;
+    color: #777777;
     font-size: 14px;
     margin: 8px 0;
 }
@@ -418,17 +377,17 @@ a {
 
 .price-note {
     text-align: center;
-    color: #777;
+    color: #777777;
     font-size: 12px;
     margin-top: 30px;
 }
 
-/* =====================================
+/* =========================================
    ADVANTAGES
-===================================== */
+========================================= */
 
 .advantages {
-    background: white;
+    background: #ffffff;
 }
 
 .feature-grid {
@@ -462,13 +421,13 @@ a {
 }
 
 .feature p {
-    color: #777;
+    color: #777777;
     font-size: 13px;
 }
 
-/* =====================================
+/* =========================================
    ABOUT
-===================================== */
+========================================= */
 
 .about {
     background: #eaf8ef;
@@ -492,12 +451,12 @@ a {
     margin-bottom: 25px;
 }
 
-/* =====================================
+/* =========================================
    CONTACT
-===================================== */
+========================================= */
 
 .contact {
-    background: white;
+    background: #ffffff;
 }
 
 .contact-card {
@@ -526,13 +485,13 @@ a {
     margin-top: 20px;
 }
 
-/* =====================================
+/* =========================================
    FOOTER
-===================================== */
+========================================= */
 
 .footer {
     background: #063d2c;
-    color: white;
+    color: #ffffff;
     text-align: center;
     padding: 40px 15px;
 }
@@ -548,9 +507,9 @@ a {
     margin: 6px 0;
 }
 
-/* =====================================
+/* =========================================
    TABLET RESPONSIVE
-===================================== */
+========================================= */
 
 @media (max-width: 1000px) {
 
@@ -588,23 +547,22 @@ a {
     .feature-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-
 }
 
-/* =====================================
+/* =========================================
    MOBILE RESPONSIVE
-===================================== */
+========================================= */
 
 @media (max-width: 650px) {
 
     html {
-        scroll-padding-top: 150px;
+        scroll-padding-top: 140px;
     }
 
     .navbar {
         width: 94%;
         min-height: auto;
-        padding: 15px 0;
+        padding: 14px 0;
         gap: 12px;
     }
 
@@ -621,11 +579,6 @@ a {
     }
 
     .nav-menu a {
-        font-size: 12px;
-    }
-
-    .nav-btn {
-        padding: 9px 17px;
         font-size: 12px;
     }
 
@@ -764,12 +717,11 @@ a {
     .footer h2 {
         font-size: 23px;
     }
-
 }
 
-/* =====================================
+/* =========================================
    SMALL MOBILE
-===================================== */
+========================================= */
 
 @media (max-width: 380px) {
 
@@ -801,5 +753,4 @@ a {
     .heading h2 {
         font-size: 24px;
     }
-
 }
