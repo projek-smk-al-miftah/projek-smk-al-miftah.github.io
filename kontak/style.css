@@ -1,7 +1,8 @@
 
-/* ==================================
+/* ==========================================
    BRAND ROFIQI - CONTACT PAGE
-================================== */
+   PREMIUM RESPONSIVE DESIGN
+========================================== */
 
 /* RESET */
 * {
@@ -10,22 +11,48 @@
     box-sizing: border-box;
 }
 
+:root {
+    --green: #087c4d;
+    --dark: #063d2c;
+    --light-green: #48e59b;
+    --soft-green: #eaf8ef;
+    --white: #ffffff;
+    --text: #18251e;
+    --muted: #718078;
+    --border: #e1eee5;
+    --shadow: 0 12px 35px #063d2c12;
+}
+
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 100px;
 }
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: #ffffff;
-    color: #18251e;
+    background: var(--white);
+    color: var(--text);
     line-height: 1.6;
     overflow-x: hidden;
 }
 
-/* HEADER */
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+/* ==========================================
+   HEADER & NAVBAR
+========================================== */
+
 .header {
     width: 100%;
-    background: #063d2c;
+    background: var(--dark);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -34,7 +61,7 @@ body {
 
 .navbar {
     width: 90%;
-    max-width: 1200px;
+    max-width: 1250px;
     min-height: 80px;
     margin: auto;
     display: flex;
@@ -44,27 +71,29 @@ body {
 }
 
 .logo {
-    color: #ffffff;
-    font-size: 24px;
+    color: var(--white);
+    font-size: 25px;
     font-weight: 900;
     text-decoration: none;
     white-space: nowrap;
+    letter-spacing: .5px;
 }
 
 .logo span,
 .footer span {
-    color: #48e59b;
+    color: var(--light-green);
 }
 
 .nav-menu {
     display: flex;
     align-items: center;
-    gap: 25px;
+    justify-content: center;
+    gap: 27px;
     list-style: none;
 }
 
 .nav-menu a {
-    color: #ffffff;
+    color: var(--white);
     font-size: 14px;
     font-weight: bold;
     text-decoration: none;
@@ -73,26 +102,32 @@ body {
 
 .nav-menu a:hover,
 .nav-menu a.active {
-    color: #48e59b;
+    color: var(--light-green);
 }
 
-/* HERO */
+/* ==========================================
+   HERO KONTAK
+========================================== */
+
 .hero {
     min-height: 390px;
     padding: 70px 8%;
     background: linear-gradient(120deg, #063d2c, #087c4d);
-    color: #ffffff;
+    color: var(--white);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 40px;
+    gap: 45px;
+    overflow: hidden;
 }
 
 .hero-content {
+    width: 65%;
     max-width: 650px;
 }
 
 .subtitle {
+    display: inline-block;
     color: #65f3ad;
     font-size: 13px;
     font-weight: bold;
@@ -120,30 +155,33 @@ body {
 .btn {
     display: inline-block;
     padding: 13px 25px;
-    background: #48e59b;
-    color: #063d2c;
-    border: none;
+    background: var(--light-green);
+    color: var(--dark);
+    border: 2px solid var(--light-green);
     border-radius: 30px;
     text-decoration: none;
     font-size: 14px;
     font-weight: bold;
+    text-align: center;
     cursor: pointer;
     transition: .3s;
 }
 
 .btn:hover {
-    background: #ffffff;
+    background: var(--white);
+    border-color: var(--white);
     transform: translateY(-3px);
 }
 
 .hero-icon {
     width: 250px;
-    min-width: 200px;
+    min-width: 220px;
     padding: 35px 20px;
     text-align: center;
     border: 1px solid #ffffff40;
     border-radius: 25px;
     background: #ffffff12;
+    box-shadow: 0 15px 35px #00000015;
 }
 
 .phone-icon {
@@ -153,8 +191,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #48e59b;
-    color: #063d2c;
+    background: var(--light-green);
+    color: var(--dark);
     border-radius: 50%;
     font-size: 40px;
 }
@@ -168,10 +206,13 @@ body {
     font-size: 13px;
 }
 
-/* CONTACT SECTION */
+/* ==========================================
+   CONTACT INFORMATION
+========================================== */
+
 .contact-section {
-    padding: 80px 8%;
-    background: #ffffff;
+    padding: 85px 8%;
+    background: var(--white);
 }
 
 .section-heading {
@@ -180,24 +221,23 @@ body {
 }
 
 .section-heading span {
-    color: #07945b;
+    color: var(--green);
     font-size: 12px;
     font-weight: bold;
     letter-spacing: 3px;
 }
 
 .section-heading h2 {
-    color: #063d2c;
+    color: var(--dark);
     font-size: 35px;
     margin: 10px 0;
 }
 
 .section-heading p {
-    color: #777777;
+    color: var(--muted);
     font-size: 15px;
 }
 
-/* CONTACT GRID */
 .contact-grid {
     max-width: 1200px;
     margin: auto;
@@ -207,17 +247,19 @@ body {
 }
 
 .contact-card {
+    min-width: 0;
     padding: 35px 22px;
     text-align: center;
     background: #f2faf5;
-    border: 1px solid #e1f0e6;
+    border: 1px solid var(--border);
     border-radius: 20px;
+    box-shadow: 0 5px 20px #00000005;
     transition: .3s;
 }
 
 .contact-card:hover {
     transform: translateY(-7px);
-    box-shadow: 0 12px 30px #00000012;
+    box-shadow: var(--shadow);
 }
 
 .contact-icon {
@@ -226,7 +268,7 @@ body {
 }
 
 .contact-card h3 {
-    color: #063d2c;
+    color: var(--dark);
     font-size: 19px;
     margin-bottom: 10px;
 }
@@ -239,9 +281,9 @@ body {
 
 .small-btn {
     display: inline-block;
-    background: #087c4d;
-    color: #ffffff;
-    padding: 9px 18px;
+    background: var(--green);
+    color: var(--white);
+    padding: 10px 19px;
     border-radius: 25px;
     text-decoration: none;
     font-size: 12px;
@@ -250,13 +292,17 @@ body {
 }
 
 .small-btn:hover {
-    background: #063d2c;
+    background: var(--dark);
+    transform: translateY(-2px);
 }
 
-/* MESSAGE SECTION */
+/* ==========================================
+   MESSAGE SECTION
+========================================== */
+
 .message-section {
     padding: 85px 8%;
-    background: #eaf8ef;
+    background: var(--soft-green);
 }
 
 .message-container {
@@ -269,14 +315,14 @@ body {
 }
 
 .message-info > span {
-    color: #07945b;
+    color: var(--green);
     font-size: 12px;
     font-weight: bold;
     letter-spacing: 2px;
 }
 
 .message-info h2 {
-    color: #063d2c;
+    color: var(--dark);
     font-size: 38px;
     line-height: 1.25;
     margin: 18px 0;
@@ -291,28 +337,33 @@ body {
 .info-item {
     display: flex;
     flex-direction: column;
-    padding-left: 15px;
-    border-left: 4px solid #07945b;
+    padding: 5px 0 5px 15px;
+    border-left: 4px solid var(--green);
 }
 
 .info-item strong {
-    color: #063d2c;
+    color: var(--dark);
 }
 
 .info-item small {
-    color: #777777;
+    color: var(--muted);
 }
 
-/* FORM */
+/* ==========================================
+   CONTACT FORM
+========================================== */
+
 .message-form {
+    width: 100%;
     padding: 35px;
-    background: #ffffff;
+    background: var(--white);
+    border: 1px solid var(--border);
     border-radius: 22px;
-    box-shadow: 0 10px 35px #0000000c;
+    box-shadow: var(--shadow);
 }
 
 .message-form h3 {
-    color: #063d2c;
+    color: var(--dark);
     font-size: 25px;
     margin-bottom: 25px;
 }
@@ -327,6 +378,7 @@ body {
 
 .message-form input,
 .message-form textarea {
+    display: block;
     width: 100%;
     padding: 13px 15px;
     margin-bottom: 18px;
@@ -336,35 +388,48 @@ body {
     font-family: Arial, sans-serif;
     font-size: 14px;
     background: #fbfdfb;
+    color: var(--text);
+    transition: .3s;
 }
 
 .message-form input:focus,
 .message-form textarea:focus {
-    border-color: #07945b;
+    border-color: var(--green);
     box-shadow: 0 0 0 3px #07945b15;
+}
+
+.message-form input::placeholder,
+.message-form textarea::placeholder {
+    color: #a0aaa3;
 }
 
 .message-form textarea {
     resize: vertical;
+    min-height: 130px;
 }
 
 .submit-btn {
+    display: block;
     width: 100%;
-    font-size: 14px;
-    background: #087c4d;
-    color: #ffffff;
+    background: var(--green);
+    color: var(--white);
+    border-color: var(--green);
 }
 
 .submit-btn:hover {
-    background: #063d2c;
+    background: var(--dark);
+    border-color: var(--dark);
 }
 
-/* FOOTER */
+/* ==========================================
+   FOOTER
+========================================== */
+
 .footer {
     padding: 40px 15px;
     text-align: center;
-    background: #063d2c;
-    color: #ffffff;
+    background: var(--dark);
+    color: var(--white);
 }
 
 .footer h2 {
@@ -384,7 +449,10 @@ body {
     border-top: 1px solid #ffffff20;
 }
 
-/* TABLET */
+/* ==========================================
+   TABLET
+========================================== */
+
 @media (max-width: 900px) {
 
     .navbar {
@@ -392,25 +460,46 @@ body {
         flex-wrap: wrap;
         justify-content: center;
         padding: 15px 0;
+        gap: 15px;
+    }
+
+    .nav-menu {
+        gap: 18px;
+        flex-wrap: wrap;
+    }
+
+    .hero {
+        padding: 60px 6%;
+        gap: 25px;
+    }
+
+    .hero-content {
+        width: 60%;
     }
 
     .contact-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .message-container {
         gap: 30px;
     }
-
-    .hero {
-        padding: 60px 6%;
-    }
 }
 
-/* MOBILE */
+/* ==========================================
+   MOBILE
+========================================== */
+
 @media (max-width: 650px) {
 
+    html {
+        scroll-padding-top: 135px;
+    }
+
     .navbar {
+        width: 94%;
+        min-height: auto;
+        padding: 14px 0;
         gap: 12px;
     }
 
@@ -423,7 +512,6 @@ body {
     .nav-menu {
         width: 100%;
         justify-content: center;
-        flex-wrap: wrap;
         gap: 10px 17px;
     }
 
@@ -431,15 +519,22 @@ body {
         font-size: 12px;
     }
 
+    /* HERO */
+
     .hero {
         min-height: auto;
         flex-direction: column;
         text-align: center;
         padding: 55px 6%;
+        gap: 35px;
+    }
+
+    .hero-content {
+        width: 100%;
     }
 
     .hero h1 {
-        font-size: 40px;
+        font-size: clamp(34px, 9vw, 42px);
     }
 
     .hero-content p {
@@ -451,18 +546,37 @@ body {
         max-width: 280px;
     }
 
-    .contact-section,
-    .message-section {
+    /* CONTACT */
+
+    .contact-section {
         padding: 60px 6%;
+    }
+
+    .section-heading {
+        margin-bottom: 30px;
     }
 
     .section-heading h2 {
         font-size: 28px;
     }
 
+    .section-heading p {
+        font-size: 13px;
+    }
+
     .contact-grid {
         grid-template-columns: 1fr;
         gap: 18px;
+    }
+
+    .contact-card {
+        padding: 28px 18px;
+    }
+
+    /* MESSAGE */
+
+    .message-section {
+        padding: 60px 6%;
     }
 
     .message-container {
@@ -478,13 +592,27 @@ body {
         font-size: 30px;
     }
 
+    .message-info p {
+        font-size: 14px;
+    }
+
     .info-item {
-        text-align: left;
         display: inline-flex;
+        text-align: left;
     }
 
     .message-form {
-        padding: 25px 18px;
+        padding: 27px 20px;
+    }
+
+    .message-form h3 {
+        font-size: 22px;
+    }
+
+    /* FOOTER */
+
+    .footer {
+        padding: 32px 15px;
     }
 
     .footer h2 {
@@ -492,7 +620,10 @@ body {
     }
 }
 
-/* SMALL MOBILE */
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
 @media (max-width: 380px) {
 
     .nav-menu {
@@ -504,11 +635,15 @@ body {
     }
 
     .hero h1 {
-        font-size: 34px;
+        font-size: 32px;
     }
 
     .message-info h2 {
         font-size: 27px;
+    }
+
+    .message-form {
+        padding: 22px 15px;
     }
 
     .btn {
@@ -516,4 +651,3 @@ body {
         font-size: 12px;
     }
 }
-
