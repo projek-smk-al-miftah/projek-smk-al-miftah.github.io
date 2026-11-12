@@ -1,327 +1,177 @@
-
-/* RESET */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-html {
-    scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
-    background: #f5f8f6;
-    color: #17251d;
+  background-color: #0f172a;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
 }
 
-/* HEADER */
-header {
-    width: 100%;
-    padding: 22px 8%;
-    background: #ffffff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 3px 15px rgba(0,0,0,0.05);
-    position: sticky;
-    top: 0;
-    z-index: 100;
+/* Dekorasi Latar Belakang */
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 
-.logo {
-    font-size: 25px;
-    font-weight: 900;
-    color: #111;
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
 }
 
-.logo span,
-footer span {
-    color: #13a65b;
+.shape:nth-child(1) {
+  background: #25d366;
+  width: 300px;
+  height: 300px;
+  top: -50px;
+  left: -50px;
 }
 
-nav {
-    display: flex;
-    gap: 30px;
+.shape:nth-child(2) {
+  background: #ea4335;
+  width: 300px;
+  height: 300px;
+  bottom: -50px;
+  right: -50px;
 }
 
-nav a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 600;
-    transition: 0.3s;
-}
-
-nav a:hover {
-    color: #13a65b;
-}
-
-/* HERO */
-.hero {
-    min-height: 440px;
-    padding: 100px 8%;
-    display: flex;
-    align-items: center;
-    background: linear-gradient(
-        120deg,
-        #063d29,
-        #087c49,
-        #13a65b
-    );
-    color: white;
-}
-
-.hero-content {
-    max-width: 650px;
-}
-
-.badge {
-    background: rgba(255,255,255,0.15);
-    padding: 10px 18px;
-    border-radius: 30px;
-    font-size: 12px;
-    letter-spacing: 2px;
-}
-
-.hero h1 {
-    font-size: 48px;
-    line-height: 1.2;
-    margin: 25px 0;
-}
-
-.hero h1 span {
-    color: #aaffcb;
-}
-
-.hero p {
-    font-size: 16px;
-    line-height: 1.8;
-    margin-bottom: 30px;
-    color: #e3f9eb;
-}
-
-.btn-main {
-    display: inline-block;
-    padding: 14px 25px;
-    background: white;
-    color: #087c49;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.btn-main:hover {
-    transform: translateY(-4px);
-    background: #e4ffed;
-}
-
-/* SERVICES */
-.services {
-    padding: 80px 8%;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 45px;
-}
-
-.section-title span {
-    color: #13a65b;
-    font-size: 13px;
-    font-weight: bold;
-    letter-spacing: 3px;
-}
-
-.section-title h2 {
-    font-size: 32px;
-    margin: 12px 0;
-}
-
-.section-title p {
-    color: #777;
-}
-
-/* CARD */
-.card-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    max-width: 900px;
-    margin: auto;
-}
-
+/* Kartu Utama Glassmorphism */
 .card {
-    background: white;
-    padding: 40px 30px;
-    border-radius: 20px;
-    text-align: center;
-    box-shadow: 0 10px 35px rgba(0,0,0,0.07);
-    transition: 0.4s;
-    border: 1px solid #edf0ee;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 40px 30px;
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  z-index: 1;
 }
 
-.card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+.avatar {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+  font-size: 32px;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.icon {
-    width: 75px;
-    height: 75px;
-    margin: auto;
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 42px;
-    font-weight: bold;
-    margin-bottom: 25px;
+.profile-header h2 {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 5px;
 }
 
-.whatsapp-icon {
-    background: #e1f9e9;
-    color: #19b95b;
+.profile-header p {
+  color: #94a3b8;
+  font-size: 13px;
+  margin-bottom: 30px;
 }
 
-.google-icon {
-    background: #f0f4ff;
-    color: #4285f4;
+/* Container Tombol */
+.links-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.card h3 {
-    font-size: 25px;
-    margin-bottom: 15px;
-}
-
-.card p {
-    color: #777;
-    line-height: 1.7;
-    margin-bottom: 28px;
-}
-
-/* BUTTON */
+/* Desain Tombol */
 .btn {
-    display: inline-block;
-    padding: 13px 25px;
-    border-radius: 8px;
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    transition: 0.3s;
+  display: flex;
+  align-items: center;
+  padding: 14px 20px;
+  border-radius: 16px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid transparent;
 }
 
-.whatsapp-btn {
-    background: #20b85a;
+.btn .icon {
+  font-size: 24px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.whatsapp-btn:hover {
-    background: #128c43;
+.btn .text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-left: 10px;
+  flex-grow: 1;
 }
 
-.google-btn {
-    background: #4285f4;
+.btn .text span {
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
 }
 
-.google-btn:hover {
-    background: #2867c5;
+.btn .text small {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.7);
 }
 
-/* ABOUT */
-.about {
-    padding: 65px 8%;
-    text-align: center;
-    background: #eaf5ee;
+.btn .arrow {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+  transition: transform 0.3s ease;
 }
 
-.about h2 {
-    margin-bottom: 20px;
+/* Gaya Khusus WhatsApp */
+.btn-whatsapp {
+  background: rgba(37, 211, 102, 0.15);
+  border-color: rgba(37, 211, 102, 0.3);
 }
 
-.about p {
-    max-width: 650px;
-    margin: auto;
-    color: #66756b;
-    line-height: 1.8;
+.btn-whatsapp .icon {
+  color: #25d366;
 }
 
-/* FOOTER */
-footer {
-    background: #092719;
-    color: white;
-    text-align: center;
-    padding: 35px 15px;
+.btn-whatsapp:hover {
+  background: rgba(37, 211, 102, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
 }
 
-footer h3 {
-    margin-bottom: 12px;
-    font-size: 23px;
+/* Gaya Khusus Google */
+.btn-google {
+  background: rgba(234, 67, 53, 0.15);
+  border-color: rgba(234, 67, 53, 0.3);
 }
 
-footer p {
-    font-size: 13px;
-    color: #c6d8cc;
+.btn-google .icon {
+  color: #ea4335;
 }
 
-/* RESPONSIVE HP */
-@media (max-width: 768px) {
-
-    header {
-        padding: 18px 5%;
-        flex-direction: column;
-        gap: 18px;
-    }
-
-    nav {
-        gap: 18px;
-    }
-
-    nav a {
-        font-size: 13px;
-    }
-
-    .hero {
-        padding: 75px 7%;
-        min-height: 380px;
-    }
-
-    .hero h1 {
-        font-size: 34px;
-    }
-
-    .hero p {
-        font-size: 14px;
-    }
-
-    .services {
-        padding: 60px 6%;
-    }
-
-    .section-title h2 {
-        font-size: 25px;
-    }
-
-    .card-container {
-        grid-template-columns: 1fr;
-    }
-
-    .card {
-        padding: 35px 20px;
-    }
+.btn-google:hover {
+  background: rgba(234, 67, 53, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(234, 67, 53, 0.2);
 }
 
-@media (max-width: 380px) {
-    nav {
-        gap: 12px;
-    }
-
-    nav a {
-        font-size: 12px;
-    }
-
-    .hero h1 {
-        font-size: 29px;
-    }
+.btn:hover .arrow {
+  transform: translateX(4px);
+  color: #fff;
 }
-
