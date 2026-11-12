@@ -1,1 +1,247 @@
 
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#063d2c">
+
+    <meta name="description" content="Hubungi BRAND ROFIQI OPPO STORE untuk informasi dan pemesanan HP OPPO terbaru.">
+
+    <title>Kontak Kami | BRAND ROFIQI</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <nav class="navbar">
+
+        <a href="index.html" class="logo">
+            BRAND <span>ROFIQI</span>
+        </a>
+
+        <ul class="nav-menu">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="produk.html">Produk</a></li>
+            <li><a href="tentang.html">Tentang</a></li>
+            <li><a href="kontak.html" class="active">Kontak</a></li>
+        </ul>
+
+    </nav>
+</header>
+
+<!-- HERO KONTAK -->
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="subtitle">CONTACT BRAND ROFIQI</span>
+
+        <h1>
+            Hubungi <span>Kami</span>
+        </h1>
+
+        <p>
+            Butuh informasi mengenai smartphone OPPO?
+            Kami siap membantu Anda mendapatkan produk
+            OPPO favorit dengan pelayanan terbaik.
+        </p>
+
+        <a href="#informasi" class="btn">
+            Informasi Kontak
+        </a>
+
+    </div>
+
+    <div class="hero-icon">
+        <div class="phone-icon">☎</div>
+        <h3>BRAND ROFIQI</h3>
+        <p>Customer Service</p>
+    </div>
+
+</section>
+
+<!-- INFORMASI KONTAK -->
+<section class="contact-section" id="informasi">
+
+    <div class="section-heading">
+        <span>GET IN TOUCH</span>
+        <h2>Informasi Kontak</h2>
+        <p>Silakan hubungi kami melalui informasi berikut.</p>
+    </div>
+
+    <div class="contact-grid">
+
+        <!-- ALAMAT -->
+        <div class="contact-card">
+
+            <div class="contact-icon">📍</div>
+
+            <h3>Alamat Toko</h3>
+
+            <p>
+                Banyupelle, Palengaan,
+                Pamekasan, Jawa Timur.
+            </p>
+
+        </div>
+
+        <!-- WHATSAPP -->
+        <div class="contact-card">
+
+            <div class="contact-icon">💬</div>
+
+            <h3>WhatsApp</h3>
+
+            <p>082233816192</p>
+
+            <a href="https://wa.me/6282233816192"
+               target="_blank"
+               rel="noopener"
+               class="small-btn">
+                Hubungi WhatsApp
+            </a>
+
+        </div>
+
+        <!-- JAM OPERASIONAL -->
+        <div class="contact-card">
+
+            <div class="contact-icon">🕒</div>
+
+            <h3>Jam Operasional</h3>
+
+            <p>
+                Setiap Hari<br>
+                08.00 - 21.00 WIB
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FORM PESAN -->
+<section class="message-section">
+
+    <div class="message-container">
+
+        <div class="message-info">
+
+            <span>WE ARE READY TO HELP</span>
+
+            <h2>
+                Ada yang ingin
+                <span>ditanyakan?</span>
+            </h2>
+
+            <p>
+                Kirimkan pesan kepada kami melalui formulir
+                berikut. Pesan akan diteruskan ke WhatsApp.
+            </p>
+
+            <div class="info-item">
+                <strong>BRAND ROFIQI STORE</strong>
+                <small>Premium Smartphone Store</small>
+            </div>
+
+        </div>
+
+        <div class="message-form">
+
+            <h3>Kirim Pesan</h3>
+
+            <form id="contactForm">
+
+                <label for="nama">Nama Lengkap</label>
+
+                <input
+                    type="text"
+                    id="nama"
+                    placeholder="Masukkan nama Anda"
+                    required>
+
+                <label for="telepon">Nomor WhatsApp</label>
+
+                <input
+                    type="tel"
+                    id="telepon"
+                    placeholder="Masukkan nomor WhatsApp"
+                    required>
+
+                <label for="pesan">Pesan Anda</label>
+
+                <textarea
+                    id="pesan"
+                    rows="5"
+                    placeholder="Tuliskan pesan Anda..."
+                    required></textarea>
+
+                <button type="submit" class="btn submit-btn">
+                    Kirim Melalui WhatsApp
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+
+    <h2>BRAND <span>ROFIQI</span></h2>
+
+    <p>
+        Temukan Smartphone OPPO Impian Anda.
+    </p>
+
+    <p class="copyright">
+        © 2026 BRAND ROFIQI. All Rights Reserved.
+    </p>
+
+</footer>
+
+<!-- JAVASCRIPT FORM -->
+<script>
+
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    const nama = document.getElementById("nama").value.trim();
+    const telepon = document.getElementById("telepon").value.trim();
+    const pesan = document.getElementById("pesan").value.trim();
+
+    if (!nama || !telepon || !pesan) {
+        alert("Mohon lengkapi semua data!");
+        return;
+    }
+
+    const nomorToko = "6282233816192";
+
+    const isiPesan =
+        "Halo BRAND ROFIQI STORE\n\n" +
+        "Nama: " + nama + "\n" +
+        "Nomor WhatsApp: " + telepon + "\n" +
+        "Pesan: " + pesan;
+
+    const link =
+        "https://wa.me/" + nomorToko +
+        "?text=" + encodeURIComponent(isiPesan);
+
+    window.open(link, "_blank");
+
+});
+
+</script>
+
+</body>
+</html>
+
