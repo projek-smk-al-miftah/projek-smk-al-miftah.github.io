@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#063d2c">
-    <meta name="description" content="BRAND ROFIQI - Toko HP OPPO Reno15 terbaru">
+    <meta name="description" content="BRAND ROFIQI - Toko Smartphone OPPO terbaru dengan desain premium dan pelayanan terbaik.">
     <title>BRAND ROFIQI | OPPO STORE</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -14,301 +14,385 @@
 
 <!-- HEADER -->
 <header class="header">
-  
+    <div class="header-container">
 
         <a href="#beranda" class="logo">
             BRAND <span>ROFIQI</span>
         </a>
 
-        <ul class="nav-menu">
-            <li><a href="#beranda">Beranda</a></li>
-            <li><a href="#produk">Produk</a></li>
-            <li><a href="#keunggulan">Keunggulan</a></li>
-            <li><a href="#tentang">Tentang</a></li>
-            <li><a href="#kontak">Kontak</a></li>
-        </ul>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
 
-    </nav>
+        <label for="menu-toggle" class="menu-button" aria-label="Buka menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <nav class="nav-menu">
+            <a href="#beranda">Beranda</a>
+            <a href="#produk">Produk</a>
+            <a href="misi-misi/index.html">Misi-Misi</a>
+            <a href="#keunggulan">Keunggulan</a>
+            <a href="#tentang">Tentang</a>
+            <a href="#kontak">Kontak</a>
+        </nav>
+
+    </div>
 </header>
 
-<!-- BERANDA / HERO -->
+<main>
+
+<!-- HERO / BERANDA -->
 <section class="hero" id="beranda">
 
-    <div class="hero-content">
+    <div class="hero-container">
 
-        <span class="label">WELCOME TO BRAND ROFIQI</span>
+        <div class="hero-content">
+            <span class="label">WELCOME TO BRAND ROFIQI</span>
 
-        <h1>
-            Upgrade Gaya Dengan
-            <span>OPPO Reno15</span>
-        </h1>
+            <h1>
+                Upgrade Gaya
+                Dengan <span>OPPO Reno15</span>
+            </h1>
 
-        <p>
-            Temukan smartphone OPPO terbaru dengan desain
-            premium, kamera berkualitas, layar memukau,
-            dan teknologi modern.
-        </p>
+            <p>
+                Temukan smartphone OPPO terbaru dengan desain
+                premium, kamera berkualitas, layar memukau,
+                dan teknologi modern untuk menemani aktivitas Anda.
+            </p>
 
-        <div class="hero-buttons">
-            <a href="#produk" class="btn">Lihat Produk</a>
-            <a href="#kontak" class="btn btn-light">Beli Sekarang</a>
+            <div class="hero-buttons">
+                <a href="#produk" class="btn btn-primary">
+                    Lihat Produk
+                </a>
+
+                <a href="#kontak" class="btn btn-outline">
+                    Beli Sekarang
+                </a>
+            </div>
+
+            <div class="hero-stat">
+                <div>
+                    <strong>50MP</strong>
+                    <small>Kamera Selfie</small>
+                </div>
+
+                <div>
+                    <strong>120Hz</strong>
+                    <small>Layar AMOLED</small>
+                </div>
+
+                <div>
+                    <strong>5G</strong>
+                    <small>Koneksi Cepat</small>
+                </div>
+            </div>
         </div>
 
-        <div class="hero-stat">
-
-            <div>
-                <strong>50MP</strong>
-                <small>Kamera Selfie</small>
+        <div class="hero-photo">
+            <div class="photo-glow"></div>
+            <img
+                src="https://opsg-imgcdn-sg.heytapimg.com/epb/202512/31/8gOBOcB0TzETq0Ft.png"
+                alt="Smartphone OPPO Reno15 5G">
+            <div class="floating-text">
+                <span>NEW COLLECTION</span>
+                <strong>OPPO RENO15</strong>
+                <small>Premium Smartphone</small>
             </div>
-
-            <div>
-                <strong>120Hz</strong>
-                <small>Layar AMOLED</small>
-            </div>
-
         </div>
 
     </div>
+</section>
 
-    <div class="hero-photo">
-
-        <img
-            src="https://opsg-imgcdn-sg.heytapimg.com/epb/202512/31/8gOBOcB0TzETq0Ft.png"
-            alt="Smartphone OPPO Reno15 5G">
-
+<!-- KEUNGGULAN SINGKAT -->
+<section class="benefit-strip">
+    <div class="benefit-item">
+        <span>✓</span>
+        <p>Produk Berkualitas</p>
     </div>
-
+    <div class="benefit-item">
+        <span>✓</span>
+        <p>Informasi Harga Jelas</p>
+    </div>
+    <div class="benefit-item">
+        <span>✓</span>
+        <p>Pemesanan Mudah</p>
+    </div>
+    <div class="benefit-item">
+        <span>✓</span>
+        <p>Pelayanan Ramah</p>
+    </div>
 </section>
 
 <!-- GALERI -->
-<section class="gallery section">
+<section class="section gallery" id="galeri">
 
-    <div class="heading">
-        <span>OUR GALLERY</span>
+    <div class="section-heading">
+        <span class="section-label">OUR GALLERY</span>
         <h2>Pesona OPPO Reno15</h2>
-        <p>Desain premium dalam setiap sudut.</p>
+        <p>Desain elegan untuk gaya hidup modern.</p>
     </div>
 
     <div class="gallery-grid">
 
-        <div class="gallery-card">
+        <article class="gallery-card">
             <img
                 src="https://opsg-imgcdn-sg.heytapimg.com/epb/202512/31/8gOBOcB0TzETq0Ft.png"
-                alt="OPPO Reno15 Aurora White">
-            <h3>Aurora White</h3>
-        </div>
+                alt="OPPO Reno15 warna putih">
+            <div class="gallery-overlay">
+                <h3>Elegant Design</h3>
+                <p>Desain premium dan modern</p>
+            </div>
+        </article>
 
-        <div class="gallery-card">
+        <article class="gallery-card">
             <img
                 src="https://opsg-imgcdn-sg.heytapimg.com/epb/202512/31/8gOBOcB0TzETq0Ft.png"
-                alt="OPPO Reno15 Twilight Blue">
-            <h3>Twilight Blue</h3>
-        </div>
+                alt="OPPO Reno15 tampilan smartphone">
+            <div class="gallery-overlay">
+                <h3>Modern Display</h3>
+                <p>Tampilan yang memukau</p>
+            </div>
+        </article>
 
-        <div class="gallery-card">
+        <article class="gallery-card">
             <img
                 src="https://opsg-imgcdn-sg.heytapimg.com/epb/202512/31/8gOBOcB0TzETq0Ft.png"
-                alt="OPPO Reno15 Premium Design">
-            <h3>Premium Design</h3>
-        </div>
+                alt="OPPO Reno15 premium">
+            <div class="gallery-overlay">
+                <h3>Premium Experience</h3>
+                <p>Teknologi untuk aktivitas Anda</p>
+            </div>
+        </article>
 
     </div>
-
 </section>
 
 <!-- PRODUK -->
-<section class="products section" id="produk">
+<section class="section products" id="produk">
 
-    <div class="heading">
-        <span>OUR PRODUCTS</span>
-        <h2>Daftar Produk & Harga</h2>
-        <p>Pilih smartphone favorit Anda.</p>
+    <div class="section-heading">
+        <span class="section-label">OUR PRODUCTS</span>
+        <h2>Produk Pilihan Kami</h2>
+        <p>Pilih smartphone OPPO favorit Anda.</p>
     </div>
 
     <div class="product-grid">
 
-        <!-- PRODUK 1 -->
         <article class="product-card">
-
             <div class="product-image">
-                <span class="badge">POPULAR</span>
-
+                <span class="product-badge">POPULAR</span>
                 <img
                     src="https://opsg-imgcdn-sg.heytapimg.com/epb/202512/31/8gOBOcB0TzETq0Ft.png"
-                    alt="OPPO Reno15 RAM 8GB">
+                    alt="OPPO Reno15 8GB">
             </div>
 
             <div class="product-info">
+                <span class="product-category">OPPO RENO SERIES</span>
                 <h3>OPPO Reno15 5G</h3>
                 <p>RAM 8GB | ROM 256GB</p>
                 <h2>Rp7.699.000</h2>
 
-                <a class="btn buy"
+                <a class="btn btn-buy"
                    href="https://wa.me/6282233816192?text=Halo%20saya%20ingin%20pesan%20OPPO%20Reno15%208GB"
                    target="_blank" rel="noopener">
-                    Beli Melalui WhatsApp
+                    Pesan Sekarang →
                 </a>
             </div>
-
         </article>
 
-        <!-- PRODUK 2 -->
         <article class="product-card">
-
             <div class="product-image">
-                <span class="badge">PREMIUM</span>
-
+                <span class="product-badge premium">PREMIUM</span>
                 <img
                     src="https://opsg-imgcdn-sg.heytapimg.com/epb/202512/31/8gOBOcB0TzETq0Ft.png"
-                    alt="OPPO Reno15 RAM 12GB">
+                    alt="OPPO Reno15 12GB">
             </div>
 
             <div class="product-info">
+                <span class="product-category">OPPO RENO SERIES</span>
                 <h3>OPPO Reno15 5G</h3>
                 <p>RAM 12GB | ROM 256GB</p>
                 <h2>Rp8.299.000</h2>
 
-                <a class="btn buy"
+                <a class="btn btn-buy"
                    href="https://wa.me/6282233816192?text=Halo%20saya%20ingin%20pesan%20OPPO%20Reno15%2012GB"
                    target="_blank" rel="noopener">
-                    Beli Melalui WhatsApp
+                    Pesan Sekarang →
                 </a>
             </div>
-
         </article>
 
-        <!-- PRODUK 3 -->
         <article class="product-card">
-
             <div class="product-image">
-                <span class="badge">F SERIES</span>
-
+                <span class="product-badge">NEW SERIES</span>
                 <img
                     src="https://opsg-imgcdn-sg.heytapimg.com/epb/202512/31/8gOBOcB0TzETq0Ft.png"
-                    alt="OPPO Reno15 F">
+                    alt="OPPO Reno15 F 5G">
             </div>
 
             <div class="product-info">
+                <span class="product-category">OPPO RENO SERIES</span>
                 <h3>OPPO Reno15 F 5G</h3>
                 <p>RAM 8GB | ROM 128GB</p>
                 <h2>Rp5.499.000</h2>
 
-                <a class="btn buy"
+                <a class="btn btn-buy"
                    href="https://wa.me/6282233816192?text=Halo%20saya%20ingin%20pesan%20OPPO%20Reno15%20F"
                    target="_blank" rel="noopener">
-                    Beli Melalui WhatsApp
+                    Pesan Sekarang →
                 </a>
             </div>
-
         </article>
 
     </div>
 
     <p class="price-note">
-        *Harga merupakan harga referensi yang perlu dikonfirmasi
-        kembali melalui WhatsApp. Ketersediaan produk dapat berubah.
+        *Harga merupakan harga referensi. Silakan konfirmasi
+        harga dan ketersediaan produk melalui WhatsApp.
     </p>
 
 </section>
 
 <!-- KEUNGGULAN -->
-<section class="advantages section" id="keunggulan">
+<section class="section advantages" id="keunggulan">
 
-    <div class="heading">
-        <span>WHY CHOOSE OPPO</span>
+    <div class="section-heading">
+        <span class="section-label">WHY CHOOSE US</span>
         <h2>Keunggulan Produk</h2>
-        <p>Teknologi modern untuk aktivitas sehari-hari.</p>
+        <p>Teknologi modern untuk kebutuhan sehari-hari.</p>
     </div>
 
     <div class="feature-grid">
 
-        <div class="feature">
-            <div class="icon">📸</div>
-            <h3>Kamera 50MP</h3>
-            <p>Selfie ultra-wide untuk mengabadikan momen.</p>
-        </div>
+        <article class="feature-card">
+            <div class="feature-icon">📸</div>
+            <h3>Kamera Berkualitas</h3>
+            <p>Abadikan berbagai momen dengan hasil foto yang menarik.</p>
+        </article>
 
-        <div class="feature">
-            <div class="icon">⚡</div>
-            <h3>80W SUPERVOOC</h3>
-            <p>Teknologi pengisian daya cepat.</p>
-        </div>
+        <article class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>Pengisian Cepat</h3>
+            <p>Teknologi pengisian daya cepat untuk mendukung aktivitas.</p>
+        </article>
 
-        <div class="feature">
-            <div class="icon">📱</div>
-            <h3>AMOLED 120Hz</h3>
-            <p>Tampilan layar jernih dan gerakan halus.</p>
-        </div>
+        <article class="feature-card">
+            <div class="feature-icon">📱</div>
+            <h3>Layar Memukau</h3>
+            <p>Nikmati tampilan layar yang nyaman dan jernih.</p>
+        </article>
 
-        <div class="feature">
-            <div class="icon">🚀</div>
-            <h3>Snapdragon 7 Gen 4</h3>
-            <p>Performa responsif untuk berbagai aktivitas.</p>
-        </div>
+        <article class="feature-card">
+            <div class="feature-icon">🚀</div>
+            <h3>Performa Modern</h3>
+            <p>Pengalaman penggunaan smartphone yang responsif.</p>
+        </article>
 
     </div>
-
 </section>
 
 <!-- TENTANG -->
-<section class="about section" id="tentang">
+<section class="section about" id="tentang">
 
-    <div class="about-content">
+    <div class="about-box">
 
-        <span>ABOUT BRAND ROFIQI</span>
+        <div class="about-decoration">BR</div>
 
-        <h2>Selamat Datang di BRAND ROFIQI</h2>
+        <div class="about-content">
+            <span class="section-label">ABOUT BRAND ROFIQI</span>
 
-        <p>
-            BRAND ROFIQI merupakan website toko smartphone
-            yang menyediakan informasi HP OPPO terbaru.
-            Kami ingin memberikan informasi produk, harga,
-            dan layanan pemesanan yang mudah bagi pelanggan.
-        </p>
+            <h2>Selamat Datang di BRAND ROFIQI</h2>
 
-        <a href="#produk" class="btn">Lihat Produk</a>
+            <p>
+                BRAND ROFIQI merupakan website toko smartphone
+                yang menyediakan informasi HP OPPO terbaru.
+                Kami berkomitmen memberikan informasi produk,
+                harga, dan layanan pemesanan yang mudah bagi pelanggan.
+            </p>
+
+            <p>
+                Temukan smartphone pilihan Anda dan hubungi
+                kami untuk mendapatkan informasi lebih lanjut.
+            </p>
+
+            <a href="#produk" class="btn btn-primary">
+                Jelajahi Produk →
+            </a>
+        </div>
 
     </div>
-
 </section>
 
 <!-- KONTAK -->
-<section class="contact section" id="kontak">
+<section class="section contact" id="kontak">
 
-    <div class="heading">
-        <span>CONTACT US</span>
+    <div class="section-heading">
+        <span class="section-label">CONTACT US</span>
         <h2>Hubungi Kami</h2>
-        <p>Pesan HP OPPO favorit Anda sekarang.</p>
+        <p>Kami siap membantu kebutuhan smartphone Anda.</p>
     </div>
 
     <div class="contact-card">
 
+        <div class="contact-logo">BR</div>
+
         <h3>BRAND ROFIQI STORE</h3>
+        <p class="contact-description">
+            Silakan hubungi kami untuk informasi produk dan pemesanan.
+        </p>
 
-        <p>📍 Alamat: Banyupelle, Palengaan</p>
-        <p>📞 WhatsApp: 082233816192</p>
-        <p>🕒 Jam Operasional: 08.00 - 21.00 WIB</p>
+        <div class="contact-details">
+            <p><span>📍</span> Banyupelle, Palengaan</p>
+            <p><span>📞</span> 082233816192</p>
+            <p><span>🕒</span> 08.00 - 21.00 WIB</p>
+        </div>
 
-        <a class="btn"
+        <a class="btn btn-whatsapp"
            href="https://wa.me/6282233816192?text=Halo%20BRAND%20ROFIQI"
            target="_blank" rel="noopener">
-            Chat WhatsApp Sekarang
+            Chat WhatsApp Sekarang →
         </a>
 
     </div>
-
 </section>
+
+</main>
 
 <!-- FOOTER -->
 <footer class="footer">
 
-    <h2>BRAND <span>ROFIQI</span></h2>
+    <div class="footer-container">
 
-    <p>Temukan Smartphone OPPO Impian Anda.</p>
+        <div>
+            <a href="#beranda" class="footer-logo">
+                BRAND <span>ROFIQI</span>
+            </a>
+            <p>Temukan smartphone OPPO impian Anda.</p>
+        </div>
 
-    <p>© 2026 BRAND ROFIQI. All Rights Reserved.</p>
+        <div class="footer-links">
+            <a href="#beranda">Beranda</a>
+            <a href="#produk">Produk</a>
+            <a href="misi-misi/index.html">Misi-Misi</a>
+            <a href="#kontak">Kontak</a>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © 2026 BRAND ROFIQI. All Rights Reserved.
+    </div>
 
 </footer>
+
+<!-- TOMBOL WHATSAPP MENGAMBANG -->
+<a class="floating-wa"
+   href="https://wa.me/6282233816192?text=Halo%20BRAND%20ROFIQI"
+   target="_blank" rel="noopener"
+   aria-label="Hubungi BRAND ROFIQI melalui WhatsApp">
+    WA
+</a>
 
 </body>
 </html>
