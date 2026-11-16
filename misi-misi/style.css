@@ -1,487 +1,557 @@
-<style>
-        /* Variabel Warna & Tema Futuristik Elegan */
-        :root {
-            --bg-dark: #090d16;
-            --bg-card: rgba(20, 28, 48, 0.75);
-            --bg-card-hover: rgba(30, 42, 72, 0.9);
-            --primary-glow: #3b82f6;
-            --secondary-glow: #8b5cf6;
-            --accent-cyan: #06b6d4;
-            --accent-gold: #f59e0b;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --border-subtle: rgba(148, 163, 184, 0.15);
-            --border-hover: rgba(96, 165, 250, 0.5);
-        }
 
-        /* Reset Dasar */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+/* =================================
+   MISI-MISI MOTIVASI
+   PREMIUM FUTURISTIC DESIGN
+================================= */
 
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            line-height: 1.6;
-            overflow-x: hidden;
-            min-height: 100vh;
-            /* Latar belakang gradasi halus dengan aksen cahaya kosmik */
-            background-image: 
-                radial-gradient(circle at 15% 15%, rgba(59, 130, 246, 0.15) 0%, transparent 45%),
-                radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.15) 0%, transparent 45%),
-                radial-gradient(circle at 50% 85%, rgba(6, 182, 212, 0.12) 0%, transparent 50%);
-        }
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        /* Container Utama */
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
+:root {
+    --bg-dark: #090d16;
+    --bg-card: #111a2b;
+    --bg-hover: #192741;
+    --blue: #3b82f6;
+    --purple: #8b5cf6;
+    --cyan: #06b6d4;
+    --gold: #f59e0b;
+    --white: #f8fafc;
+    --muted: #94a3b8;
+    --border: rgba(148, 163, 184, 0.16);
+}
 
-        /* ================= HERO SECTION ================= */
-        header.hero {
-            text-align: center;
-            padding: 5rem 1.5rem 3.5rem;
-            position: relative;
-        }
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 25px;
+}
 
-        .badge-misi {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(59, 130, 246, 0.12);
-            border: 1px solid rgba(59, 130, 246, 0.35);
-            color: #60a5fa;
-            padding: 0.45rem 1.1rem;
-            border-radius: 9999px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 0 20px rgba(59, 130, 246, 0.15);
-        }
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--bg-dark);
+    color: var(--white);
+    line-height: 1.7;
+    min-height: 100vh;
+    overflow-x: hidden;
 
-        .badge-dot {
-            width: 8px;
-            height: 8px;
-            background-color: #38bdf8;
-            border-radius: 50%;
-            box-shadow: 0 0 8px #38bdf8;
-            animation: pulse 2s infinite;
-        }
+    background-image:
+        radial-gradient(circle at 15% 15%, rgba(59,130,246,.15), transparent 40%),
+        radial-gradient(circle at 85% 30%, rgba(139,92,246,.14), transparent 40%),
+        radial-gradient(circle at 50% 90%, rgba(6,182,212,.10), transparent 45%);
+}
 
-        header.hero h1 {
-            font-size: clamp(2.1rem, 5vw, 3.6rem);
-            font-weight: 800;
-            line-height: 1.15;
-            letter-spacing: -0.02em;
-            margin-bottom: 1.25rem;
-            background: linear-gradient(135deg, #ffffff 20%, #93c5fd 60%, #c4b5fd 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+/* CONTAINER */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 25px;
+}
 
-        header.hero p {
-            max-width: 680px;
-            margin: 0 auto;
-            font-size: clamp(1rem, 2vw, 1.15rem);
-            color: var(--text-muted);
-            font-weight: 400;
-        }
+/* =================================
+   HERO
+================================= */
 
-        /* Garis Pemisah Bercahaya */
-        .divider {
-            height: 1px;
-            max-width: 400px;
-            margin: 2.5rem auto 0;
-            background: linear-gradient(90deg, transparent, rgba(96, 165, 250, 0.5), transparent);
-        }
+.hero {
+    text-align: center;
+    padding: 55px 0 45px;
+    position: relative;
+}
 
-        /* ================= GRID 6 KODE MISI ================= */
-        main {
-            padding: 1rem 0 5rem;
-        }
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    text-decoration: none;
+    color: white;
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 45px;
+}
 
-        .mission-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 1.75rem;
-        }
+.brand-icon {
+    color: #60a5fa;
+    font-size: 27px;
+}
 
-        /* Desain Kartu Kode */
-        .code-card {
-            background: var(--bg-card);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--border-subtle);
-            border-radius: 1.25rem;
-            padding: 2rem;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-                        border-color 0.35s ease,
-                        box-shadow 0.35s ease,
-                        background-color 0.35s ease;
-        }
+.brand-highlight {
+    color: #60a5fa;
+}
 
-        /* Efek Cahaya Atas pada Kartu */
-        .code-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary-glow), var(--secondary-glow), var(--accent-cyan));
-            opacity: 0.4;
-            transition: opacity 0.35s ease;
-        }
+.badge-misi {
+    display: flex;
+    width: fit-content;
+    margin: 0 auto 23px;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 18px;
+    border-radius: 50px;
+    color: #60a5fa;
+    background: rgba(59,130,246,.12);
+    border: 1px solid rgba(59,130,246,.35);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
 
-        /* Efek Hover Interaktif */
-        .code-card:hover {
-            transform: translateY(-8px);
-            background: var(--bg-card-hover);
-            border-color: var(--border-hover);
-            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6),
-                        0 0 25px -5px rgba(59, 130, 246, 0.25);
-        }
+.badge-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #38bdf8;
+    box-shadow: 0 0 12px #38bdf8;
+    animation: pulse 2s infinite;
+}
 
-        .code-card:hover::before {
-            opacity: 1;
-        }
+.hero h1 {
+    font-size: clamp(32px, 5vw, 58px);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -2px;
+    margin-bottom: 20px;
+}
 
-        /* Header di dalam Kartu (Nomor Kode & Ikon) */
-        .card-top {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 1.5rem;
-        }
+.hero h1 span {
+    display: block;
+    background: linear-gradient(
+        90deg,
+        #60a5fa,
+        #a78bfa,
+        #22d3ee
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
 
-        .code-tag {
-            font-family: monospace;
-            font-size: 0.85rem;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            color: #38bdf8;
-            background: rgba(56, 189, 248, 0.1);
-            border: 1px solid rgba(56, 189, 248, 0.25);
-            padding: 0.35rem 0.8rem;
-            border-radius: 0.5rem;
-        }
+.hero-description {
+    max-width: 720px;
+    margin: auto;
+    color: var(--muted);
+    font-size: 15px;
+}
 
-        .icon-box {
-            width: 46px;
-            height: 46px;
-            border-radius: 0.85rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.2));
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            color: #93c5fd;
-            transition: transform 0.35s ease, color 0.35s ease;
-        }
+.hero-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 28px;
+    padding: 13px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    color: white;
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    box-shadow: 0 8px 25px rgba(59,130,246,.25);
+    transition: .3s;
+}
 
-        .code-card:hover .icon-box {
-            transform: scale(1.1) rotate(4deg);
-            color: #ffffff;
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.4), rgba(139, 92, 246, 0.4));
-        }
+.hero-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(59,130,246,.4);
+}
 
-        /* Judul & Deskripsi Kartu */
-        .code-card h2 {
-            font-size: 1.35rem;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 0.75rem;
-            letter-spacing: -0.01em;
-        }
+.divider {
+    max-width: 450px;
+    height: 1px;
+    margin: 40px auto;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #60a5fa,
+        transparent
+    );
+}
 
-        .code-card p {
-            font-size: 0.96rem;
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-        }
+/* HERO STATS */
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 75px;
+}
 
-        /* Kutipan / Mantra Aksi di Bagian Bawah Kartu */
-        .card-mantra {
-            padding-top: 1rem;
-            border-top: 1px solid rgba(148, 163, 184, 0.12);
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: #cbd5e1;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
+.hero-stats div {
+    display: flex;
+    flex-direction: column;
+}
 
-        .card-mantra span.arrow {
-            color: #38bdf8;
-            transition: transform 0.3s ease;
-        }
+.hero-stats strong {
+    font-size: 25px;
+    color: #60a5fa;
+    font-weight: 800;
+}
 
-        .code-card:hover .card-mantra span.arrow {
-            transform: translateX(4px);
-        }
+.hero-stats span {
+    font-size: 12px;
+    color: var(--muted);
+}
 
-        /* ================= BANNER PENUTUP / CALL TO ACTION ================= */
-        .cta-banner {
-            margin-top: 4rem;
-            padding: 2.5rem 2rem;
-            border-radius: 1.5rem;
-            background: linear-gradient(135deg, rgba(30, 58, 138, 0.45), rgba(88, 28, 135, 0.45));
-            border: 1px solid rgba(147, 197, 253, 0.25);
-            text-align: center;
-            backdrop-filter: blur(10px);
-        }
+/* =================================
+   SECTION HEADING
+================================= */
 
-        .cta-banner h3 {
-            font-size: clamp(1.3rem, 3vw, 1.75rem);
-            font-weight: 700;
-            margin-bottom: 0.6rem;
-            color: #ffffff;
-        }
+main {
+    padding: 35px 0 80px;
+}
 
-        .cta-banner p {
-            color: #cbd5e1;
-            max-width: 600px;
-            margin: 0 auto;
-            font-size: 0.98rem;
-        }
+.section-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
 
-        /* ================= FOOTER ================= */
-        footer {
-            text-align: center;
-            padding: 2rem 1.5rem;
-            border-top: 1px solid var(--border-subtle);
-            color: var(--text-muted);
-            font-size: 0.875rem;
-        }
+.section-label {
+    color: #60a5fa;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
 
-        /* Animasi Denyut Halus */
-        @keyframes pulse {
-            0%, 100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-            50% {
-                opacity: 0.5;
-                transform: scale(1.25);
-            }
-        }
+.section-heading h2 {
+    font-size: clamp(25px, 4vw, 35px);
+    margin: 10px 0;
+    font-weight: 800;
+}
 
-        /* Penyesuaian Responsif untuk Layar Ponsel Kecil */
-        @media (max-width: 480px) {
-            header.hero {
-                padding: 3.5rem 1rem 2.5rem;
-            }
-            .mission-grid {
-                grid-template-columns: 1fr;
-            }
-            .code-card {
-                padding: 1.5rem;
-            }
-        }
-    </style>
-</head>
-<body>
+.section-heading p {
+    color: var(--muted);
+    font-size: 14px;
+}
 
-    <!-- Bagian Header / Hero Section -->
-    <header class="hero">
-        <div class="container">
-            <div class="badge-misi">
-                <span class="badge-dot"></span>
-                <span>Cetak Biru Kesuksesan</span>
-            </div>
-            <h1>Misi-Misi Motivasi Meraih Masa Depan</h1>
-            <p>
-                Masa depan yang gemilang tidak datang secara kebetulan, melainkan dirancang melalui prinsip yang kuat dan tindakan nyata hari ini. Pegang teguh 6 kode misi berikut sebagai kompas perjalananmu.
-            </p>
-            <div class="divider"></div>
-        </div>
-    </header>
+/* =================================
+   MISSION GRID
+================================= */
 
-    <!-- Bagian Utama Berisi 6 Kartu Kode Misi -->
-    <main>
-        <div class="container">
-            <section class="mission-grid" aria-label="Daftar 6 Kode Motivasi">
-                
-                <!-- KODE 01 -->
-                <article class="code-card">
-                    <div>
-                        <div class="card-top">
-                            <span class="code-tag">KODE // 01</span>
-                            <div class="icon-box" aria-hidden="true">
-                                <!-- Ikon Target / Presisi -->
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <circle cx="12" cy="12" r="10"></circle>
-                                    <circle cx="12" cy="12" r="6"></circle>
-                                    <circle cx="12" cy="12" r="2"></circle>
-                                </svg>
-                            </div>
-                        </div>
-                        <h2>Disiplin &amp; Konsistensi</h2>
-                        <p>
-                            Motivasi membuatmu memulai, tetapi disiplin dan kebiasaan kecil yang dilakukan secara konsisten setiap harilah yang membawamu sampai ke garis finis.
-                        </p>
-                    </div>
-                    <div class="card-mantra">
-                        <span class="arrow">&rarr;</span>
-                        <span>Lakukan sedikit demi sedikit, setiap hari tanpa jeda.</span>
-                    </div>
-                </article>
+.mission-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 23px;
+}
 
-                <!-- KODE 02 -->
-                <article class="code-card">
-                    <div>
-                        <div class="card-top">
-                            <span class="code-tag">KODE // 02</span>
-                            <div class="icon-box" aria-hidden="true">
-                                <!-- Ikon Roket / Visi Tinggi -->
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
-                                    <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
-                                    <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
-                                    <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
-                                </svg>
-                            </div>
-                        </div>
-                        <h2>Berani Bermimpi Besar</h2>
-                        <p>
-                            Jangan pernah membatasi potensimu dengan keraguan. Tetapkan visi yang tinggi dan jelas, lalu pecah menjadi langkah-langkah kecil yang berani kamu eksekusi sekarang.
-                        </p>
-                    </div>
-                    <div class="card-mantra">
-                        <span class="arrow">&rarr;</span>
-                        <span>Visi besar memicu energi dan keberanian luar biasa.</span>
-                    </div>
-                </article>
+/* CARD */
+.code-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 290px;
+    padding: 27px;
+    overflow: hidden;
 
-                <!-- KODE 03 -->
-                <article class="code-card">
-                    <div>
-                        <div class="card-top">
-                            <span class="code-tag">KODE // 03</span>
-                            <div class="icon-box" aria-hidden="true">
-                                <!-- Ikon Perisai / Ketangguhan -->
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                                    <path d="m9 12 2 2 4-4"></path>
-                                </svg>
-                            </div>
-                        </div>
-                        <h2>Pantang Menyerah</h2>
-                        <p>
-                            Kegagalan bukanlah akhir dari segalanya, melainkan umpan balik berharga. Jadikan setiap rintangan sebagai batu loncatan untuk bangkit lebih kuat dan lebih bijaksana.
-                        </p>
-                    </div>
-                    <div class="card-mantra">
-                        <span class="arrow">&rarr;</span>
-                        <span>Jatuh tujuh kali, bangkit delapan kali lebih tangguh.</span>
-                    </div>
-                </article>
+    background: rgba(20,28,48,.78);
+    border: 1px solid var(--border);
+    border-radius: 18px;
 
-                <!-- KODE 04 -->
-                <article class="code-card">
-                    <div>
-                        <div class="card-top">
-                            <span class="code-tag">KODE // 04</span>
-                            <div class="icon-box" aria-hidden="true">
-                                <!-- Ikon Pertumbuhan / Kilau Ilmu -->
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
-                                    <polyline points="16 7 22 7 22 13"></polyline>
-                                </svg>
-                            </div>
-                        </div>
-                        <h2>Terus Belajar &amp; Bertumbuh</h2>
-                        <p>
-                            Dunia terus bergerak dinamis. Perbarui wawasanmu, asah keterampilan baru setiap hari, dan jadilah versi terbaik dari dirimu dibandingkan hari kemarin.
-                        </p>
-                    </div>
-                    <div class="card-mantra">
-                        <span class="arrow">&rarr;</span>
-                        <span>Investasi terbaik adalah meningkatkan kualitas diri.</span>
-                    </div>
-                </article>
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 
-                <!-- KODE 05 -->
-                <article class="code-card">
-                    <div>
-                        <div class="card-top">
-                            <span class="code-tag">KODE // 05</span>
-                            <div class="icon-box" aria-hidden="true">
-                                <!-- Ikon Cahaya / Solusi -->
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path>
-                                    <path d="M9 18h6"></path>
-                                    <path d="M10 22h4"></path>
-                                </svg>
-                            </div>
-                        </div>
-                        <h2>Fokus pada Solusi</h2>
-                        <p>
-                            Ketika badai masalah datang, jangan habiskan energi untuk mengeluh. Arahkan pikiran positifmu untuk mencari jalan keluar dan ubah tantangan menjadi peluang emas.
-                        </p>
-                    </div>
-                    <div class="card-mantra">
-                        <span class="arrow">&rarr;</span>
-                        <span>Di balik setiap kesulitan selalu tersembunyi peluang.</span>
-                    </div>
-                </article>
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease,
+        background .35s ease;
+}
 
-                <!-- KODE 06 -->
-                <article class="code-card">
-                    <div>
-                        <div class="card-top">
-                            <span class="code-tag">KODE // 06</span>
-                            <div class="icon-box" aria-hidden="true">
-                                <!-- Ikon Waktu / Prioritas -->
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <circle cx="12" cy="12" r="10"></circle>
-                                    <polyline points="12 6 12 12 16 14"></polyline>
-                                </svg>
-                            </div>
-                        </div>
-                        <h2>Kelola Waktu dengan Bijak</h2>
-                        <p>
-                            Waktu adalah aset paling berharga yang tidak bisa diputar kembali. Prioritaskan hal-hal yang berdampak besar pada masa depanmu dan kurangi distraksi yang sia-sia.
-                        </p>
-                    </div>
-                    <div class="card-mantra">
-                        <span class="arrow">&rarr;</span>
-                        <span>Hargai waktumu hari ini untuk menuai hasil esok hari.</span>
-                    </div>
-                </article>
+.code-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
 
-            </section>
+    background: linear-gradient(
+        90deg,
+        var(--blue),
+        var(--purple),
+        var(--cyan)
+    );
 
-            <!-- Banner Motivasi Penutup -->
-            <section class="cta-banner" aria-label="Pesan Penyemangat">
-                <h3>Masa Depanmu Dimulai dari Keputusan Hari Ini</h3>
-                <p>
-                    Jalankan keenam kode misi ini dengan sepenuh hati. Langkah kecil yang kamu ambil sekarang adalah fondasi kesuksesan besarmu di masa depan.
-                </p>
-            </section>
-        </div>
-    </main>
+    opacity: .6;
+}
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Misi-Misi Motivasi Meraih Masa Depan. Terus Melangkah &amp; Menginspirasi.</p>
-        </div>
-    </footer>
+.code-card:hover {
+    transform: translateY(-8px);
+    background: var(--bg-hover);
+    border-color: rgba(96,165,250,.5);
 
-</body>
-</html>
+    box-shadow:
+        0 20px 40px rgba(0,0,0,.35),
+        0 0 25px rgba(59,130,246,.12);
+}
+
+/* CARD TOP */
+.card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.code-tag {
+    font-family: monospace;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #38bdf8;
+    background: rgba(56,189,248,.1);
+    border: 1px solid rgba(56,189,248,.25);
+    padding: 7px 12px;
+    border-radius: 7px;
+}
+
+.icon-box {
+    width: 47px;
+    height: 47px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 25px;
+    color: #93c5fd;
+
+    background: linear-gradient(
+        135deg,
+        rgba(59,130,246,.2),
+        rgba(139,92,246,.2)
+    );
+
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 13px;
+
+    transition: .3s;
+}
+
+.code-card:hover .icon-box {
+    transform: scale(1.1) rotate(5deg);
+    color: white;
+}
+
+/* CARD TEXT */
+.code-card h3 {
+    color: white;
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.code-card p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* CARD MANTRA */
+.card-mantra {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 25px;
+    padding-top: 17px;
+
+    border-top: 1px solid var(--border);
+
+    color: #cbd5e1;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.card-mantra span {
+    color: #38bdf8;
+    font-size: 17px;
+}
+
+/* =================================
+   CTA BANNER
+================================= */
+
+.cta-banner {
+    margin-top: 65px;
+    padding: 55px 25px;
+    text-align: center;
+    border-radius: 22px;
+
+    background: linear-gradient(
+        135deg,
+        rgba(30,58,138,.4),
+        rgba(88,28,135,.4)
+    );
+
+    border: 1px solid rgba(147,197,253,.25);
+}
+
+.cta-symbol {
+    font-size: 38px;
+    color: #60a5fa;
+    margin-bottom: 10px;
+}
+
+.cta-banner h2 {
+    font-size: clamp(23px, 4vw, 36px);
+    line-height: 1.4;
+    margin: 12px 0;
+}
+
+.cta-banner h2 span {
+    display: block;
+    color: #60a5fa;
+}
+
+.cta-banner p {
+    max-width: 650px;
+    margin: auto;
+    color: #cbd5e1;
+    font-size: 14px;
+}
+
+/* =================================
+   FOOTER
+================================= */
+
+footer {
+    text-align: center;
+    padding: 35px 20px;
+    border-top: 1px solid var(--border);
+    background: rgba(0,0,0,.15);
+}
+
+.footer-brand {
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.footer-brand span {
+    color: #60a5fa;
+}
+
+footer p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* =================================
+   ANIMATION
+================================= */
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: .5;
+        transform: scale(1.3);
+    }
+}
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 900px) {
+    .mission-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-stats {
+        gap: 45px;
+    }
+}
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+    .container {
+        padding: 0 17px;
+    }
+
+    .hero {
+        padding: 35px 0;
+    }
+
+    .brand {
+        margin-bottom: 35px;
+        font-size: 16px;
+    }
+
+    .badge-misi {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+        letter-spacing: -1px;
+    }
+
+    .hero-description {
+        font-size: 13px;
+    }
+
+    .hero-stats {
+        gap: 25px;
+    }
+
+    .hero-stats strong {
+        font-size: 21px;
+    }
+
+    .hero-stats span {
+        font-size: 10px;
+    }
+
+    main {
+        padding-top: 20px;
+    }
+
+    .section-heading h2 {
+        font-size: 25px;
+    }
+
+    .mission-grid {
+        grid-template-columns: 1fr;
+        gap: 17px;
+    }
+
+    .code-card {
+        min-height: 260px;
+        padding: 23px;
+    }
+
+    .code-card h3 {
+        font-size: 17px;
+    }
+
+    .cta-banner {
+        margin-top: 40px;
+        padding: 35px 20px;
+    }
+
+    .cta-banner p {
+        font-size: 13px;
+    }
+
+    footer p {
+        line-height: 1.8;
+    }
+}
+
+/* AKSESIBILITAS: KURANGI ANIMASI */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+}
