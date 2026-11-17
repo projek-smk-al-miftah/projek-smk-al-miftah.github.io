@@ -1,26 +1,35 @@
-
 /* =========================================
    BRAND ROFIQI - GALAXY STAR ANIMATION
-   HUJAN BINTANG PREMIUM
+   HUJAN BINTANG PREMIUM (GITHUB PAGES READY)
 ========================================= */
-
-/* BACKGROUND BINTANG */
 
 body {
     position: relative;
     isolation: isolate;
+    background-color: #03291d; /* Dasar gelap agar bintang terlihat jelas */
+    overflow-x: hidden;
 }
 
+/* WADAH HUJAN BINTANG */
 .star-background {
     position: fixed;
     inset: 0;
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    pointer-events: none;
-    z-index: 999;
+    pointer-events: none; /* Agar tombol & link tetap bisa diklik */
+    z-index: 1; /* Di atas background, tapi tidak menutupi teks/kartu */
 }
 
+/* Pastikan konten utama berada di atas lapisan bintang */
+.header,
+main,
+.footer {
+    position: relative;
+    z-index: 2;
+}
+
+/* PARTIKEL BINTANG LATAR */
 .stars {
     position: absolute;
     inset: -100%;
@@ -31,100 +40,113 @@ body {
 
 .stars-one {
     background-image:
-        radial-gradient(2px 2px at 20px 30px, #ffffff 98%, transparent),
-        radial-gradient(2px 2px at 100px 150px, #48e8a2 98%, transparent),
-        radial-gradient(1px 1px at 200px 80px, #ffffff 98%, transparent),
-        radial-gradient(2px 2px at 300px 220px, #ffffff 98%, transparent),
-        radial-gradient(1px 1px at 400px 120px, #48e8a2 98%, transparent);
-
+        radial-gradient(2px 2px at 20px 30px, #ffffff 95%, transparent),
+        radial-gradient(2.5px 2.5px at 100px 150px, #48e8a2 95%, transparent),
+        radial-gradient(1.5px 1.5px at 200px 80px, #ffffff 95%, transparent),
+        radial-gradient(2px 2px at 300px 220px, #a7f3d0 95%, transparent),
+        radial-gradient(1.5px 1.5px at 400px 120px, #48e8a2 95%, transparent);
     background-size: 450px 300px;
-    opacity: 0.65;
-    animation: starMoveOne 35s linear infinite;
+    opacity: 0.75;
+    animation: starRainOne 25s linear infinite;
 }
 
 .stars-two {
     background-image:
-        radial-gradient(2px 2px at 50px 100px, #48e8a2 98%, transparent),
-        radial-gradient(1px 1px at 150px 250px, #ffffff 98%, transparent),
-        radial-gradient(3px 3px at 250px 50px, #ffffff 98%, transparent),
-        radial-gradient(1px 1px at 350px 180px, #48e8a2 98%, transparent);
-
+        radial-gradient(2px 2px at 50px 100px, #48e8a2 95%, transparent),
+        radial-gradient(1.5px 1.5px at 150px 250px, #ffffff 95%, transparent),
+        radial-gradient(3px 3px at 250px 50px, #ffffff 95%, transparent),
+        radial-gradient(1.5px 1.5px at 350px 180px, #48e8a2 95%, transparent);
     background-size: 400px 350px;
-    opacity: 0.5;
-    animation: starMoveTwo 45s linear infinite;
+    opacity: 0.55;
+    animation: starRainTwo 38s linear infinite, starTwinkle 4s ease-in-out infinite alternate;
 }
 
 .stars-three {
     background-image:
-        radial-gradient(2px 2px at 80px 60px, #ffffff 98%, transparent),
-        radial-gradient(1px 1px at 180px 170px, #48e8a2 98%, transparent),
-        radial-gradient(2px 2px at 280px 280px, #ffffff 98%, transparent);
-
+        radial-gradient(2px 2px at 80px 60px, #ffffff 95%, transparent),
+        radial-gradient(1px 1px at 180px 170px, #48e8a2 95%, transparent),
+        radial-gradient(2px 2px at 280px 280px, #ffffff 95%, transparent);
     background-size: 350px 300px;
-    opacity: 0.35;
-    animation: starMoveThree 55s linear infinite;
+    opacity: 0.4;
+    animation: starRainThree 50s linear infinite;
 }
 
-/* BINTANG JATUH */
-
+/* HUJAN BINTANG JATUH (METEOR) */
 .shooting-star {
     position: absolute;
-    top: 10%;
-    left: 75%;
-    width: 120px;
+    top: -10%;
+    left: 80%;
+    width: 150px;
     height: 2px;
-
-    background: linear-gradient(
-        90deg,
-        transparent,
-        #ffffff,
-        #48e8a2
-    );
-
+    background: linear-gradient(90deg, #ffffff, #48e8a2, transparent);
     border-radius: 50%;
-    filter: drop-shadow(0 0 7px #48e8a2);
-
+    filter: drop-shadow(0 0 8px #48e8a2);
+    opacity: 0;
     transform: rotate(-35deg);
-    animation: shootingStar 6s linear infinite;
+    animation: shootingStar 5s ease-in infinite;
+}
+
+/* Kepala bintang jatuh yang bersinar */
+.shooting-star::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 0 0 12px 3px #48e8a2;
 }
 
 .shooting-two {
-    top: 40%;
+    top: 15%;
+    left: 105%;
+    width: 180px;
+    animation-delay: 2.2s;
+    animation-duration: 6.5s;
+}
+
+.shooting-three {
+    top: -5%;
     left: 45%;
-    animation-delay: 3s;
-    animation-duration: 8s;
+    width: 120px;
+    animation-delay: 4s;
+    animation-duration: 5.5s;
 }
 
-/* ANIMASI BINTANG */
-
-@keyframes starMoveOne {
+/* KEYFRAMES ANIMASI BINTANG */
+@keyframes starRainOne {
     from {
-        transform: translateY(0);
+        transform: translate(0, 0);
     }
-
     to {
-        transform: translateY(300px);
-    }
-}
-
-@keyframes starMoveTwo {
-    from {
-        transform: translateY(0) translateX(0);
-    }
-
-    to {
-        transform: translateY(350px) translateX(-100px);
+        transform: translate(-150px, 300px); /* Bergerak turun miring seperti hujan */
     }
 }
 
-@keyframes starMoveThree {
+@keyframes starRainTwo {
     from {
-        transform: translateY(0);
+        transform: translate(0, 0);
     }
-
     to {
-        transform: translateY(400px);
+        transform: translate(-100px, 350px);
     }
+}
+
+@keyframes starRainThree {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(-80px, 300px);
+    }
+}
+
+@keyframes starTwinkle {
+    0% { opacity: 0.35; }
+    100% { opacity: 0.85; }
 }
 
 @keyframes shootingStar {
@@ -132,18 +154,15 @@ body {
         opacity: 0;
         transform: translate(0, 0) rotate(-35deg);
     }
-
     10% {
         opacity: 1;
     }
-
-    45% {
+    55% {
         opacity: 1;
     }
-
-    60%, 100% {
+    70%, 100% {
         opacity: 0;
-        transform: translate(-500px, 350px) rotate(-35deg);
+        transform: translate(-750px, 520px) rotate(-35deg);
     }
 }
 
@@ -152,110 +171,73 @@ body {
 ========================================= */
 
 .code-card {
+    position: relative;
+    overflow: hidden;
     animation: cardAppear 1s ease both;
     will-change: transform;
 }
 
 .mission-01 {
-    animation:
-        cardAppear 1s ease both,
-        floatOne 5s ease-in-out 1s infinite;
+    animation: cardAppear 1s ease both, floatOne 5s ease-in-out 1s infinite;
 }
 
 .mission-02 {
-    animation:
-        cardAppear 1s ease 0.2s both,
-        floatTwo 6s ease-in-out 1.2s infinite;
+    animation: cardAppear 1s ease 0.2s both, floatTwo 6s ease-in-out 1.2s infinite;
 }
 
 .mission-03 {
-    animation:
-        cardAppear 1s ease 0.4s both,
-        floatThree 5.5s ease-in-out 1.4s infinite;
+    animation: cardAppear 1s ease 0.4s both, floatThree 5.5s ease-in-out 1.4s infinite;
 }
 
 .mission-04 {
-    animation:
-        cardAppear 1s ease 0.6s both,
-        floatTwo 6.5s ease-in-out 1.6s infinite;
+    animation: cardAppear 1s ease 0.6s both, floatTwo 6.5s ease-in-out 1.6s infinite;
 }
 
 .mission-05 {
-    animation:
-        cardAppear 1s ease 0.8s both,
-        floatOne 5.8s ease-in-out 1.8s infinite;
+    animation: cardAppear 1s ease 0.8s both, floatOne 5.8s ease-in-out 1.8s infinite;
 }
 
 .mission-06 {
-    animation:
-        cardAppear 1s ease 1s both,
-        floatThree 6.2s ease-in-out 2s infinite;
+    animation: cardAppear 1s ease 1s both, floatThree 6.2s ease-in-out 2s infinite;
 }
 
-/* GERAKAN KARTU BERBEDA */
-
 @keyframes floatOne {
-    0%, 100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
 
 @keyframes floatTwo {
-    0%, 100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-15px);
-    }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
 }
 
 @keyframes floatThree {
-    0%, 100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-7px);
-    }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-7px); }
 }
-
-/* ANIMASI MUNCUL */
 
 @keyframes cardAppear {
     from {
         opacity: 0;
-        translate: 0 35px;
+        transform: translateY(35px);
     }
-
     to {
         opacity: 1;
-        translate: 0 0;
+        transform: translateY(0);
     }
 }
 
-/* IKON BERGERAK */
-
+/* IKON BERCAHAYA */
 .icon-box {
     animation: iconGlow 3s ease-in-out infinite;
 }
 
 @keyframes iconGlow {
-    0%, 100% {
-        box-shadow: 0 0 0 rgba(32, 200, 121, 0);
-    }
-
-    50% {
-        box-shadow: 0 0 20px rgba(32, 200, 121, 0.35);
-    }
+    0%, 100% { box-shadow: 0 0 0 rgba(32, 200, 121, 0); }
+    50% { box-shadow: 0 0 20px rgba(32, 200, 121, 0.45); }
 }
 
-/* CAHAYA KARTU */
-
+/* KILAUAN CAHAYA SAAT KARTU DI-HOVER */
 .code-card::after {
     content: "";
     position: absolute;
@@ -263,14 +245,12 @@ body {
     left: -120%;
     width: 80%;
     height: 100%;
-
     background: linear-gradient(
         110deg,
         transparent,
-        rgba(32, 200, 121, 0.10),
+        rgba(72, 232, 162, 0.18),
         transparent
     );
-
     transform: skewX(-20deg);
     transition: 0.8s;
     pointer-events: none;
@@ -280,94 +260,48 @@ body {
     left: 150%;
 }
 
-/* HERO BERCAHAYA */
-
+/* HERO & FLOATING CARD */
 .mission-display {
     animation: displayFloat 6s ease-in-out infinite;
 }
 
 @keyframes displayFloat {
-    0%, 100% {
-        translate: 0 0;
-    }
-
-    50% {
-        translate: 0 -12px;
-    }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
 }
-
-/* FLOATING CARD */
 
 .floating-card {
     animation: floatingBadge 4s ease-in-out infinite;
 }
 
 @keyframes floatingBadge {
-    0%, 100% {
-        translate: 0 0;
-    }
-
-    50% {
-        translate: 0 -12px;
-    }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
 }
 
-/* BINTANG DI LATAR BELAKANG HERO */
-
+/* LATAR BELAKANG HERO AGAR BINTANG TERLIHAT TEMBUS */
 .hero {
     background:
         radial-gradient(
             circle at 80% 30%,
             rgba(35, 211, 126, 0.22),
-            transparent 32%
+            transparent 35%
         ),
         linear-gradient(
             120deg,
-            #043c2b,
-            #087c4d
+            rgba(4, 60, 43, 0.88),
+            rgba(8, 124, 77, 0.82)
         );
 }
 
-/* MOBILE */
-
+/* RESPONSIVE MOBILE */
 @media (max-width: 650px) {
-    .mission-01 {
-        animation: cardAppear 1s ease both,
-                   floatOne 5s ease-in-out 1s infinite;
-    }
-
-    .mission-02 {
-        animation: cardAppear 1s ease 0.2s both,
-                   floatTwo 6s ease-in-out 1.2s infinite;
-    }
-
-    .mission-03 {
-        animation: cardAppear 1s ease 0.4s both,
-                   floatThree 5.5s ease-in-out 1.4s infinite;
-    }
-
-    .mission-04 {
-        animation: cardAppear 1s ease 0.6s both,
-                   floatTwo 6.5s ease-in-out 1.6s infinite;
-    }
-
-    .mission-05 {
-        animation: cardAppear 1s ease 0.8s both,
-                   floatOne 5.8s ease-in-out 1.8s infinite;
-    }
-
-    .mission-06 {
-        animation: cardAppear 1s ease 1s both,
-                   floatThree 6.2s ease-in-out 2s infinite;
-    }
-
     .shooting-star {
-        width: 75px;
+        width: 90px;
     }
 }
 
 /* AKSESIBILITAS */
-
 @media (prefers-reduced-motion: reduce) {
     .stars,
     .shooting-star,
