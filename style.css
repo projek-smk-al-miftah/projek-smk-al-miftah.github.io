@@ -1071,4 +1071,204 @@ a {
         transition-duration: 0.01ms !important;
         animation-duration: 0.01ms !important;
     }
+} 
+/* =========================================
+   BRAND ROFIQI - PREMIUM ANIMATION
+   HUJAN BINTANG • ANGIN • HP MELAYANG
+========================================= */
+
+/* LAPISAN ANIMASI HERO */
+.hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
 }
+
+.hero-weather {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* HUJAN BINTANG */
+.star {
+    position: absolute;
+    top: -30px;
+    width: 4px;
+    height: 4px;
+    background: #ffffff;
+    border-radius: 50%;
+    box-shadow:
+        0 0 7px #ffffff,
+        0 0 15px #42ffad,
+        0 0 25px #20c879;
+    animation: starFall linear infinite;
+}
+
+.star-1 { left: 8%; animation-duration: 7s; }
+.star-2 { left: 18%; animation-duration: 10s; animation-delay: 2s; }
+.star-3 { left: 30%; animation-duration: 8s; animation-delay: 1s; }
+.star-4 { left: 42%; animation-duration: 11s; animation-delay: 3s; }
+.star-5 { left: 55%; animation-duration: 9s; animation-delay: 1s; }
+.star-6 { left: 65%; animation-duration: 12s; animation-delay: 2s; }
+.star-7 { left: 75%; animation-duration: 8s; animation-delay: 4s; }
+.star-8 { left: 85%; animation-duration: 10s; animation-delay: 1s; }
+.star-9 { left: 93%; animation-duration: 7s; animation-delay: 3s; }
+.star-10 { left: 48%; animation-duration: 13s; animation-delay: 5s; }
+
+@keyframes starFall {
+    0% {
+        transform: translate(0, -50px) scale(0.5);
+        opacity: 0;
+    }
+    15% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 0.9;
+    }
+    100% {
+        transform: translate(-90px, 700px) scale(1.3);
+        opacity: 0;
+    }
+}
+
+/* EFEK ANGIN CAHAYA */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+        repeating-linear-gradient(
+            165deg,
+            transparent 0,
+            transparent 90px,
+            rgba(88, 255, 175, 0.12) 92px,
+            transparent 95px
+        );
+    background-size: 200% 200%;
+    animation: windMove 12s linear infinite;
+}
+
+@keyframes windMove {
+    0% {
+        background-position: 100% 0;
+    }
+    100% {
+        background-position: -100% 100%;
+    }
+}
+
+/* KONTEN HERO DI ATAS ANIMASI */
+.hero-container {
+    position: relative;
+    z-index: 1;
+}
+
+/* HP MELAYANG */
+.hero-photo img {
+    animation: phoneFloat 4s ease-in-out infinite;
+}
+
+@keyframes phoneFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-13px);
+    }
+}
+
+/* EFEK KILAU TOMBOL */
+.btn-primary,
+.btn-buy,
+.btn-whatsapp {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::after,
+.btn-buy::after,
+.btn-whatsapp::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+        110deg,
+        transparent,
+        rgba(255,255,255,0.35),
+        transparent
+    );
+    transform: skewX(-20deg);
+    animation: buttonShine 4s ease-in-out infinite;
+}
+
+@keyframes buttonShine {
+    0%, 65% {
+        left: -120%;
+    }
+    100% {
+        left: 150%;
+    }
+}
+
+/* KARTU PRODUK, GALERI DAN KEUNGGULAN */
+.product-card,
+.feature-card,
+.gallery-card {
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.product-card:hover,
+.feature-card:hover {
+    transform: translateY(-10px);
+}
+
+/* WHATSAPP BERDENYUT */
+.floating-wa {
+    animation: waPulse 2s infinite;
+}
+
+@keyframes waPulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(22, 189, 104, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 0 13px rgba(22, 189, 104, 0);
+    }
+}
+
+/* RESPONSIVE ANIMASI */
+@media (max-width: 650px) {
+    .star {
+        width: 3px;
+        height: 3px;
+    }
+
+    .hero-photo img {
+        max-width: 310px;
+    }
+}
+
+/* AKSESIBILITAS: KURANGI GERAKAN */
+@media (prefers-reduced-motion: reduce) {
+    .star,
+    .hero::after,
+    .hero-photo img,
+    .btn-primary::after,
+    .btn-buy::after,
+    .btn-whatsapp::after,
+    .floating-wa {
+        animation: none !important;
+    }
+}
+
