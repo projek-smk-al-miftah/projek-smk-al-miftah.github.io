@@ -1,141 +1,320 @@
 
 /* =========================================
-   BRAND ROFIQI - MISI MASA DEPAN
-   PREMIUM GREEN DESIGN
-   DESKTOP - TABLET - MOBILE
+   BRAND ROFIQI - GALAXY STAR ANIMATION
+   HUJAN BINTANG PREMIUM
 ========================================= */
 
-/* RESET */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --green: #07864b;
-    --green-light: #20c879;
-    --green-bright: #48e8a2;
-    --green-dark: #063d2c;
-    --green-deep: #032c20;
-    --green-soft: #eaf7ef;
-    --white: #ffffff;
-    --black: #122019;
-    --gray: #718078;
-    --border: #e5eee8;
-    --shadow: 0 15px 40px rgba(0, 40, 24, 0.09);
-}
-
-/* DASAR HALAMAN */
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 90px;
-}
+/* BACKGROUND BINTANG */
 
 body {
+    position: relative;
+    isolation: isolate;
+}
+
+.star-background {
+    position: fixed;
+    inset: 0;
     width: 100%;
-    min-height: 100vh;
-    font-family: 'Plus Jakarta Sans', Arial, sans-serif;
-    background: #ffffff;
-    color: var(--black);
-    line-height: 1.7;
-    overflow-x: hidden;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 999;
 }
 
-a {
-    text-decoration: none;
+.stars {
+    position: absolute;
+    inset: -100%;
+    width: 300%;
+    height: 300%;
+    background-repeat: repeat;
 }
 
-button,
-a {
-    -webkit-tap-highlight-color: transparent;
+.stars-one {
+    background-image:
+        radial-gradient(2px 2px at 20px 30px, #ffffff 98%, transparent),
+        radial-gradient(2px 2px at 100px 150px, #48e8a2 98%, transparent),
+        radial-gradient(1px 1px at 200px 80px, #ffffff 98%, transparent),
+        radial-gradient(2px 2px at 300px 220px, #ffffff 98%, transparent),
+        radial-gradient(1px 1px at 400px 120px, #48e8a2 98%, transparent);
+
+    background-size: 450px 300px;
+    opacity: 0.65;
+    animation: starMoveOne 35s linear infinite;
 }
 
-.container {
-    width: 100%;
-    max-width: 1250px;
-    margin: auto;
-    padding: 0 25px;
+.stars-two {
+    background-image:
+        radial-gradient(2px 2px at 50px 100px, #48e8a2 98%, transparent),
+        radial-gradient(1px 1px at 150px 250px, #ffffff 98%, transparent),
+        radial-gradient(3px 3px at 250px 50px, #ffffff 98%, transparent),
+        radial-gradient(1px 1px at 350px 180px, #48e8a2 98%, transparent);
+
+    background-size: 400px 350px;
+    opacity: 0.5;
+    animation: starMoveTwo 45s linear infinite;
+}
+
+.stars-three {
+    background-image:
+        radial-gradient(2px 2px at 80px 60px, #ffffff 98%, transparent),
+        radial-gradient(1px 1px at 180px 170px, #48e8a2 98%, transparent),
+        radial-gradient(2px 2px at 280px 280px, #ffffff 98%, transparent);
+
+    background-size: 350px 300px;
+    opacity: 0.35;
+    animation: starMoveThree 55s linear infinite;
+}
+
+/* BINTANG JATUH */
+
+.shooting-star {
+    position: absolute;
+    top: 10%;
+    left: 75%;
+    width: 120px;
+    height: 2px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #ffffff,
+        #48e8a2
+    );
+
+    border-radius: 50%;
+    filter: drop-shadow(0 0 7px #48e8a2);
+
+    transform: rotate(-35deg);
+    animation: shootingStar 6s linear infinite;
+}
+
+.shooting-two {
+    top: 40%;
+    left: 45%;
+    animation-delay: 3s;
+    animation-duration: 8s;
+}
+
+/* ANIMASI BINTANG */
+
+@keyframes starMoveOne {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(300px);
+    }
+}
+
+@keyframes starMoveTwo {
+    from {
+        transform: translateY(0) translateX(0);
+    }
+
+    to {
+        transform: translateY(350px) translateX(-100px);
+    }
+}
+
+@keyframes starMoveThree {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(400px);
+    }
+}
+
+@keyframes shootingStar {
+    0% {
+        opacity: 0;
+        transform: translate(0, 0) rotate(-35deg);
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    45% {
+        opacity: 1;
+    }
+
+    60%, 100% {
+        opacity: 0;
+        transform: translate(-500px, 350px) rotate(-35deg);
+    }
 }
 
 /* =========================================
-   HEADER
+   ENAM KARTU MISI BERGERAK SENDIRI
 ========================================= */
 
-.header {
-    width: 100%;
-    position: sticky;
+.code-card {
+    animation: cardAppear 1s ease both;
+    will-change: transform;
+}
+
+.mission-01 {
+    animation:
+        cardAppear 1s ease both,
+        floatOne 5s ease-in-out 1s infinite;
+}
+
+.mission-02 {
+    animation:
+        cardAppear 1s ease 0.2s both,
+        floatTwo 6s ease-in-out 1.2s infinite;
+}
+
+.mission-03 {
+    animation:
+        cardAppear 1s ease 0.4s both,
+        floatThree 5.5s ease-in-out 1.4s infinite;
+}
+
+.mission-04 {
+    animation:
+        cardAppear 1s ease 0.6s both,
+        floatTwo 6.5s ease-in-out 1.6s infinite;
+}
+
+.mission-05 {
+    animation:
+        cardAppear 1s ease 0.8s both,
+        floatOne 5.8s ease-in-out 1.8s infinite;
+}
+
+.mission-06 {
+    animation:
+        cardAppear 1s ease 1s both,
+        floatThree 6.2s ease-in-out 2s infinite;
+}
+
+/* GERAKAN KARTU BERBEDA */
+
+@keyframes floatOne {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes floatTwo {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes floatThree {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+/* ANIMASI MUNCUL */
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        translate: 0 35px;
+    }
+
+    to {
+        opacity: 1;
+        translate: 0 0;
+    }
+}
+
+/* IKON BERGERAK */
+
+.icon-box {
+    animation: iconGlow 3s ease-in-out infinite;
+}
+
+@keyframes iconGlow {
+    0%, 100% {
+        box-shadow: 0 0 0 rgba(32, 200, 121, 0);
+    }
+
+    50% {
+        box-shadow: 0 0 20px rgba(32, 200, 121, 0.35);
+    }
+}
+
+/* CAHAYA KARTU */
+
+.code-card::after {
+    content: "";
+    position: absolute;
     top: 0;
-    z-index: 1000;
-    background: rgba(4, 53, 37, 0.97);
-    backdrop-filter: blur(15px);
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+    left: -120%;
+    width: 80%;
+    height: 100%;
+
+    background: linear-gradient(
+        110deg,
+        transparent,
+        rgba(32, 200, 121, 0.10),
+        transparent
+    );
+
+    transform: skewX(-20deg);
+    transition: 0.8s;
+    pointer-events: none;
 }
 
-.header-container {
-    width: 100%;
-    max-width: 1250px;
-    min-height: 82px;
-    padding: 0 35px;
-    margin: auto;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 25px;
+.code-card:hover::after {
+    left: 150%;
 }
 
-.logo,
-.footer-logo {
-    font-size: 25px;
-    font-weight: 900;
-    color: var(--white);
-    letter-spacing: -1px;
-    white-space: nowrap;
+/* HERO BERCAHAYA */
+
+.mission-display {
+    animation: displayFloat 6s ease-in-out infinite;
 }
 
-.logo span,
-.footer-logo span {
-    color: #36df96;
+@keyframes displayFloat {
+    0%, 100% {
+        translate: 0 0;
+    }
+
+    50% {
+        translate: 0 -12px;
+    }
 }
 
-.nav-menu {
-    display: flex;
-    align-items: center;
-    gap: 7px;
+/* FLOATING CARD */
+
+.floating-card {
+    animation: floatingBadge 4s ease-in-out infinite;
 }
 
-.nav-menu a {
-    color: #ffffff;
-    font-size: 13px;
-    font-weight: 700;
-    padding: 11px 13px;
-    border-radius: 7px;
-    transition: 0.3s;
+@keyframes floatingBadge {
+    0%, 100% {
+        translate: 0 0;
+    }
+
+    50% {
+        translate: 0 -12px;
+    }
 }
 
-.nav-menu a:hover {
-    background: rgba(255, 255, 255, 0.12);
-    color: #53f0ac;
-}
-
-.menu-toggle,
-.menu-button {
-    display: none;
-}
-
-/* =========================================
-   HERO
-========================================= */
+/* BINTANG DI LATAR BELAKANG HERO */
 
 .hero {
-    width: 100%;
-    min-height: 620px;
-    position: relative;
-    overflow: hidden;
-
-    color: #ffffff;
-
     background:
         radial-gradient(
             circle at 80% 30%,
@@ -149,1089 +328,53 @@ a {
         );
 }
 
-.hero-container {
-    width: 100%;
-    max-width: 1250px;
-    min-height: 620px;
-    padding: 65px 35px;
-    margin: auto;
-
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    align-items: center;
-    gap: 45px;
-}
-
-.hero-content {
-    width: 100%;
-    max-width: 620px;
-    position: relative;
-    z-index: 2;
-}
-
-.label,
-.section-label {
-    display: inline-block;
-    color: var(--green-light);
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 3px;
-    margin-bottom: 18px;
-}
-
-.badge-misi {
-    display: flex;
-    width: fit-content;
-    align-items: center;
-    gap: 9px;
-
-    margin-bottom: 22px;
-    padding: 8px 15px;
-
-    border: 1px solid rgba(72, 232, 162, 0.3);
-    border-radius: 50px;
-
-    background: rgba(72, 232, 162, 0.10);
-    color: #63efad;
-
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 1.5px;
-}
-
-.badge-dot {
-    width: 8px;
-    height: 8px;
-    flex-shrink: 0;
-    border-radius: 50%;
-    background: #48e8a2;
-    box-shadow: 0 0 12px #48e8a2;
-    animation: pulse 2s infinite;
-}
-
-.hero h1 {
-    font-size: clamp(40px, 5.2vw, 65px);
-    line-height: 1.13;
-    font-weight: 900;
-    letter-spacing: -2px;
-    margin-bottom: 22px;
-}
-
-.hero h1 span {
-    display: block;
-    color: #48e8a2;
-}
-
-.hero-content > p {
-    max-width: 560px;
-    color: #d5eee1;
-    font-size: 15px;
-    line-height: 1.9;
-    margin-bottom: 30px;
-}
-
-.hero-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 13px;
-}
-
-.btn {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-
-    padding: 13px 25px;
-    border-radius: 50px;
-
-    font-size: 13px;
-    font-weight: 800;
-
-    transition: 0.3s ease;
-}
-
-.btn:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-
-.btn-primary {
-    color: #ffffff;
-    background: var(--green);
-}
-
-.btn-primary:hover {
-    background: #09a663;
-}
-
-.btn-outline {
-    color: var(--green-dark);
-    background: #ffffff;
-}
-
-.btn-outline:hover {
-    background: #dff8e9;
-}
-
-/* HERO STATISTIK */
-
-.hero-stat {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 38px;
-    margin-top: 45px;
-}
-
-.hero-stat div {
-    display: flex;
-    flex-direction: column;
-}
-
-.hero-stat strong {
-    font-size: 23px;
-    color: #52efa9;
-    line-height: 1.3;
-}
-
-.hero-stat small {
-    font-size: 11px;
-    color: #d7f2e4;
-    margin-top: 4px;
-}
-
-/* =========================================
-   HERO VISUAL
-========================================= */
-
-.hero-visual {
-    min-width: 0;
-    min-height: 440px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-.visual-glow {
-    width: 340px;
-    height: 340px;
-    position: absolute;
-    border-radius: 50%;
-    background: rgba(91, 255, 175, 0.2);
-    filter: blur(65px);
-}
-
-.mission-display {
-    width: 100%;
-    max-width: 410px;
-    padding: 28px;
-
-    position: relative;
-    z-index: 1;
-
-    border: 1px solid rgba(255, 255, 255, 0.23);
-    border-radius: 22px;
-
-    background: rgba(3, 48, 32, 0.72);
-    backdrop-filter: blur(15px);
-
-    box-shadow: 0 25px 55px rgba(0, 0, 0, 0.22);
-
-    transform: rotate(2deg);
-    transition: 0.4s;
-}
-
-.mission-display:hover {
-    transform: rotate(0) translateY(-7px);
-}
-
-.display-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 18px;
-    border-bottom: 1px solid rgba(255,255,255,0.15);
-
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 1.5px;
-}
-
-.display-status {
-    color: #55eda8;
-    font-size: 9px;
-}
-
-.display-symbol {
-    margin-top: 22px;
-    color: #48e8a2;
-    font-size: 40px;
-}
-
-.display-label {
-    color: #9bd9bb;
-    font-size: 9px;
-    letter-spacing: 2px;
-}
-
-.mission-display h2 {
-    font-size: 54px;
-    line-height: 1.05;
-    letter-spacing: -3px;
-    margin: 12px 0 22px;
-}
-
-.mission-display h2 span {
-    color: #48e8a2;
-}
-
-.display-line {
-    height: 2px;
-    background: linear-gradient(
-        90deg,
-        #48e8a2,
-        transparent
-    );
-    margin-bottom: 20px;
-}
-
-.display-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 11px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.09);
-}
-
-.display-item span {
-    color: #48e8a2;
-    font-size: 12px;
-    font-weight: 800;
-}
-
-.display-item p {
-    flex: 1;
-    color: #e1f5e9;
-    font-size: 11px;
-}
-
-.display-item b {
-    color: #48e8a2;
-}
-
-.display-bottom {
-    margin-top: 20px;
-    color: #9bd9bb;
-    font-size: 9px;
-    font-weight: 800;
-    letter-spacing: 2px;
-    text-align: center;
-}
-
-.floating-card {
-    position: absolute;
-    right: -5px;
-    bottom: 20px;
-    z-index: 2;
-
-    display: flex;
-    align-items: center;
-    gap: 12px;
-
-    padding: 13px 17px;
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 13px;
-
-    background: rgba(4, 50, 33, 0.92);
-    backdrop-filter: blur(12px);
-}
-
-.floating-card > span {
-    color: #48e8a2;
-    font-size: 25px;
-}
-
-.floating-card div {
-    display: flex;
-    flex-direction: column;
-}
-
-.floating-card strong {
-    font-size: 12px;
-}
-
-.floating-card small {
-    color: #c4e7d4;
-    font-size: 9px;
-}
-
-/* =========================================
-   BENEFIT STRIP
-========================================= */
-
-.benefit-strip {
-    width: calc(100% - 40px);
-    max-width: 1150px;
-    margin: 0 auto;
-    padding: 25px 30px;
-
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-
-    background: #ffffff;
-    border-radius: 0 0 18px 18px;
-    box-shadow: var(--shadow);
-
-    position: relative;
-    z-index: 5;
-}
-
-.benefit-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-
-.benefit-item span {
-    width: 27px;
-    height: 27px;
-    flex-shrink: 0;
-
-    display: grid;
-    place-items: center;
-
-    background: var(--green-soft);
-    color: var(--green);
-    border-radius: 50%;
-    font-weight: 900;
-}
-
-.benefit-item p {
-    font-size: 12px;
-    font-weight: 700;
-}
-
-/* =========================================
-   SECTION UMUM
-========================================= */
-
-.section {
-    width: 100%;
-    padding: 95px 35px;
-}
-
-.section-heading {
-    text-align: center;
-    margin-bottom: 48px;
-}
-
-.section-heading .section-label {
-    margin-bottom: 7px;
-}
-
-.section-heading h2 {
-    color: var(--green-dark);
-    font-size: clamp(28px, 4vw, 39px);
-    font-weight: 900;
-    letter-spacing: -1px;
-    margin-bottom: 8px;
-}
-
-.section-heading p {
-    color: var(--gray);
-    font-size: 14px;
-}
-
-/* =========================================
-   MISSION GRID
-========================================= */
-
-.missions {
-    background: #f7fbf8;
-}
-
-.mission-grid {
-    width: 100%;
-    max-width: 1150px;
-    margin: auto;
-
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 25px;
-}
-
-.code-card {
-    min-width: 0;
-    min-height: 300px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    padding: 27px;
-    position: relative;
-    overflow: hidden;
-
-    background: #ffffff;
-    border: 1px solid var(--border);
-    border-radius: 18px;
-
-    box-shadow: 0 8px 30px rgba(0, 40, 24, 0.05);
-
-    transition: 0.35s ease;
-}
-
-.code-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-
-    background: linear-gradient(
-        90deg,
-        var(--green-dark),
-        var(--green-light)
-    );
-}
-
-.code-card:hover {
-    transform: translateY(-9px);
-    border-color: #a8e6c2;
-    box-shadow: var(--shadow);
-}
-
-.card-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 25px;
-}
-
-.code-tag {
-    padding: 7px 12px;
-
-    border-radius: 7px;
-    border: 1px solid #b9e8cc;
-
-    background: var(--green-soft);
-    color: var(--green);
-
-    font-family: monospace;
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 1px;
-}
-
-.icon-box {
-    width: 48px;
-    height: 48px;
-    flex-shrink: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    color: var(--green);
-    background: var(--green-soft);
-    border: 1px solid #d5efdf;
-    border-radius: 13px;
-
-    font-size: 25px;
-    transition: 0.3s;
-}
-
-.code-card:hover .icon-box {
-    transform: scale(1.1) rotate(5deg);
-    background: var(--green);
-    color: #ffffff;
-}
-
-.code-card h3 {
-    color: var(--green-dark);
-    font-size: 18px;
-    font-weight: 800;
-    margin-bottom: 12px;
-}
-
-.code-card p {
-    color: var(--gray);
-    font-size: 13px;
-    line-height: 1.9;
-}
-
-.card-mantra {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-
-    margin-top: 25px;
-    padding-top: 17px;
-
-    border-top: 1px solid var(--border);
-
-    color: #45564b;
-    font-size: 12px;
-    font-weight: 700;
-}
-
-.card-mantra span {
-    color: var(--green);
-    font-size: 17px;
-    line-height: 1.2;
-}
-
-/* =========================================
-   CTA BANNER
-========================================= */
-
-.cta-section {
-    padding: 80px 35px;
-    background: #ffffff;
-}
-
-.cta-banner {
-    width: 100%;
-    max-width: 1100px;
-    margin: auto;
-    padding: 65px 30px;
-
-    text-align: center;
-    border-radius: 22px;
-
-    background:
-        radial-gradient(
-            circle at 90% 10%,
-            rgba(72, 232, 162, 0.2),
-            transparent 35%
-        ),
-        linear-gradient(
-            120deg,
-            #063d2c,
-            #087a4b
-        );
-
-    color: #ffffff;
-    box-shadow: var(--shadow);
-}
-
-.cta-symbol {
-    font-size: 40px;
-    color: #48e8a2;
-    margin-bottom: 10px;
-}
-
-.cta-banner .section-label {
-    color: #48e8a2;
-}
-
-.cta-banner h2 {
-    font-size: clamp(25px, 4vw, 40px);
-    line-height: 1.4;
-    margin: 12px 0;
-}
-
-.cta-banner h2 span {
-    display: block;
-    color: #48e8a2;
-}
-
-.cta-banner p {
-    max-width: 650px;
-    margin: auto;
-    color: #d3eadd;
-    font-size: 14px;
-}
-
-.cta-banner .btn {
-    margin-top: 28px;
-}
-
-/* =========================================
-   KONTAK
-========================================= */
-
-.contact {
-    background: #f7fbf8;
-}
-
-.contact-card {
-    width: 100%;
-    max-width: 560px;
-    margin: auto;
-    padding: 40px;
-
-    background: #ffffff;
-    border: 1px solid var(--border);
-    border-radius: 20px;
-
-    text-align: center;
-    box-shadow: var(--shadow);
-}
-
-.contact-logo {
-    width: 70px;
-    height: 70px;
-    margin: 0 auto 18px;
-
-    display: grid;
-    place-items: center;
-
-    background: var(--green-dark);
-    color: #ffffff;
-    border-radius: 20px;
-
-    font-size: 25px;
-    font-weight: 900;
-}
-
-.contact-card h3 {
-    color: var(--green-dark);
-    font-size: 22px;
-}
-
-.contact-card > p {
-    color: var(--gray);
-    font-size: 13px;
-    margin: 10px 0 25px;
-}
-
-.btn-whatsapp {
-    width: 100%;
-    color: #ffffff;
-    background: #079b54;
-}
-
-.btn-whatsapp:hover {
-    background: #067c43;
-}
-
-/* =========================================
-   FOOTER
-========================================= */
-
-.footer {
-    background: #032c20;
-    color: #ffffff;
-    padding: 55px 35px 0;
-}
-
-.footer-container {
-    width: 100%;
-    max-width: 1150px;
-    margin: auto;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 30px;
-
-    padding-bottom: 35px;
-}
-
-.footer-logo {
-    display: inline-block;
-    margin-bottom: 8px;
-}
-
-.footer-container p {
-    color: #bdd8c8;
-    font-size: 13px;
-}
-
-.footer-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.footer-links a {
-    color: #dcece2;
-    font-size: 13px;
-    transition: 0.3s;
-}
-
-.footer-links a:hover {
-    color: #4ce5a1;
-}
-
-.copyright {
-    width: 100%;
-    max-width: 1150px;
-    margin: auto;
-    padding: 20px 0;
-
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
-
-    color: #a9c5b5;
-    text-align: center;
-    font-size: 12px;
-}
-
-/* =========================================
-   ANIMATION
-========================================= */
-
-@keyframes pulse {
-    0%, 100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-
-    50% {
-        opacity: 0.5;
-        transform: scale(1.3);
-    }
-}
-
-/* =========================================
-   TABLET
-========================================= */
-
-@media (max-width: 900px) {
-
-    .header-container {
-        padding: 0 22px;
-    }
-
-    .nav-menu {
-        gap: 0;
-    }
-
-    .nav-menu a {
-        padding: 10px 8px;
-        font-size: 11px;
-    }
-
-    .hero-container {
-        grid-template-columns: 1fr 0.8fr;
-        padding: 55px 25px;
-        gap: 20px;
-    }
-
-    .hero h1 {
-        font-size: 43px;
-    }
-
-    .mission-display {
-        padding: 22px;
-    }
-
-    .mission-display h2 {
-        font-size: 43px;
-    }
-
-    .floating-card {
-        right: -5px;
-    }
-
-    .benefit-strip {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .mission-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-/* =========================================
-   MOBILE
-========================================= */
+/* MOBILE */
 
 @media (max-width: 650px) {
-
-    html {
-        scroll-padding-top: 75px;
+    .mission-01 {
+        animation: cardAppear 1s ease both,
+                   floatOne 5s ease-in-out 1s infinite;
     }
 
-    .header-container {
-        min-height: 70px;
-        padding: 0 20px;
+    .mission-02 {
+        animation: cardAppear 1s ease 0.2s both,
+                   floatTwo 6s ease-in-out 1.2s infinite;
     }
 
-    .logo {
-        font-size: 21px;
+    .mission-03 {
+        animation: cardAppear 1s ease 0.4s both,
+                   floatThree 5.5s ease-in-out 1.4s infinite;
     }
 
-    .menu-toggle {
-        display: block;
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        opacity: 0;
-        pointer-events: none;
+    .mission-04 {
+        animation: cardAppear 1s ease 0.6s both,
+                   floatTwo 6.5s ease-in-out 1.6s infinite;
     }
 
-    .menu-button {
-        display: flex;
-        width: 43px;
-        height: 43px;
-
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 6px;
-
-        cursor: pointer;
-
-        border: 1px solid rgba(255,255,255,0.25);
-        border-radius: 9px;
+    .mission-05 {
+        animation: cardAppear 1s ease 0.8s both,
+                   floatOne 5.8s ease-in-out 1.8s infinite;
     }
 
-    .menu-button span {
-        width: 21px;
-        height: 2px;
-        background: #ffffff;
-        border-radius: 5px;
-        transition: 0.3s;
+    .mission-06 {
+        animation: cardAppear 1s ease 1s both,
+                   floatThree 6.2s ease-in-out 2s infinite;
     }
 
-    .nav-menu {
-        display: none;
-
-        position: absolute;
-        top: 70px;
-        left: 0;
-        right: 0;
-
-        padding: 15px 20px 20px;
-
-        flex-direction: column;
-        align-items: stretch;
-        gap: 5px;
-
-        background: #063d2c;
-        box-shadow: 0 15px 20px rgba(0,0,0,0.15);
-    }
-
-    .nav-menu a {
-        display: block;
-        padding: 12px 15px;
-        font-size: 14px;
-    }
-
-    .menu-toggle:checked ~ .nav-menu {
-        display: flex;
-    }
-
-    .menu-toggle:checked + .menu-button span:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-
-    .menu-toggle:checked + .menu-button span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .menu-toggle:checked + .menu-button span:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-
-    /* HERO MOBILE */
-
-    .hero,
-    .hero-container {
-        min-height: auto;
-    }
-
-    .hero-container {
-        grid-template-columns: 1fr;
-        padding: 55px 22px 45px;
-        gap: 30px;
-    }
-
-    .label {
-        font-size: 10px;
-        letter-spacing: 2px;
-    }
-
-    .badge-misi {
-        font-size: 9px;
-    }
-
-    .hero h1 {
-        font-size: clamp(37px, 10vw, 49px);
-        letter-spacing: -1.5px;
-    }
-
-    .hero-content > p {
-        font-size: 13px;
-    }
-
-    .hero-stat {
-        gap: 25px;
-        margin-top: 32px;
-    }
-
-    .hero-stat strong {
-        font-size: 20px;
-    }
-
-    .hero-visual {
-        min-height: 350px;
-        padding: 10px 5px;
-    }
-
-    .mission-display {
-        max-width: 380px;
-        padding: 23px;
-        transform: none;
-    }
-
-    .mission-display h2 {
-        font-size: 47px;
-    }
-
-    .floating-card {
-        right: 0;
-        bottom: 0;
-    }
-
-    /* BENEFIT */
-
-    .benefit-strip {
-        width: calc(100% - 24px);
-        padding: 22px 12px;
-        gap: 15px 5px;
-    }
-
-    .benefit-item {
-        justify-content: flex-start;
-        gap: 7px;
-    }
-
-    .benefit-item p {
-        font-size: 10px;
-    }
-
-    .benefit-item span {
-        width: 23px;
-        height: 23px;
-    }
-
-    /* SECTION */
-
-    .section {
-        padding: 70px 20px;
-    }
-
-    .section-heading {
-        margin-bottom: 32px;
-    }
-
-    .section-heading h2 {
-        font-size: 27px;
-    }
-
-    .section-heading p {
-        font-size: 13px;
-    }
-
-    /* MISSION */
-
-    .mission-grid {
-        grid-template-columns: 1fr;
-        gap: 17px;
-    }
-
-    .code-card {
-        min-height: 260px;
-        padding: 23px;
-    }
-
-    .code-card h3 {
-        font-size: 17px;
-    }
-
-    /* CTA */
-
-    .cta-section {
-        padding: 55px 20px;
-    }
-
-    .cta-banner {
-        padding: 38px 20px;
-    }
-
-    .cta-banner h2 {
-        font-size: 26px;
-    }
-
-    .cta-banner p {
-        font-size: 13px;
-    }
-
-    /* CONTACT */
-
-    .contact-card {
-        padding: 28px 20px;
-    }
-
-    /* FOOTER */
-
-    .footer {
-        padding: 40px 22px 0;
-    }
-
-    .footer-container {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .footer-links {
-        gap: 14px;
+    .shooting-star {
+        width: 75px;
     }
 }
 
-/* =========================================
-   SMALL MOBILE
-========================================= */
-
-@media (max-width: 360px) {
-
-    .hero h1 {
-        font-size: 35px;
-    }
-
-    .hero-buttons .btn {
-        width: 100%;
-    }
-
-    .hero-stat {
-        gap: 17px;
-    }
-
-    .mission-display {
-        padding: 17px;
-    }
-
-    .mission-display h2 {
-        font-size: 40px;
-    }
-
-    .display-item p {
-        font-size: 10px;
-    }
-
-    .benefit-strip {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-/* =========================================
-   AKSESIBILITAS
-========================================= */
+/* AKSESIBILITAS */
 
 @media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
-        scroll-behavior: auto !important;
-        animation-duration: 0.01ms !important;
-        transition-duration: 0.01ms !important;
+    .stars,
+    .shooting-star,
+    .code-card,
+    .icon-box,
+    .mission-display,
+    .floating-card {
+        animation: none !important;
     }
 }
